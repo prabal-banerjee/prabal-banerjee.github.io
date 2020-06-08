@@ -10,6 +10,15 @@ pause(){
 	read -p "Press [Enter] key to continue..." fackEnterKey
 }
 
+reset_config(){
+	CONFIG="module.exports = {
+		publicPath: process.env.NODE_ENV === 'production'
+		? '/'
+		: '/'
+	}"
+	echo "$CONFIG" > vue.config.js
+}
+
 one(){
 	clear
 	echo "Starting dev server\n"
@@ -34,6 +43,7 @@ two(){
 	echo "CMI Server"
 	rsync -az ./dist/ prabal@access2.cmi.ac.in:.www/ --delete
 	
+	reset_config;
 
         pause
 }
@@ -56,6 +66,8 @@ three(){
 	echo "ISI Server"
 	rsync -az ./dist/ prabal_r@www.isical.ac.in:public_html/ --delete
 
+	reset_config;
+	
         pause
 }
 
