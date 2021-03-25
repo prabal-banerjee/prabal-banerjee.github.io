@@ -1,9 +1,9 @@
 <template>
   <div id="app">
     <h1>
-      > Prabal Banerjee > {{($route.path).charAt(1).toUpperCase()+($route.path).slice(2)}}<span id="homeBlink" class="blinking-cursor">_</span>
+      > <router-link to="/" exact> Prabal Banerjee </router-link> > {{($route.path).charAt(1).toUpperCase()+($route.path).slice(2)}}<span id="homeBlink" class="blinking-cursor">_</span>
       <!-- <b id="pubsBlink"> > Publications <span class="blinking-cursor">_</span>  </b>
-      <b id="internBlink"> > Projects <span class="blinking-cursor">_</span>  </b>
+      <b id="internBlink"> > Experience <span class="blinking-cursor">_</span>  </b>
       <b id="eduBlink"> > Education <span class="blinking-cursor">_</span>  </b> -->
     </h1>
 
@@ -13,7 +13,7 @@
       <tr>
         <td> <router-link to="/" exact> Home </router-link> </td>
         <td> <router-link to="/publications"> Publications </router-link> </td>
-        <td> <router-link to="/internships"> Internships/Projects </router-link> </td>
+        <td> <router-link to="/experience"> Experience </router-link> </td>
         <td> <router-link to="/education"> Education </router-link> </td>
       </tr>
     </table>

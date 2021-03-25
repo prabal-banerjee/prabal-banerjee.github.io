@@ -1,9 +1,19 @@
 <template>
   <div class="pubText" style="overflow-y: auto; height:70%; width:90%">
 		<p>
-			<a target="_blank" href="https://arxiv.org/abs/2005.09327">Griefing-Penalty: Countermeasure for Griefing Attack in Bitcoin-compatible PCNs</a>
+			<a target="_blank" href="https://ieeexplore.ieee.org/abstract/document/9352817">Blockchain Enabled Data Trading with User Consent</a>
+			<br/><span style="font-size:15px;">with Amudhan Muthaiah, Sushmita Ruj</span>
+			<br/><span style="font-size:15px;">Published in 2021 International Conference on COMmunication Systems & NETworkS (COMSNETS)</span>
+		</p>
+		<p>
+			<a target="_blank" href="https://ieeexplore.ieee.org/document/9284655">Reliable, Fair and Decentralized Marketplace for Content Sharing Using Blockchain</a>
+			<br/><span style="font-size:15px;">with Chander Govindarajan, Praveen Jayachandran, Sushmita Ruj</span>
+			<br/><span style="font-size:15px;">Published in 2020 IEEE International Conference on Blockchain (Blockchain)</span>
+		</p>
+		<p>
+			<a target="_blank" href="https://ieeexplore.ieee.org/document/9343090">Time is Money: Countering Griefing Attack in Lightning Network</a>
 			<br/><span style="font-size:15px;">with Subhra Mazumdar, Sushmita Ruj</span>
-			<br/><span style="font-size:15px;">(pending publication) (uploaded on arXiv)</span>
+			<br/><span style="font-size:15px;">Published in: 2020 IEEE 19th International Conference on Trust, Security and Privacy in Computing and Communications (TrustCom)</span>
 		</p>
 		<p>
 			<a target="_blank" href="https://arxiv.org/abs/2001.03717">Verifiable and Auditable Digital Interchange Framework</a>
@@ -16,7 +26,7 @@
 			<br/><span style="font-size:15px;">(pending publication) (uploaded on arXiv)</span>
 		</p>
 		<p>
-			Content Distributed Over Secure Channels
+			<a target="_blank" href="https://patents.google.com/patent/US20200322413A1/en">Content Distributed Over Secure Channels</a>
 			<br/><span style="font-size:15px;">with Adarsh Saraf, Shreya Chakraborty, Chander Govindarajan</span>
 			<br/><span style="font-size:15px;">Filed with the Patent Office of USA on April 2019. Patent Pending.</span>
 		</p>

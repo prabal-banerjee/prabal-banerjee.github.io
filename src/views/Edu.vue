@@ -1,7 +1,7 @@
 <template>
   <div class="eduText" style="overflow-y: auto; height:70%; width:90%">
 		<p>
-			Research Fellow in Computer Science
+			PhD Student in Computer Science
 			<br/><span style="font-size:20px;">Research Advisor : <a target="_blank" href="http://www.isical.ac.in/~sush/">Dr. Sushmita Ruj</a></span>
 			<br/><span style="font-size:20px;"><a target="_blank" href="http://www.isical.ac.in/~csru/">Cryptology and Security Research Unit</a></span>
 			<br/><span style="font-size:20px;"><a target="_blank" href="http://www.isical.ac.in/">Indian Statistical Institute, Kolkata</a></span>

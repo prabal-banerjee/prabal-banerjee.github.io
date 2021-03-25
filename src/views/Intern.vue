@@ -1,6 +1,12 @@
 <template>
   <div class="internText" style="overflow-y: auto; height:70%; width:90%">
 		<p>
+			Researcher at <a target="_blank" href="https://matic.network/">Matic Network</a>
+			<br/><span style="font-size:20px;">Working on improving the Layer-2 solutions</span>
+			<br/><span style="font-size:20px;">2020 - </span>
+
+		</p>
+		<p>
 			Blockchain Researcher - Intern
 			<br/><span style="font-size:20px;">Three month long Internship with <a target="_blank" href="https://www.xoken.org/">Xoken Labs</a>, 2018</span>
 			<br/><span style="font-size:20px;">Mentor : Nithin Mani</span>

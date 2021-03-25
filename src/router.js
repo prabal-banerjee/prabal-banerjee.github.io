@@ -23,7 +23,7 @@ export default new Router({
       component: () => import(/* webpackChunkName: "pub" */ './views/Pub.vue')
     },
     {
-      path: '/internships',
+      path: '/experience',
       component: () => import(/* webpackChunkName: "intern" */ './views/Intern.vue')
     },
     {
