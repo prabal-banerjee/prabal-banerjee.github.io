@@ -79,13 +79,13 @@ three(){
 	echo "GitHub"
 	cd dist
 	cp index.html 404.html
-	git init
+	# git init
 	git add -A
 	git commit -m 'deploy'
-	git push -f git@github.com:prabal-banerjee/prabal-banerjee.github.io.git master
+	git push -f git@github.com:prabal-banerjee/prabal-banerjee.github.io.git code_backup
 	cd -
 	
-        pause
+    pause
 }
  
 show_menus() {
@@ -124,3 +124,5 @@ do
 	show_menus
 	read_options
 done
+
+# Remove staged files from git
