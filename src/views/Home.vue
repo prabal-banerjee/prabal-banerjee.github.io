@@ -1,11 +1,11 @@
 <template>
   <span class="mainText" >
-		Researcher @ 
-		<a target="_blank" href="https://matic.network/">Matic Network</a>
+		Co-Founder @ 
+		<a target="_blank" href="https://www.availproject.org/">Avail</a>
 		<br/><br/>
 		& 
 		<br/><br/>
-		Ph.D. Student @ 
+		Ph.D. Candidate @ 
 		<!-- <a target="_blank" href="http://www.isical.ac.in/~csru/">Cryptology and Security Research Unit</a>, <br/> -->
 		<a target="_blank" href="http://www.isical.ac.in">ISI Kolkata</a>
 		<br/><br/>

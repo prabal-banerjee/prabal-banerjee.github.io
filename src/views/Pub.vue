@@ -1,6 +1,16 @@
 <template>
   <div class="pubText" style="overflow-y: auto; height:70%; width:90%">
 		<p>
+			Accelerated Verifiable Fair Digital Exchange
+			<br/><span style="font-size:15px;">with Dushyant Behl, Palanivel Kodeswaran, Chaitanya Kumar, Sushmita Ruj, Sayandeep Sen, Dhinakaran Vinayagamurthy</span>
+			<br/><span style="font-size:15px;">Accepted for publication at ACM Distributed Ledger Technologies (ACM DLT) in 2023 <br/><a target="_blank" href="https://arxiv.org/abs/2001.03717">arXiv version</a></span>
+		</p>
+		<p>
+			<a target="_blank" href="https://ieeexplore.ieee.org/abstract/document/9993793">Strategic Analysis of Griefing Attack in Lightning Network</a>
+			<br/><span style="font-size:15px;">with Subhra Mazumdar, Abhinandan Sinha, Sushmita Ruj, Bimal Kumar Roy</span>
+			<br/><span style="font-size:15px;">Published in: 2022 IEEE Transactions on Network and Service Management (IEEE TNSM)</span>
+		</p>
+		<p>
 			<a target="_blank" href="https://ieeexplore.ieee.org/abstract/document/9352817">Blockchain Enabled Data Trading with User Consent</a>
 			<br/><span style="font-size:15px;">with Amudhan Muthaiah, Sushmita Ruj</span>
 			<br/><span style="font-size:15px;">Published in 2021 International Conference on COMmunication Systems & NETworkS (COMSNETS)</span>
@@ -16,11 +26,6 @@
 			<br/><span style="font-size:15px;">Published in: 2020 IEEE 19th International Conference on Trust, Security and Privacy in Computing and Communications (TrustCom)</span>
 		</p>
 		<p>
-			<a target="_blank" href="https://arxiv.org/abs/2001.03717">Verifiable and Auditable Digital Interchange Framework</a>
-			<br/><span style="font-size:15px;">with Dushyant Behl, Palanivel Kodeswaran, Chaitanya Kumar, Sushmita Ruj, Sayandeep Sen</span>
-			<br/><span style="font-size:15px;">(pending publication) (uploaded on arXiv)</span>
-		</p>
-		<p>
 			<a target="_blank" href="https://arxiv.org/abs/1904.12362">Blockchain Enabled Privacy Preserving Data Audit</a>
 			<br/><span style="font-size:15px;">with Nishant Nikam, Sushmita Ruj</span>
 			<br/><span style="font-size:15px;">(pending publication) (uploaded on arXiv)</span>
@@ -28,7 +33,7 @@
 		<p>
 			<a target="_blank" href="https://patents.google.com/patent/US20200322413A1/en">Content Distributed Over Secure Channels</a>
 			<br/><span style="font-size:15px;">with Adarsh Saraf, Shreya Chakraborty, Chander Govindarajan</span>
-			<br/><span style="font-size:15px;">Filed with the Patent Office of USA on April 2019. Patent Pending.</span>
+			<br/><span style="font-size:15px;">US Patent number US20200322413A1. Active since 2021.</span>
 		</p>
 		<p>
 			<a target="_blank" href="https://arxiv.org/abs/1811.11462">Blockchain Enabled Data Marketplace - Design and Challenges</a>
