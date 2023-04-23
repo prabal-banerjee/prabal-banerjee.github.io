@@ -73,16 +73,16 @@ three(){
 	}"
 	echo "$CONFIG" > vue.config.js
 
-	
+
 	# npm run build 
-	echo "Make sure you have made changes in code_backup branch\n"
-	echo "Pushing code to the repo\n"
+	echo "Make sure you have made changes in code_backup branch"
+	echo "Pushing code to the repo"
 	# git checkout code_backup
 	# git add -A
 	# git commit -S 
 	# git push origin code_backup
 
-	echo "Building dist for uploading to master\n"
+	echo "Building dist for uploading to master"
 	npm run build 
 	cd dist
 	cp index.html 404.html
