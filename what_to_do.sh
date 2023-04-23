@@ -28,7 +28,6 @@ two(){
 	# npm run build 
 	echo "Make sure you have made changes in code_backup branch"
 	
-	echo "Building dist for uploading to master"
 	npm run build 
 	cd dist
 	cp index.html 404.html
@@ -40,7 +39,7 @@ two(){
 	git commit -S 
 	# git push origin code_backup
 
-	git subtree push --prefix dist origin master
+	git subtree push --prefix dist origin gh-pages
 
 	# git checkout master
 	# git checkout code_backup -- dist
