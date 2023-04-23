@@ -27,27 +27,30 @@ two(){
 
 	# npm run build 
 	echo "Make sure you have made changes in code_backup branch"
-	echo "Pushing code to the repo"
-	git checkout code_backup
-	git add -A
-	git commit -S 
-	# git push origin code_backup
-
+	
 	echo "Building dist for uploading to master"
 	npm run build 
 	cd dist
 	cp index.html 404.html
 	cd -
 
-	git checkout master
-	git checkout code_backup -- dist
-	cp -R dist/* .
-	rm -rf dist
-	git add -A
-	git commit -m 'deploy'
-	# git push orgin master
-
+	echo "Pushing code to the repo"
 	git checkout code_backup
+	git add -A
+	git commit -S 
+	# git push origin code_backup
+
+	git subtree push --prefix dist origin master
+
+	# git checkout master
+	# git checkout code_backup -- dist
+	# cp -R dist/* .
+	# rm -rf dist
+	# git add -A
+	# git commit -m 'deploy'
+	# # git push orgin master
+
+	# git checkout code_backup
 	
     pause
 }
