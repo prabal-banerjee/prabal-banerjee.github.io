@@ -66,12 +66,14 @@ two(){
 three(){
 	clear
 
-	# CONFIG="module.exports = {
-	# 	publicPath: process.env.NODE_ENV === 'production'
-	# 	? '/'
-	# 	: '/'
-	# }"
-	# echo "$CONFIG" > vue.config.js
+	CONFIG="module.exports = {
+		publicPath: process.env.NODE_ENV === 'production'
+		? '/'
+		: '/'
+	}"
+	echo "$CONFIG" > vue.config.js
+
+	
 	# npm run build 
 	echo "Make sure you have made changes in code_backup branch\n"
 	echo "Pushing code to the repo\n"
