@@ -28,13 +28,14 @@ two(){
 	# npm run build 
 	echo "Make sure you have made changes in code branch"
 	
+	nvm use 16
 	npm run build 
 	cd dist
 	cp index.html 404.html
 	cd -
 
 	echo "Pushing code to the repo"
-	git checkout code
+	# git checkout code
 	git add -A
 	git commit -S 
 	git push origin code

@@ -26,8 +26,8 @@
 			<br/><span style="font-size:15px;">Published in: 2020 IEEE 19th International Conference on Trust, Security and Privacy in Computing and Communications (TrustCom)</span>
 		</p>
 		<p>
-			<a target="_blank" href="https://arxiv.org/abs/1904.12362">Blockchain Enabled Privacy Preserving Data Audit</a>
-			<br/><span style="font-size:15px;">with Nishant Nikam, Sushmita Ruj</span>
+			<a target="_blank" href="https://arxiv.org/abs/1904.12362">Cumulus: Blockchain-Enabled Privacy Preserving Data Audit in Cloud</a>
+			<br/><span style="font-size:15px;">with Nishant Nikam, Subhra Mazumdar, Sushmita Ruj</span>
 			<br/><span style="font-size:15px;">(pending publication) (uploaded on arXiv)</span>
 		</p>
 		<p>
@@ -38,7 +38,7 @@
 		<p>
 			<a target="_blank" href="https://arxiv.org/abs/1811.11462">Blockchain Enabled Data Marketplace - Design and Challenges</a>
 			<br/><span style="font-size:15px;">with Sushmita Ruj</span>
-			<br/><span style="font-size:15px;">(pending publication) (uploaded on arXiv)</span>
+			<br/><span style="font-size:15px;">(uploaded on arXiv)</span>
 		</p>
 		<p>
 			<a target="_blank" href="http://ijarcs.in/index.php/Ijarcs/article/download/2527/2515">An Inexpensive Wearable Android Accessory</a>
