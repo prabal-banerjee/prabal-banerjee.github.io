@@ -28,6 +28,7 @@ two(){
 	# npm run build 
 	echo "Make sure you have made changes in code_backup branch"
 	
+	nvm use 16
 	npm run build 
 	cd dist
 	cp index.html 404.html
