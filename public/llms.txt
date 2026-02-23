@@ -1,0 +1,36 @@
+# Prabal Banerjee — Personal Website
+
+## About
+Prabal Banerjee is the Co-Founder of Avail (https://www.availproject.org/), a modular blockchain infrastructure project focused on data availability. He is a former Lead Researcher at Polygon and a PhD dropout from the Cryptology and Security Research Unit at the Indian Statistical Institute, Kolkata.
+
+## Research Interests
+- Blockchains
+- Interoperability
+- Data availability
+- Fairness
+- Symmetric key encryption
+
+## Key Publications
+- Cumulus: Blockchain-Enabled Privacy-Preserving Data Audit in Cloud (Distributed Ledger Technology, 2025)
+- Accelerated Verifiable Fair Digital Exchange (Distributed Ledger Technology, 2023)
+- Strategic Analysis of Griefing Attack in Lightning Network (IEEE TNSM, 2023)
+- Chrisimos: A useful Proof-of-Work for finding Minimal Dominating Set (IEEE TrustCom, 2023)
+- Blockchain Enabled Data Trading with User Consent (COMSNETS, 2021)
+- Reliable, Fair and Decentralized Marketplace for Content Sharing Using Blockchain (IEEE Blockchain, 2020)
+- Time is Money: Countering Griefing Attack in Lightning Network (IEEE TrustCom, 2020)
+- Content Distributed Over Secure Channels (US Patent, 2021)
+
+## Experience
+- Co-Founder at Avail (2023–present)
+- Lead Researcher at Polygon (2020–2023)
+- Multiple research internships at IBM Research India, Xoken Labs, Oracle, Jadavpur University (2015–2018)
+
+## Education
+- PhD Student in Computer Science, Indian Statistical Institute Kolkata (2016–2020)
+- MSc in Computer Science, Chennai Mathematical Institute (2014–2016)
+- BSc (Hons) Computer Science, St. Xavier's College Kolkata (2011–2014)
+
+## Contact
+- Twitter: https://x.com/prabalbanerjee
+- GitHub: https://github.com/prabal-banerjee
+- LinkedIn: https://in.linkedin.com/in/prabal-banerjee

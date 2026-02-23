@@ -1,9 +1,49 @@
 ---
 interface Props {
   title: string;
+  description?: string;
 }
 
-const { title } = Astro.props;
+const { title, description = "Prabal Banerjee — Co-Founder at Avail, blockchain researcher, former Lead Researcher at Polygon. Research interests in blockchains, interoperability, data availability, and cryptography." } = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Prabal Banerjee",
+  "url": "https://prabalbanerjee.xyz",
+  "jobTitle": "Co-Founder",
+  "worksFor": {
+    "@type": "Organization",
+    "name": "Avail",
+    "url": "https://www.availproject.org/"
+  },
+  "alumniOf": [
+    {
+      "@type": "CollegeOrUniversity",
+      "name": "Indian Statistical Institute, Kolkata",
+      "url": "http://www.isical.ac.in/"
+    },
+    {
+      "@type": "CollegeOrUniversity",
+      "name": "Chennai Mathematical Institute",
+      "url": "http://www.cmi.ac.in/"
+    },
+    {
+      "@type": "CollegeOrUniversity",
+      "name": "St. Xavier's College, Kolkata",
+      "url": "http://www.sxccal.edu/"
+    }
+  ],
+  "knowsAbout": ["blockchain", "data availability", "interoperability", "cryptography", "fairness", "symmetric key encryption"],
+  "sameAs": [
+    "https://x.com/prabalbanerjee",
+    "https://github.com/prabal-banerjee",
+    "https://in.linkedin.com/in/prabal-banerjee",
+    "https://scholar.google.com/citations?user=5nHFzjoAAAAJ"
+  ]
+};
 ---
 
 <!doctype html>
@@ -11,13 +51,34 @@ const { title } = Astro.props;
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Prabal Banerjee's Personal Webpage" />
-    <meta
-      name="keywords"
-      content="prabal, banerjee, prabalbanerjee, ISI, PhD, cryptography, cryptology, blockchain, cmi, xaviers, avail"
-    />
-    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+
+    <!-- SEO -->
     <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="keywords" content="Prabal Banerjee, Avail, Polygon, blockchain, data availability, interoperability, cryptography, ISI Kolkata, researcher" />
+    <meta name="author" content="Prabal Banerjee" />
+    <link rel="canonical" href={canonicalURL.href} />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL.href} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:site_name" content="Prabal Banerjee" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@prabalbanerjee" />
+    <meta name="twitter:creator" content="@prabalbanerjee" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+
+    <!-- Structured Data -->
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
