@@ -1,0 +1,76 @@
+---
+import experience from '../data/experience.json';
+---
+
+<section id="experience">
+  <div class="terminal-prompt-line">$ cat experience.txt</div>
+
+  <div class="exp-list">
+    {experience.map((exp, i) => (
+      <div class={`exp-entry entry-hover accent-peach reveal reveal-delay-${(i % 4) + 1}`}>
+        <h3 class="entry-title">
+          {exp.companyUrl ? (
+            <>
+              {exp.title} at{' '}
+              <a href={exp.companyUrl} target="_blank" rel="noopener">
+                {exp.company}
+              </a>
+              {exp.companyNote && (
+                <span class="entry-note"> {exp.companyNote}</span>
+              )}
+            </>
+          ) : (
+            exp.title
+          )}
+        </h3>
+        <p class="entry-sub" set:html={exp.description} />
+        {exp.date && <span class="entry-meta">{exp.date}</span>}
+      </div>
+    ))}
+  </div>
+</section>
+
+<style>
+  .exp-list {
+    max-width: 900px;
+  }
+
+  .exp-entry {
+    margin-bottom: 0.25rem;
+  }
+
+  .entry-title {
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: var(--text);
+    margin-bottom: 0.3rem;
+    line-height: 1.5;
+  }
+
+  .entry-title a {
+    color: var(--blue);
+  }
+
+  .entry-note {
+    color: var(--subtext);
+    font-size: 0.8rem;
+  }
+
+  .entry-sub {
+    color: var(--subtext);
+    font-size: 0.8rem;
+    margin-bottom: 0.2rem;
+    line-height: 1.5;
+  }
+
+  .entry-sub :global(a) {
+    color: var(--blue);
+  }
+
+  .entry-meta {
+    color: var(--peach);
+    font-size: 0.8rem;
+    line-height: 1.5;
+  }
+</style>

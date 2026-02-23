@@ -1,0 +1,63 @@
+---
+import publications from '../data/publications.json';
+---
+
+<section id="publications">
+  <div class="terminal-prompt-line">$ cat publications.txt</div>
+
+  <div class="pub-list">
+    {publications.map((pub, i) => (
+      <div class={`pub-entry entry-hover accent-blue reveal reveal-delay-${(i % 4) + 1}`}>
+        <h3 class="entry-title">
+          <a href={pub.url} target="_blank" rel="noopener">{pub.title}</a>
+          {pub.arxivUrl && (
+            <a href={pub.arxivUrl} target="_blank" rel="noopener" class="arxiv-link">[arxiv]</a>
+          )}
+        </h3>
+        <p class="entry-sub">{pub.authors}</p>
+        {pub.venue && <p class="entry-meta">{pub.venue}</p>}
+      </div>
+    ))}
+  </div>
+</section>
+
+<style>
+  .pub-list {
+    max-width: 900px;
+  }
+
+  .pub-entry {
+    margin-bottom: 0.25rem;
+  }
+
+  .entry-title {
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    font-weight: 400;
+    margin-bottom: 0.3rem;
+    line-height: 1.5;
+  }
+
+  .entry-title a {
+    color: var(--blue);
+  }
+
+  .arxiv-link {
+    color: var(--peach) !important;
+    font-size: 0.8rem;
+    margin-left: 0.4rem;
+  }
+
+  .entry-sub {
+    color: var(--subtext);
+    font-size: 0.8rem;
+    margin-bottom: 0.2rem;
+    line-height: 1.5;
+  }
+
+  .entry-meta {
+    color: var(--green);
+    font-size: 0.8rem;
+    line-height: 1.5;
+  }
+</style>

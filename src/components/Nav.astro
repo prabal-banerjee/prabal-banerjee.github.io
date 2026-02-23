@@ -1,0 +1,121 @@
+---
+const tabs = [
+  { href: '#home', label: 'Home' },
+  { href: '#publications', label: 'Publications' },
+  { href: '#experience', label: 'Experience' },
+  { href: '#education', label: 'Education' },
+  { href: '#contact', label: 'Contact' },
+];
+---
+
+<nav class="tab-bar" id="main-nav">
+  <div class="tab-row">
+    {tabs.map(tab => (
+      <a href={tab.href} class="tab" data-section={tab.href.slice(1)}>
+        <span class="tab-label">{tab.label}</span>
+        <span class="tab-close">&times;</span>
+      </a>
+    ))}
+    <span class="tab-new">+</span>
+  </div>
+</nav>
+
+<style>
+  .tab-bar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--bg-surface);
+    border-bottom: 1px solid var(--surface2);
+    flex-shrink: 0;
+  }
+
+  .tab-row {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    padding: 0;
+    gap: 0;
+    height: var(--tab-bar-height);
+    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .tab-row::-webkit-scrollbar {
+    display: none;
+  }
+
+  .tab {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-shrink: 0;
+    gap: 8px;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--subtext);
+    padding: 8px 14px;
+    height: 32px;
+    white-space: nowrap;
+    background: transparent;
+    border: 1px solid transparent;
+    border-bottom: none;
+    border-radius: 6px 6px 0 0;
+    margin-bottom: -1px;
+    transition: color 0.15s, background 0.15s;
+    text-decoration: none;
+  }
+
+  .tab:hover {
+    color: var(--text);
+    background: var(--bg-overlay);
+    text-decoration: none;
+  }
+
+  .tab.active {
+    color: var(--text);
+    background: var(--bg-base);
+    border-color: var(--surface2);
+  }
+
+  .tab-close {
+    font-size: 0.85rem;
+    opacity: 0;
+    transition: opacity 0.15s;
+    color: var(--subtext);
+    line-height: 1;
+  }
+
+  .tab:hover .tab-close {
+    opacity: 0.6;
+  }
+
+  .tab-new {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    color: var(--subtext);
+    padding: 0 12px;
+    height: 32px;
+    cursor: default;
+    opacity: 0.5;
+  }
+
+  @media (max-width: 480px) {
+    .tab {
+      font-size: 0.65rem;
+      padding: 6px 10px;
+    }
+
+    .tab-close {
+      display: none;
+    }
+
+    .tab-new {
+      display: none;
+    }
+  }
+</style>

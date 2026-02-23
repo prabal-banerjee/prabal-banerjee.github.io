@@ -1,0 +1,116 @@
+---
+---
+
+<section id="contact">
+  <div class="terminal-prompt-line">$ cat contact.txt</div>
+
+  <div class="contact-list">
+    <div class="contact-entry entry-hover accent-green reveal reveal-delay-1">
+      <span class="contact-label">email:</span>
+      <span class="contact-value">mail (dot) &lt;my first name&gt; (at) gmail (dot) com</span>
+    </div>
+    <div class="contact-entry entry-hover accent-green reveal reveal-delay-2">
+      <span class="contact-label">twitter:</span>
+      <a
+        href="https://x.com/prabalbanerjee"
+        target="_blank"
+        rel="noopener"
+        class="contact-link"
+      >
+        @prabalbanerjee
+      </a>
+    </div>
+    <div class="contact-entry entry-hover accent-green reveal reveal-delay-3">
+      <span class="contact-label">github:</span>
+      <a
+        href="https://github.com/prabal-banerjee"
+        target="_blank"
+        rel="noopener"
+        class="contact-link"
+      >
+        prabal-banerjee
+      </a>
+    </div>
+    <div class="contact-entry entry-hover accent-green reveal reveal-delay-4">
+      <span class="contact-label">linkedin:</span>
+      <a
+        href="https://in.linkedin.com/pub/prabal-banerjee/120/774/b06"
+        target="_blank"
+        rel="noopener"
+        class="contact-link"
+      >
+        www.linkedin.com/in/prabal-banerjee
+      </a>
+    </div>
+    <div class="contact-entry entry-hover accent-green reveal">
+      <span class="contact-label">gpg:</span>
+      <a href="/prabal_pub_key.gpg" class="contact-link">
+        prabal_pub_key.gpg
+      </a>
+    </div>
+  </div>
+
+  <div class="exit-block reveal">
+    <div class="exit-line">
+      <span class="prompt">$</span>
+      <span class="cmd">exit</span>
+    </div>
+    <div class="process-line">[Process completed]</div>
+  </div>
+</section>
+
+<style>
+  section#contact {
+    min-height: auto;
+    padding-bottom: 80px;
+  }
+
+  .contact-list {
+    max-width: 900px;
+    margin-bottom: 3rem;
+  }
+
+  .contact-entry {
+    display: flex;
+    gap: 0.5rem;
+    align-items: baseline;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin-bottom: 0.25rem;
+  }
+
+  .contact-label {
+    color: var(--yellow);
+    min-width: 6rem;
+    flex-shrink: 0;
+  }
+
+  .contact-value {
+    color: var(--subtext);
+    font-size: 0.8rem;
+  }
+
+  .contact-link {
+    color: var(--blue);
+    font-size: 0.8rem;
+  }
+
+  .exit-block {
+    font-size: 0.9rem;
+  }
+
+  .prompt {
+    color: var(--green);
+    margin-right: 0.5rem;
+  }
+
+  .cmd {
+    color: var(--peach);
+  }
+
+  .process-line {
+    color: var(--subtext);
+    font-size: 0.8rem;
+    margin-top: 0.3rem;
+  }
+</style>

@@ -1,0 +1,61 @@
+---
+import education from '../data/education.json';
+---
+
+<section id="education">
+  <div class="terminal-prompt-line">$ cat education.txt</div>
+
+  <div class="edu-list">
+    {education.map((edu, i) => (
+      <div class={`edu-entry entry-hover accent-mauve reveal reveal-delay-${(i % 4) + 1}`}>
+        <h3 class="entry-title" style="color: var(--mauve);">{edu.degree}</h3>
+        <p class="entry-sub">
+          <a href={edu.institutionUrl} target="_blank" rel="noopener">
+            {edu.institution}
+          </a>
+        </p>
+        {edu.details.map(detail => (
+          <p class="entry-sub" set:html={detail.text} />
+        ))}
+        <span class="entry-meta" style="color: var(--peach);">{edu.date}</span>
+      </div>
+    ))}
+  </div>
+</section>
+
+<style>
+  .edu-list {
+    max-width: 900px;
+  }
+
+  .edu-entry {
+    margin-bottom: 0.25rem;
+  }
+
+  .entry-title {
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    font-weight: 700;
+    margin-bottom: 0.3rem;
+    line-height: 1.5;
+  }
+
+  .entry-sub {
+    font-size: 0.8rem;
+    margin-bottom: 0.2rem;
+    line-height: 1.5;
+    color: var(--subtext);
+  }
+
+  .entry-sub a,
+  .entry-sub :global(a) {
+    color: var(--blue);
+  }
+
+  .entry-meta {
+    font-size: 0.8rem;
+    line-height: 1.5;
+    display: inline-block;
+    margin-top: 0.1rem;
+  }
+</style>

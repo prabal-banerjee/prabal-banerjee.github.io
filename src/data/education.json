@@ -1,0 +1,34 @@
+[
+  {
+    "degree": "PhD Student in Computer Science",
+    "institution": "Indian Statistical Institute, Kolkata",
+    "institutionUrl": "http://www.isical.ac.in/",
+    "details": [
+      {
+        "text": "Research Advisor: <a href='https://research.unsw.edu.au/people/dr-sushmita-ruj-0' target='_blank'>Dr. Sushmita Ruj</a> and <a href='https://www.isical.ac.in/~bimal/' target='_blank'>Prof. Bimal Kumar Roy</a>"
+      },
+      {
+        "text": "<a href='http://www.isical.ac.in/~csru/' target='_blank'>Cryptology and Security Research Unit</a>"
+      }
+    ],
+    "date": "2016 - 2020"
+  },
+  {
+    "degree": "Master of Science in Computer Science",
+    "institution": "Chennai Mathematical Institute",
+    "institutionUrl": "http://www.cmi.ac.in/",
+    "details": [],
+    "date": "2014 - 2016"
+  },
+  {
+    "degree": "Bachelor of Science (Computer Science Honours)",
+    "institution": "St. Xavier's College, Kolkata (Autonomous)",
+    "institutionUrl": "http://www.sxccal.edu/",
+    "details": [
+      {
+        "text": "<a href='http://www.caluniv.ac.in/' target='_blank'>University of Calcutta</a>"
+      }
+    ],
+    "date": "2011 - 2014"
+  }
+]

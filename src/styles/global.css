@@ -1,0 +1,269 @@
+/* ============================================
+   TERMINAL EMULATOR — Design System
+   Catppuccin Mocha Palette
+   ============================================ */
+
+/* --- Variables --- */
+:root {
+  --bg-base: #1e1e2e;
+  --bg-surface: #313244;
+  --bg-overlay: #45475a;
+  --text: #cdd6f4;
+  --subtext: #a6adc8;
+  --blue: #89b4fa;
+  --green: #a6e3a1;
+  --mauve: #cba6f7;
+  --peach: #fab387;
+  --red: #f38ba8;
+  --yellow: #f9e2af;
+  --surface2: #585b70;
+  --font-mono: 'JetBrains Mono', monospace;
+  --title-bar-height: 36px;
+  --tab-bar-height: 38px;
+  --chrome-height: calc(var(--title-bar-height) + var(--tab-bar-height));
+}
+
+/* --- Reset --- */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #181825;
+  color: var(--text);
+  font-family: var(--font-mono);
+  font-size: clamp(14px, 1.6vw, 16px);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  padding: 8px;
+  height: 100vh;
+}
+
+a {
+  color: var(--blue);
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* --- Selection --- */
+::selection {
+  background: var(--mauve);
+  color: var(--bg-base);
+}
+
+/* --- Scrollbar --- */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-base);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--surface2);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--subtext);
+}
+
+/* --- Terminal Window --- */
+.terminal-window {
+  background: var(--bg-base);
+  border-radius: 10px;
+  border: 1px solid var(--surface2);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.5),
+    0 0 0 1px rgba(88, 91, 112, 0.3);
+}
+
+/* --- Title Bar --- */
+.title-bar {
+  height: var(--title-bar-height);
+  background: var(--bg-surface);
+  border-bottom: 1px solid var(--surface2);
+  display: flex;
+  align-items: center;
+  padding: 0 14px;
+  border-radius: 10px 10px 0 0;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.traffic-lights {
+  display: flex;
+  gap: 8px;
+  z-index: 1;
+}
+
+.traffic-lights .dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: block;
+}
+
+.traffic-lights .dot.red { background: var(--red); }
+.traffic-lights .dot.yellow { background: var(--yellow); }
+.traffic-lights .dot.green { background: var(--green); }
+
+.title-bar-text {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--subtext);
+}
+
+/* --- Terminal Content --- */
+.terminal-content {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scroll-padding-top: var(--tab-bar-height);
+}
+
+/* --- Section Layout --- */
+section {
+  padding: 40px clamp(20px, 5vw, 60px) 60px;
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+section#home {
+  min-height: calc(100vh - var(--chrome-height));
+}
+
+/* --- Terminal Prompt --- */
+.terminal-prompt-line {
+  color: var(--green);
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+}
+
+/* --- ASCII Art --- */
+.ascii-art {
+  font-family: var(--font-mono);
+  font-size: clamp(0.45rem, 1.2vw, 0.85rem);
+  line-height: 1.15;
+  color: var(--mauve);
+  margin: 0;
+  white-space: pre;
+  overflow: hidden;
+}
+
+.ascii-art-wide {
+  display: block;
+}
+
+.ascii-art-narrow {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  .ascii-art-wide {
+    display: none;
+  }
+
+  .ascii-art-narrow {
+    display: block;
+  }
+}
+
+/* --- Entry Hover --- */
+.entry-hover {
+  padding: 0.8rem 1rem;
+  margin-left: -1rem;
+  margin-right: -1rem;
+  border-left: 2px solid transparent;
+  border-radius: 0 4px 4px 0;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.entry-hover:hover {
+  background: var(--bg-surface);
+}
+
+.entry-hover.accent-blue:hover { border-left-color: var(--blue); }
+.entry-hover.accent-peach:hover { border-left-color: var(--peach); }
+.entry-hover.accent-mauve:hover { border-left-color: var(--mauve); }
+.entry-hover.accent-green:hover { border-left-color: var(--green); }
+
+/* --- Blinking Cursor --- */
+.blinking-cursor {
+  font-weight: 100;
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  from, to { color: transparent; }
+  50% { color: var(--green); }
+}
+
+/* --- Scroll Reveal --- */
+.reveal {
+  opacity: 0;
+  transition: opacity 0.6s ease-out;
+}
+
+.reveal.visible {
+  opacity: 1;
+}
+
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+  body {
+    padding: 0;
+  }
+
+  .terminal-window {
+    border-radius: 0;
+    border: none;
+  }
+
+  .title-bar {
+    border-radius: 0;
+  }
+
+  section {
+    padding: 30px 16px 40px;
+  }
+
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transition: none;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+}

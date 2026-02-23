@@ -1,0 +1,129 @@
+---
+---
+
+<section id="home" class="hero">
+  <div class="hero-content">
+    <pre class="ascii-art ascii-art-wide reveal">{
+` ____            _           _   ____                        _
+|  _ \\ _ __ __ _| |__   __ _| | | __ )  __ _ _ __   ___ _ __(_) ___  ___
+| |_) | '__/ _\` | '_ \\ / _\` | | |  _ \\ / _\` | '_ \\ / _ \\ '__| |/ _ \\/ _ \\
+|  __/| | | (_| | |_) | (_| | | | |_) | (_| | | | |  __/ |  | |  __/  __/
+|_|   |_|  \\__,_|_.__/ \\__,_|_| |____/ \\__,_|_| |_|\\___|_|  | |\\___|\\___/
+                                                             _/ |
+                                                            |__/`
+    }</pre>
+    <pre class="ascii-art ascii-art-narrow reveal">{
+` ____            _           _
+|  _ \\ _ __ __ _| |__   __ _| |
+| |_) | '__/ _\` | '_ \\ / _\` | |
+|  __/| | | (_| | |_) | (_| | |
+|_|   |_|  \\__,_|_.__/ \\__,_|_|
+
+ ____                        _
+| __ )  __ _ _ __   ___ _ __(_) ___  ___
+|  _ \\ / _\` | '_ \\ / _ \\ '__| |/ _ \\/ _ \\
+| |_) | (_| | | | |  __/ |  | |  __/  __/
+|____/ \\__,_|_| |_|\\___|_|  | |\\___|\\___/
+                            _/ |
+                           |__/`
+    }</pre>
+
+    <div class="hero-cmd reveal reveal-delay-1">
+      <span class="prompt">$</span>
+      <span class="cmd">whoami</span>
+    </div>
+
+    <div class="hero-roles reveal reveal-delay-2">
+      <p>
+        Co-Founder @
+        <a href="https://www.availproject.org/" target="_blank" rel="noopener"
+          >Avail</a
+        >
+      </p>
+      <p>
+        Ph.D. Dropout @
+        <a href="http://www.isical.ac.in" target="_blank" rel="noopener"
+          >ISI Kolkata</a
+        >
+      </p>
+    </div>
+
+    <div class="hero-interests reveal reveal-delay-3">
+      <div class="interest-cmd">
+        <span class="prompt">$</span>
+        <span class="cmd">echo</span>
+        <span class="echo-arg">"$RESEARCH_INTERESTS"</span>
+      </div>
+      <div class="interest-output">
+        <p>blockchains</p>
+        <p>interoperability</p>
+        <p>data availability</p>
+        <p>fairness</p>
+        <p>symmetric key encryption<span class="blinking-cursor">_</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .hero-content {
+    max-width: 800px;
+    width: 100%;
+  }
+
+  .hero-cmd {
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+  }
+
+  .hero-roles {
+    font-size: 0.9rem;
+    line-height: 2;
+    margin-bottom: 2rem;
+    padding-left: 1.2rem;
+    color: var(--text);
+  }
+
+  .hero-interests {
+    font-size: 0.9rem;
+  }
+
+  .interest-cmd {
+    margin-bottom: 0.5rem;
+  }
+
+  .interest-output {
+    padding-left: 1.2rem;
+    color: var(--subtext);
+    font-size: 0.8rem;
+    line-height: 1.8;
+  }
+
+  .prompt {
+    color: var(--green);
+    margin-right: 0.5rem;
+  }
+
+  .cmd {
+    color: var(--peach);
+    margin-right: 0.3rem;
+  }
+
+  .echo-arg {
+    color: var(--yellow);
+  }
+
+  @media (max-width: 768px) {
+    .hero {
+      align-items: flex-start;
+      padding-top: 40px;
+    }
+  }
+</style>

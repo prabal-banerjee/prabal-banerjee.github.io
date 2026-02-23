@@ -1,0 +1,107 @@
+[
+  {
+    "title": "Cumulus: Blockchain-Enabled Privacy-Preserving Data Audit in Cloud",
+    "authors": "Prabal Banerjee, Nishant Nikam, Subhra Mazumdar, Sushmita Ruj",
+    "venue": "Distributed Ledger Technology: Research and Practice, 2025",
+    "url": "https://dl.acm.org/doi/10.1145/3712004",
+    "arxivUrl": "https://arxiv.org/abs/1904.12362"
+  },
+  {
+    "title": "Accelerated Verifiable Fair Digital Exchange",
+    "authors": "Prabal Banerjee, Dushyant Behl, Palanivel Kodeswaran, Chaitanya Kumar, Sushmita Ruj, Sayandeep Sen, Dhinakaran Vinayagamurthy",
+    "venue": "Distributed Ledger Technology: Research and Practice, 2023",
+    "url": "https://dl.acm.org/doi/10.1145/3592900",
+    "arxivUrl": "https://arxiv.org/abs/2001.03717"
+  },
+  {
+    "title": "Strategic Analysis of Griefing Attack in Lightning Network",
+    "authors": "Subhra Mazumdar, Prabal Banerjee, Abhinandan Sinha, Sushmita Ruj, Bimal Kumar Roy",
+    "venue": "IEEE Transactions on Network and Service Management, 2023",
+    "url": "https://ieeexplore.ieee.org/abstract/document/9993793",
+    "arxivUrl": null
+  },
+  {
+    "title": "Chrisimos: A useful Proof-of-Work for finding Minimal Dominating Set",
+    "authors": "Diptendu Chatterjee, Prabal Banerjee, Subhra Mazumdar",
+    "venue": "IEEE TrustCom, 2023",
+    "url": "https://ieeexplore.ieee.org/document/10538820",
+    "arxivUrl": null
+  },
+  {
+    "title": "Content Distributed Over Secure Channels",
+    "authors": "Prabal Banerjee, Adarsh Saraf, Shreya Chakraborty, Chander Govindarajan",
+    "venue": "US Patent US20200322413A1, 2021",
+    "url": "https://patents.google.com/patent/US20200322413A1/en",
+    "arxivUrl": null
+  },
+  {
+    "title": "Blockchain Enabled Data Trading with User Consent",
+    "authors": "Prabal Banerjee, Amudhan Muthaiah, Sushmita Ruj",
+    "venue": "COMSNETS, 2021",
+    "url": "https://ieeexplore.ieee.org/abstract/document/9352817",
+    "arxivUrl": null
+  },
+  {
+    "title": "Reliable, Fair and Decentralized Marketplace for Content Sharing Using Blockchain",
+    "authors": "Prabal Banerjee, Chander Govindarajan, Praveen Jayachandran, Sushmita Ruj",
+    "venue": "IEEE International Conference on Blockchain, 2020",
+    "url": "https://ieeexplore.ieee.org/document/9284655",
+    "arxivUrl": null
+  },
+  {
+    "title": "Time is Money: Countering Griefing Attack in Lightning Network",
+    "authors": "Subhra Mazumdar, Prabal Banerjee, Sushmita Ruj",
+    "venue": "IEEE TrustCom, 2020",
+    "url": "https://ieeexplore.ieee.org/document/9343090",
+    "arxivUrl": null
+  },
+  {
+    "title": "Blockchain Enabled Data Marketplace - Design and Challenges",
+    "authors": "Prabal Banerjee, Sushmita Ruj",
+    "venue": "arXiv preprint, 2018",
+    "url": "https://arxiv.org/abs/1811.11462",
+    "arxivUrl": null
+  },
+  {
+    "title": "An Inexpensive Wearable Android Accessory",
+    "authors": "Prabal Banerjee, Kaustav Basu, Proyag Pal",
+    "venue": "International Journal of Advanced Research in Computer Science, 2014",
+    "url": "http://ijarcs.in/index.php/Ijarcs/article/download/2527/2515",
+    "arxivUrl": null
+  },
+  {
+    "title": "Modified Multi Way Feedback Encryption Standard (MWFES) Ver-I",
+    "authors": "Prabal Banerjee, Purnendu Mukherjee, Asoke Nath",
+    "venue": "International Journal of Advanced Computer Research, 2013",
+    "url": "http://accentsjournals.org/PaperDirectory/Journal/IJACR/2013/12/52.pdf",
+    "arxivUrl": null
+  },
+  {
+    "title": "Multi Way Feedback Encryption Standard (MWFES): Ver-I",
+    "authors": "Prabal Banerjee, Purnendu Mukherjee, Asoke Nath",
+    "venue": "ICETTR, 2013",
+    "url": "http://accentsjournals.org/PaperDirectory/Conference/ICETTR-2013/31.pdf",
+    "arxivUrl": null
+  },
+  {
+    "title": "Advanced Symmetric Key Cryptosystem using Bit and Byte Level Encryption Methods with Feedback",
+    "authors": "Prabal Banerjee, Asoke Nath",
+    "venue": "WORLDCOMP, 2013",
+    "url": "http://world-comp.org/p2013/FCS3301.pdf",
+    "arxivUrl": null
+  },
+  {
+    "title": "Bit and Byte Level Generalized Modified Vernam Cipher Method with Feedback",
+    "authors": "Prabal Banerjee, Asoke Nath",
+    "venue": "International Journal of Computer Applications, 2013",
+    "url": "http://www.ijcaonline.org/archives/volume64/number2/10604-5310",
+    "arxivUrl": null
+  },
+  {
+    "title": "Bit Level Generalized Modified Vernam Cipher Method with Feedback",
+    "authors": "Prabal Banerjee, Asoke Nath",
+    "venue": "ICETT, 2012",
+    "url": "http://accentsjournals.org/PaperDirectory/Conference/ICETT-2012/5.pdf",
+    "arxivUrl": null
+  }
+]

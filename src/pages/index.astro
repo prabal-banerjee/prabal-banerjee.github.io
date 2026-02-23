@@ -1,0 +1,62 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Nav from '../components/Nav.astro';
+import Hero from '../components/Hero.astro';
+import Publications from '../components/Publications.astro';
+import Experience from '../components/Experience.astro';
+import Education from '../components/Education.astro';
+import Contact from '../components/Contact.astro';
+import '../styles/global.css';
+---
+
+<BaseLayout title="Prabal Banerjee">
+  <div class="terminal-content">
+    <Nav />
+    <main>
+      <Hero />
+      <Publications />
+      <Experience />
+      <Education />
+      <Contact />
+    </main>
+  </div>
+</BaseLayout>
+
+<script>
+  // Scroll reveal + active nav highlighting
+  const scrollRoot = document.querySelector('.terminal-content');
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.tab[data-section]');
+  const reveals = document.querySelectorAll('.reveal');
+
+  const revealObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    },
+    { root: scrollRoot, threshold: 0.1 }
+  );
+
+  reveals.forEach((el) => revealObserver.observe(el));
+
+  const navObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          navLinks.forEach((link) => {
+            link.classList.toggle(
+              'active',
+              link.dataset.section === entry.target.id
+            );
+          });
+        }
+      });
+    },
+    { root: scrollRoot, rootMargin: '-40% 0px -55% 0px' }
+  );
+
+  sections.forEach((section) => navObserver.observe(section));
+</script>
