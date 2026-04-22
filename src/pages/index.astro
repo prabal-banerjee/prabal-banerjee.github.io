@@ -42,21 +42,37 @@ import '../styles/global.css';
 
   reveals.forEach((el) => revealObserver.observe(el));
 
-  const navObserver = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          navLinks.forEach((link) => {
-            link.classList.toggle(
-              'active',
-              link.dataset.section === entry.target.id
-            );
-          });
-        }
-      });
-    },
-    { root: scrollRoot, rootMargin: '-40% 0px -55% 0px' }
-  );
+  const setActive = (id) => {
+    navLinks.forEach((link) => {
+      link.classList.toggle('active', link.dataset.section === id);
+    });
+  };
 
-  sections.forEach((section) => navObserver.observe(section));
+  if (scrollRoot && sections.length) {
+    const sectionEls = Array.from(sections);
+    const lastSection = sectionEls[sectionEls.length - 1];
+
+    const updateActive = () => {
+      const atBottom =
+        scrollRoot.scrollTop + scrollRoot.clientHeight >=
+        scrollRoot.scrollHeight - 2;
+      if (atBottom) {
+        setActive(lastSection.id);
+        return;
+      }
+      // The active section is the last one whose top has scrolled past
+      // ~40% of the scroll container's visible height.
+      const threshold = scrollRoot.scrollTop + scrollRoot.clientHeight * 0.4;
+      let current = sectionEls[0];
+      for (const section of sectionEls) {
+        if (section.offsetTop <= threshold) current = section;
+        else break;
+      }
+      setActive(current.id);
+    };
+
+    updateActive();
+    scrollRoot.addEventListener('scroll', updateActive, { passive: true });
+    window.addEventListener('resize', updateActive);
+  }
 </script>
