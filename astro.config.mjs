@@ -5,5 +5,9 @@ import sitemap from '@astrojs/sitemap';
 export default defineConfig({
   site: 'https://prabalbanerjee.xyz',
   output: 'static',
-  integrations: [sitemap()],
+  integrations: [
+    sitemap({
+      customPages: ['https://prabalbanerjee.xyz/Ninety-Fifth-Percentile/'],
+    }),
+  ],
 });
