@@ -204,6 +204,14 @@ figcaption b{color:var(--ink);font-weight:600;}
   .quote p{font-size:1.05rem;}
 }
 </style>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-CHFJDYGC7N"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-CHFJDYGC7N');
+</script>
 </head>
 <body>
 <div class="wrap">
@@ -667,6 +675,51 @@ figcaption b{color:var(--ink);font-weight:600;}
     });
   }, {threshold:0.12});
   items.forEach(function(el){ io.observe(el); });
+})();
+</script>
+<script>
+/* Read-depth + engaged-time reporting for GA4. */
+(function(){
+  if(!window.gtag) return;
+  var marks = [25, 50, 75, 100];
+  var fired = {};
+  var start = Date.now();
+  var completed = false;
+
+  function depth(){
+    var doc = document.documentElement;
+    var scrollable = doc.scrollHeight - window.innerHeight;
+    if(scrollable <= 0) return 100;
+    return Math.min(100, Math.round((window.pageYOffset / scrollable) * 100));
+  }
+
+  function check(){
+    var d = depth();
+    for(var i = 0; i < marks.length; i++){
+      var m = marks[i];
+      if(d >= m && !fired[m]){
+        fired[m] = true;
+        gtag('event', 'read_depth', {
+          percent: m,
+          seconds: Math.round((Date.now() - start) / 1000)
+        });
+      }
+    }
+    if(d >= 90 && !completed && (Date.now() - start) > 60000){
+      completed = true;
+      gtag('event', 'read_complete', {
+        seconds: Math.round((Date.now() - start) / 1000)
+      });
+    }
+  }
+
+  var ticking = false;
+  window.addEventListener('scroll', function(){
+    if(ticking) return;
+    ticking = true;
+    window.requestAnimationFrame(function(){ check(); ticking = false; });
+  }, {passive: true});
+  check();
 })();
 </script>
 </body>
