@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Ninety-Fifth Percentile</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..500&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ash:#E9EAE4;
+  --ash-deep:#DFE1D8;
+  --ink:#1A1C16;
+  --ink-soft:#585C4E;
+  --ink-faint:#8A8E7F;
+  --ochre:#B5822A;
+  --crimson:#98194F;
+  --rule:rgba(26,28,22,0.16);
+  --rule-soft:rgba(26,28,22,0.08);
+  --measure:34rem;
+  --wide:60rem;
+}
+*{box-sizing:border-box;}
+html{-webkit-text-size-adjust:100%;}
+body{
+  margin:0;
+  background:var(--ash);
+  color:var(--ink);
+  font-family:"Newsreader",Georgia,"Times New Roman",serif;
+  font-size:19px;
+  line-height:1.62;
+  font-weight:380;
+}
+.wrap{max-width:var(--wide);margin:0 auto;padding:0 1.5rem 6rem;}
+.col{max-width:var(--measure);margin-left:auto;margin-right:auto;}
+
+/* ---------- masthead ---------- */
+.masthead{padding:6rem 0 1rem;}
+h1{
+  font-family:"Bricolage Grotesque","Helvetica Neue",Arial,sans-serif;
+  font-variation-settings:"wdth" 88,"opsz" 96;
+  font-weight:750;
+  font-size:clamp(2.9rem,8.5vw,5.4rem);
+  line-height:.94;
+  letter-spacing:-.025em;
+  margin:0 0 1.3rem;
+  max-width:14ch;
+}
+h1 em{font-style:normal;color:var(--crimson);}
+.deck{
+  font-size:clamp(1.15rem,2.4vw,1.4rem);
+  line-height:1.45;
+  color:var(--ink-soft);
+  max-width:46ch;margin:0 0 2.2rem;
+  font-weight:350;
+}
+.byline{
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:.72rem;letter-spacing:.08em;color:var(--ink-soft);
+  border-top:1px solid var(--rule);padding-top:.9rem;
+}
+.byline a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--rule);}
+.byline a:hover{border-bottom-color:var(--crimson);color:var(--crimson);}
+.byline .handle{color:var(--ink-faint);}
+.byline .handle a{color:var(--ink-faint);}
+
+/* ---------- structure ---------- */
+h2{
+  font-family:"Bricolage Grotesque","Helvetica Neue",Arial,sans-serif;
+  font-variation-settings:"wdth" 92,"opsz" 40;
+  font-weight:700;
+  font-size:1.62rem;
+  line-height:1.12;
+  letter-spacing:-.015em;
+  margin:3.4rem 0 1.1rem;
+}
+h2 .mark{
+  display:block;
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:.66rem;font-weight:500;letter-spacing:.18em;
+  color:var(--crimson);text-transform:uppercase;
+  margin-bottom:.7rem;
+}
+p{margin:0 0 1.15rem;}
+p.lead{font-size:1.12rem;}
+a{color:var(--ink);text-decoration-color:var(--rule);text-underline-offset:2px;}
+a:hover{text-decoration-color:var(--crimson);}
+strong{font-weight:600;}
+
+.pull{
+  font-family:"Bricolage Grotesque","Helvetica Neue",Arial,sans-serif;
+  font-variation-settings:"wdth" 84,"opsz" 40;
+  font-weight:600;
+  font-size:clamp(1.4rem,3.4vw,1.85rem);
+  line-height:1.18;letter-spacing:-.02em;
+  color:var(--ink);
+  border-left:3px solid var(--crimson);
+  padding:.15rem 0 .15rem 1.15rem;
+  margin:2.4rem 0;
+}
+
+.quote{
+  margin:2.2rem 0;
+  padding:1.35rem 1.4rem;
+  background:var(--ash-deep);
+}
+.quote p{
+  font-size:1.18rem;line-height:1.4;margin:0 0 .7rem;font-style:italic;
+}
+.quote cite{
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-style:normal;font-size:.68rem;letter-spacing:.09em;
+  text-transform:uppercase;color:var(--ink-soft);
+}
+
+/* ---------- figures ---------- */
+figure{
+  margin:3rem auto;
+  max-width:var(--wide);
+}
+figure svg{width:100%;height:auto;display:block;}
+figcaption{
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:.7rem;line-height:1.55;letter-spacing:.02em;
+  color:var(--ink-soft);
+  border-top:1px solid var(--rule);
+  padding-top:.65rem;margin-top:.8rem;
+  max-width:58ch;
+}
+figcaption b{color:var(--ink);font-weight:600;}
+
+/* svg text classes */
+.t-label{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:12px;fill:var(--ink-soft);}
+.t-small{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:10.5px;fill:var(--ink-faint);letter-spacing:.06em;}
+.t-num{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:12px;fill:var(--ink);font-weight:500;}
+.t-head{font-family:"Bricolage Grotesque",Arial,sans-serif;font-size:15px;fill:var(--ink);font-weight:700;}
+.t-big{font-family:"Bricolage Grotesque",Arial,sans-serif;font-size:34px;fill:var(--ink);font-weight:750;}
+
+/* ---------- stat strip ---------- */
+.stats{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+  gap:1px;background:var(--rule);
+  border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);
+  margin:2.6rem auto;max-width:var(--wide);
+}
+.stat{background:var(--ash);padding:1.1rem 1rem;}
+.stat b{
+  display:block;
+  font-family:"Bricolage Grotesque",Arial,sans-serif;
+  font-variation-settings:"wdth" 85;
+  font-size:1.85rem;font-weight:750;line-height:1;letter-spacing:-.02em;
+  color:var(--crimson);margin-bottom:.45rem;
+}
+.stat span{
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:.68rem;line-height:1.5;color:var(--ink-soft);display:block;
+}
+
+/* ---------- sources ---------- */
+.sources{
+  margin-top:4rem;padding-top:1.2rem;border-top:2px solid var(--ink);
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:.72rem;line-height:1.75;color:var(--ink-soft);
+}
+.sources h3{
+  font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--ink);margin:0 0 .9rem;font-weight:600;
+}
+.sources li{margin-bottom:.5rem;}
+.sources ol{padding-left:1.4rem;margin:0;}
+
+.reveal{opacity:0;transform:translateY(14px);transition:opacity .7s ease,transform .7s ease;}
+.reveal.in{opacity:1;transform:none;}
+@media (prefers-reduced-motion:reduce){
+  .reveal{opacity:1;transform:none;transition:none;}
+}
+@media (max-width:640px){
+  body{font-size:18px;}
+  .quote p{font-size:1.05rem;}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="masthead col">
+  <h1>The Ninety-Fifth <em>Percentile</em></h1>
+  <p class="deck">In almost every field, the best are paid absurdly more than the very good. The gap is real, it is mostly explainable, and it is still a terrible way to measure a life.</p>
+  <p class="byline">By <a href="https://prabalbanerjee.xyz">Prabal Banerjee</a> <span class="handle">(<a href="https://x.com/prabalbanerjee">@prabalbanerjee</a>)</span> and Claude Opus 5</p>
+</header>
+
+<section class="col">
+  <p class="lead">Ask a carpenter what a carpenter earns and you will get a number. Ask an economist and you will get a distribution. Ask a man who has spent nine years building staircases that no one photographs, and who watched a former apprentice sign a contract worth more than his last decade, and you will get something closer to the truth: <strong>the number depends on where you sit on a curve nobody drew for you.</strong></p>
+
+  <p>The gap inside a single trade can be larger than the gap between trades. In the United States, the median carpenter earned $59,310 in May 2024; the tenth percentile earned $38,760 and the ninetieth earned $98,370. Software developers show the same picture at a different altitude: $79,850 at the tenth, $133,080 at the median, $211,450 at the ninetieth. Same job title, two and a half times the money — and that is before you account for the people the survey never counts.</p>
+
+  <p>To an outsider this looks like a rigged game. It mostly isn't. It is the visible edge of two forces that pull in the same direction — one you build, one you're handed.</p>
+</section>
+
+<figure class="reveal">
+<svg viewBox="0 0 900 470" role="img" aria-label="A curve showing pay against skill percentile: roughly linear to the 80th, flat from 80 to 90, then rising sharply after 90.">
+  <!-- band tints -->
+  <rect x="80" y="55" width="624" height="330" fill="#1A1C16" opacity="0.030"/>
+  <rect x="704" y="55" width="78" height="330" fill="#B5822A" opacity="0.13"/>
+  <rect x="782" y="55" width="78" height="330" fill="#98194F" opacity="0.10"/>
+
+  <!-- axes -->
+  <line x1="80" y1="385" x2="860" y2="385" stroke="#1A1C16" stroke-width="1.2"/>
+  <line x1="80" y1="55" x2="80" y2="385" stroke="#1A1C16" stroke-width="1.2"/>
+
+  <!-- gridlines -->
+  <line x1="704" y1="55" x2="704" y2="385" stroke="#1A1C16" stroke-opacity="0.28" stroke-dasharray="3 4"/>
+  <line x1="782" y1="55" x2="782" y2="385" stroke="#1A1C16" stroke-opacity="0.28" stroke-dasharray="3 4"/>
+  <line x1="821" y1="55" x2="821" y2="385" stroke="#1A1C16" stroke-opacity="0.28" stroke-dasharray="3 4"/>
+
+  <!-- the curve -->
+  <path d="M80 380 C 250 350, 480 300, 704 252 C 730 246, 758 240, 782 236 C 806 232, 826 192, 838 142 C 848 102, 856 76, 860 58"
+        fill="none" stroke="#1A1C16" stroke-width="2.6" stroke-linecap="round"/>
+
+  <!-- axis labels -->
+  <text class="t-small" x="80" y="405">0</text>
+  <text class="t-small" x="690" y="405">80</text>
+  <text class="t-small" x="770" y="405">90</text>
+  <text class="t-small" x="810" y="405">95</text>
+  <text class="t-small" x="838" y="405">99</text>
+  <text class="t-label" x="80" y="434">SKILL PERCENTILE  →</text>
+  <text class="t-small" x="860" y="434" fill="#98194F" style="text-anchor:end">A MODEL · NO AXIS VALUE IS DATA</text>
+  <text class="t-label" x="16" y="70" transform="rotate(-90 16 70)" style="text-anchor:end">PAY  →</text>
+
+  <!-- band labels -->
+  <text class="t-head" x="100" y="90">Effort pays back</text>
+  <text class="t-label" x="100" y="110">Get better, earn more. Roughly</text>
+  <text class="t-label" x="100" y="127">one unit in, one unit out.</text>
+
+  <text class="t-head" x="712" y="90" fill="#8A6520">The</text>
+  <text class="t-head" x="712" y="108" fill="#8A6520">plateau</text>
+  <text class="t-small" x="712" y="128">MARKET</text>
+  <text class="t-small" x="712" y="142">RATE</text>
+
+  <text class="t-head" x="792" y="90" fill="#98194F">The tail</text>
+  <text class="t-small" x="792" y="110">WINNER</text>
+  <text class="t-small" x="792" y="124">TAKES</text>
+  <text class="t-small" x="792" y="138">MOST</text>
+
+  <!-- density strip -->
+  <text class="t-small" x="80" y="452">WHERE PEOPLE ACTUALLY SIT</text>
+  <g fill="#98194F">
+    <rect x="82" y="459" width="6" height="4" opacity="0.04"/>
+    <rect x="113" y="459" width="6" height="4" opacity="0.05"/>
+    <rect x="144" y="459" width="6" height="4" opacity="0.07"/>
+    <rect x="175" y="459" width="6" height="4" opacity="0.09"/>
+    <rect x="206" y="459" width="6" height="4" opacity="0.11"/>
+    <rect x="238" y="459" width="6" height="4" opacity="0.14"/>
+    <rect x="269" y="459" width="6" height="4" opacity="0.17"/>
+    <rect x="300" y="459" width="6" height="4" opacity="0.20"/>
+    <rect x="331" y="459" width="6" height="4" opacity="0.24"/>
+    <rect x="362" y="459" width="6" height="4" opacity="0.28"/>
+    <rect x="394" y="459" width="6" height="4" opacity="0.33"/>
+    <rect x="425" y="459" width="6" height="4" opacity="0.39"/>
+    <rect x="456" y="459" width="6" height="4" opacity="0.46"/>
+    <rect x="487" y="459" width="6" height="4" opacity="0.54"/>
+    <rect x="518" y="459" width="6" height="4" opacity="0.63"/>
+    <rect x="550" y="459" width="6" height="4" opacity="0.73"/>
+    <rect x="581" y="459" width="6" height="4" opacity="0.83"/>
+    <rect x="612" y="459" width="6" height="4" opacity="0.92"/>
+    <rect x="643" y="459" width="6" height="4" opacity="0.98"/>
+    <rect x="674" y="459" width="6" height="4" opacity="1"/>
+    <rect x="706" y="459" width="6" height="4" opacity="0.96"/>
+    <rect x="737" y="459" width="6" height="4" opacity="0.80"/>
+    <rect x="768" y="459" width="6" height="4" opacity="0.52"/>
+    <rect x="799" y="459" width="6" height="4" opacity="0.24"/>
+    <rect x="830" y="459" width="6" height="4" opacity="0.07"/>
+  </g>
+</svg>
+<figcaption><b>The shape of the bargain.</b> This is the essay's organising metaphor, not a finding: no dataset I know of measures a worker's skill percentile against their total earnings, and the breakpoints shown are argued, not estimated. The claim is that pay tracks skill closely for most of a career, decouples from it near the top of the ordinary market, and then re-couples violently in the last few points — and that most working professionals spend their lives on the flat stretch.</figcaption>
+</figure>
+
+<section class="col">
+  <h2><span class="mark">01 — The curve</span>Zero to eighty is honest work</h2>
+
+  <p>For most of a career, effort converts to money at a believable exchange rate. An apprentice becomes a journeyman becomes a lead. A junior developer ships features, then owns a service, then owns an architecture. Each step is visible, each step pays. This is the stretch where advice makes sense, where "work harder, get better" is not a platitude but a description of the mechanism.</p>
+
+  <p>Then it flattens. Somewhere around the eightieth percentile you hit a wall built out of other people's competence. Everyone around you is also good. The work is excellent and the pay stops moving in proportion, because the market has decided what excellent is worth and there are a great many of you. This plateau is the market rate, and it is where the overwhelming majority of skilled professionals will spend the rest of their working lives.</p>
+
+  <p>And then, in the last few percentage points, the line goes vertical.</p>
+
+  <p class="pull">The difference between the 88th percentile and the 96th does not feel like eight points of anything. It feels like a rounding error. It is often the difference between a good living and a fortune.</p>
+
+  <p>Sherwin Rosen named this in 1981 in a paper called <em>The Economics of Superstars</em>. His insight was that in any field where output can be reproduced or scaled cheaply — a recording, a film, a codebase, a reputation — small differences in perceived quality produce enormous differences in reward, because buyers prefer the best and the best can serve everyone at once. Rosen observed that this creates the conditions for <q>talented persons to command both very large markets and very large incomes</q>. Nobody wants the second-best surgeon if the best one is available.</p>
+
+  <p>The official statistics can barely see this. The US Bureau of Labor Statistics publishes wages up to the ninetieth percentile and then stops. It also excludes the self-employed — which is to say it excludes roughly a quarter of carpenters, who were 27% self-employed in 2024. The tail exists precisely where the measurement ends.</p>
+</section>
+
+<figure class="reveal">
+<svg viewBox="0 0 900 440" role="img" aria-label="Bar chart comparing wage percentiles for carpenters and software developers, each scaled to its own 90th percentile, showing near-identical shapes, plus a bar running off the chart for top tech pay.">
+  <text class="t-head" x="40" y="30">Two fields, one wage ladder</text>
+  <text class="t-small" x="40" y="48">EMPLOYEE WAGE PERCENTILES, EACH FIELD SCALED TO ITS OWN 90TH · BLS OEWS, MAY 2024</text>
+
+  <!-- Carpenters -->
+  <text class="t-head" x="40" y="88" font-size="13">CARPENTERS</text>
+  <line x1="40" y1="98" x2="860" y2="98" stroke="#1A1C16" stroke-opacity="0.18"/>
+  <g>
+    <text class="t-small" x="180" y="119" style="text-anchor:end">10TH</text>
+    <rect x="196" y="108" width="205" height="13" fill="#1A1C16" opacity="0.75"/>
+    <text class="t-num" x="411" y="119">$38,760</text>
+
+    <text class="t-small" x="180" y="143" style="text-anchor:end">50TH</text>
+    <rect x="196" y="132" width="314" height="13" fill="#1A1C16" opacity="0.75"/>
+    <text class="t-num" x="520" y="143">$59,310</text>
+
+    <text class="t-small" x="180" y="167" style="text-anchor:end">75TH</text>
+    <rect x="196" y="156" width="400" height="13" fill="#1A1C16" opacity="0.75"/>
+    <text class="t-num" x="606" y="167">$75,620</text>
+
+    <text class="t-small" x="180" y="191" style="text-anchor:end">90TH</text>
+    <rect x="196" y="180" width="520" height="13" fill="#B5822A"/>
+    <text class="t-num" x="726" y="191">$98,370</text>
+  </g>
+
+  <!-- Software developers -->
+  <text class="t-head" x="40" y="232" font-size="13">SOFTWARE DEVELOPERS</text>
+  <line x1="40" y1="242" x2="860" y2="242" stroke="#1A1C16" stroke-opacity="0.18"/>
+  <g>
+    <text class="t-small" x="180" y="263" style="text-anchor:end">10TH</text>
+    <rect x="196" y="252" width="197" height="13" fill="#1A1C16" opacity="0.75"/>
+    <text class="t-num" x="403" y="263">$79,850</text>
+
+    <text class="t-small" x="180" y="287" style="text-anchor:end">50TH</text>
+    <rect x="196" y="276" width="327" height="13" fill="#1A1C16" opacity="0.75"/>
+    <text class="t-num" x="533" y="287">$133,080</text>
+
+    <text class="t-small" x="180" y="311" style="text-anchor:end">75TH</text>
+    <rect x="196" y="300" width="416" height="13" fill="#1A1C16" opacity="0.75"/>
+    <text class="t-num" x="622" y="311">$169,000</text>
+
+    <text class="t-small" x="180" y="335" style="text-anchor:end">90TH</text>
+    <rect x="196" y="324" width="520" height="13" fill="#B5822A"/>
+    <text class="t-num" x="726" y="335">$211,450</text>
+  </g>
+
+  <!-- the tail -->
+  <line x1="40" y1="372" x2="860" y2="372" stroke="#1A1C16" stroke-opacity="0.18"/>
+  <text class="t-small" x="180" y="399" style="text-anchor:end">BEYOND</text>
+  <rect x="196" y="388" width="660" height="13" fill="#98194F"/>
+  <polygon points="856,384 880,394.5 856,405" fill="#98194F"/>
+  <text class="t-small" x="196" y="424" fill="#98194F">STAFF ENGINEER — $457,000 MEDIAN TOTAL COMP, US (LEVELS.FYI, 2025) — 2.2× THE BLS 90TH WAGE</text>
+</svg>
+<figcaption><b>Two wage ladders with the same proportions.</b> Expressed as a fraction of its own 90th percentile, a carpenter's wage distribution is almost indistinguishable from a software developer's — 0.39, 0.60, 0.77, 1.00 against 0.38, 0.63, 0.80, 1.00. Two occupations are an illustration, not a law, and these are wage ranks, not skill ranks: geography, tenure, hours, union status, employer and specialisation are all inside these numbers. What the chart does establish is that the fields differ in altitude more than in proportion — and that official statistics stop exactly where the interesting part begins. The bottom bar is not like-for-like: it is total compensation including stock, against a base-wage series.</figcaption>
+</figure>
+
+<section class="col">
+  <h2><span class="mark">02 — The plateau</span>What the very good see when they look up</h2>
+
+  <p>Three groups look at that curve and see three different pictures.</p>
+
+  <p>The amateur, somewhere around the fiftieth or sixtieth percentile, sees the top and feels aspiration. The distance is so large it reads as a different category of being — talent, genius, destiny. This is comfortable, because you cannot be blamed for failing to become a different species.</p>
+
+  <p>The professional on the plateau sees something more corrosive. From the 85th percentile, the 97th does not look like a different species. It looks like a person doing roughly what you do, slightly better, for ten times the money. So you reach for the explanation that costs you least: <em>right place, right time.</em> Sometimes that is true. Usually it is a partial truth doing full-time work as an excuse.</p>
+
+  <p>And the people in the tail mostly see the hours. They tend to describe their advantage in terms that sound banal from the outside — an obsession that started early, a refusal to ship anything mediocre, a decade of noticing small things nobody else noticed.</p>
+
+  <div class="quote">
+    <p>Deliberate practice is purposeful practice that knows where it is going.</p>
+    <cite>K. Anders Ericsson — <em>Peak</em>, 2016</cite>
+  </div>
+
+  <p>Ericsson spent a career dismantling the idea that expertise is either innate or automatic. His 1993 study of violinists at the Music Academy of West Berlin sorted thirty students into three tiers and found that accumulated solitary practice tracked the tiers exactly. His conclusion was strong: differences in performance, even among experts, could largely be accounted for by differences in practice.</p>
+
+  <p>In 2019 Brooke Macnamara and Megha Maitra ran the study again, double-blind, with thirty-nine violinists. Part of it held and part of it broke. The least accomplished group had practised least — practice clearly matters. But between the "good" group and the "best" group there was no significant difference at all. The good violinists had logged an average of 9,844 hours; the best averaged 8,224. The merely good had practised <em>more</em>, and the gap was statistically indistinguishable from noise. Across all three tiers, practice explained 26% of the variance in performance rather than the 48% reported in 1993.</p>
+
+  <div class="quote">
+    <p>Once you get to the highly skilled groups, practice stops accounting for the difference.</p>
+    <cite>Brooke N. Macnamara — Case Western Reserve University, 2019</cite>
+  </div>
+
+  <p>Read carelessly, this looks like it demolishes the case for effort. Read properly, it says something sharper and more useful, and it is exactly the shape of the curve this essay is about. <strong>Practice is what gets you onto the plateau. It is not what gets you off it.</strong></p>
+
+  <p>By the time you are comparing the good to the best, everyone in the room has already paid the price of admission — a decade of hours, competent teaching, real feedback. Volume has been equalised. It has stopped being a variable. Whatever separates the top tier from the tier below has to be something else: what they do inside the hours, what they notice, what they refuse to accept as finished, what they were reaching for in the first place. The 26% figure is not a demotion of effort. It is a measurement of how quickly effort becomes table stakes.</p>
+
+  <p class="pull">Hours separate the good from the ordinary. Something else separates the greatest from the great — and it is not more hours.</p>
+
+  <p>What that something is, the replication does not say, and honesty requires admitting the candidates are contested: raw aptitude, the quality rather than quantity of practice, coaching, timing, and the measurement problem of judging violinists at twenty at all. Ericsson's own answer was that not all hours are equal — that purposeful, uncomfortable, feedback-driven work at the edge of current ability is a different substance from repetition, however long the repetition runs.</p>
+
+  <p>What survives all of it is a claim about direction rather than magnitude. <strong>Nobody is accidentally the greatest.</strong> You can be lucky into the room and lucky into the decade, but nobody arrives at the top of a field without having wanted it hard enough to organise a life around it. That is an assertion, not a finding — but it is the assertion every person in the tail makes about themselves, and it is conspicuously absent from the accounts of the people one tier down.</p>
+</section>
+
+<section class="col">
+  <h2><span class="mark">03 — The environment</span>The half you did not choose</h2>
+
+  <p>I used to discount this part almost entirely. My reasoning was tidy: a curriculum is a curriculum. If a college in India teaches the same algorithms out of the same textbooks as MIT, the output should be comparable, and any difference is a branding artefact.</p>
+
+  <p>That was wrong, and not slightly. The gap is real and enormous, and almost none of it lives in the syllabus. It lives in the ambient assumption of the room. At one institution the median student's plan is to get placed. At the other, the median student's plan is to build something that did not exist, and three people down the hall have already done it, which makes it thinkable. <strong>Your surroundings set your ceiling of ambition before you ever get to test your ceiling of ability.</strong></p>
+
+  <p class="pull">Ambition is not generated. It is caught — from the people close enough to you that their achievements feel possible rather than mythical.</p>
+
+  <p>There is now hard evidence for this. Bell, Chetty, Jaravel, Petkova and Van Reenen linked patent records to tax records for 1.2 million American inventors and asked who becomes one. Children whose parents were in the top 1% of the income distribution turned out to be ten times as likely to become inventors as children from below-median-income families. Early test scores explained very little of that gap.</p>
+
+  <p>What did explain it was exposure. Children who grew up around inventors became inventors — and, remarkably, they invented the same <em>kinds</em> of things. Kids raised near Silicon Valley's computing industry patented computing. Kids raised around Minneapolis's medical device cluster patented medical devices. The researchers estimated that moving a child from a commuting zone at the 25th percentile of exposure to innovation — New Orleans — to one at the 75th — Austin — would raise their probability of becoming an inventor by 37%.</p>
+
+  <div class="quote">
+    <p>…driven by differences in environment rather than abilities to innovate.</p>
+    <cite>Bell, Chetty, Jaravel, Petkova &amp; Van Reenen — NBER, 2017</cite>
+  </div>
+
+  <p>Their phrase for what the economy loses this way is <em>lost Einsteins</em>. If women, minorities and low-income children invented at the same rate as white men from top-quintile families, the study estimated the number of American inventors would <strong>quadruple</strong>. Not double. Quadruple. That is a counterfactual rather than a causal decomposition — but it is a measure of how much capacity the present arrangement simply never finds.</p>
+</section>
+
+<figure class="reveal">
+<svg viewBox="0 0 900 300" role="img" aria-label="Ten figures representing children of top-1-percent parents against one figure for below-median-income children, illustrating the ten-fold gap in becoming an inventor.">
+  <text class="t-head" x="40" y="30">Who becomes an inventor</text>
+  <text class="t-small" x="40" y="48">US PATENT + TAX RECORDS, 1.2 MILLION INVENTORS · BELL, CHETTY ET AL., NBER 2017</text>
+
+  <text class="t-small" x="40" y="92">PARENTS IN THE TOP 1% OF INCOME</text>
+  <g fill="#98194F">
+    <g><circle cx="52" cy="116" r="9"/><rect x="41" y="130" width="22" height="28" rx="9"/></g>
+    <g transform="translate(46,0)"><circle cx="52" cy="116" r="9"/><rect x="41" y="130" width="22" height="28" rx="9"/></g>
+    <g transform="translate(92,0)"><circle cx="52" cy="116" r="9"/><rect x="41" y="130" width="22" height="28" rx="9"/></g>
+    <g transform="translate(138,0)"><circle cx="52" cy="116" r="9"/><rect x="41" y="130" width="22" height="28" rx="9"/></g>
+    <g transform="translate(184,0)"><circle cx="52" cy="116" r="9"/><rect x="41" y="130" width="22" height="28" rx="9"/></g>
+    <g transform="translate(230,0)"><circle cx="52" cy="116" r="9"/><rect x="41" y="130" width="22" height="28" rx="9"/></g>
+    <g transform="translate(276,0)"><circle cx="52" cy="116" r="9"/><rect x="41" y="130" width="22" height="28" rx="9"/></g>
+    <g transform="translate(322,0)"><circle cx="52" cy="116" r="9"/><rect x="41" y="130" width="22" height="28" rx="9"/></g>
+    <g transform="translate(368,0)"><circle cx="52" cy="116" r="9"/><rect x="41" y="130" width="22" height="28" rx="9"/></g>
+    <g transform="translate(414,0)"><circle cx="52" cy="116" r="9"/><rect x="41" y="130" width="22" height="28" rx="9"/></g>
+  </g>
+  <text class="t-num" x="520" y="140" fill="#98194F" font-size="15">10×</text>
+
+  <line x1="40" y1="186" x2="860" y2="186" stroke="#1A1C16" stroke-opacity="0.18"/>
+
+  <text class="t-small" x="40" y="216">PARENTS BELOW MEDIAN INCOME</text>
+  <g fill="#1A1C16" opacity="0.8">
+    <circle cx="52" cy="240" r="9"/><rect x="41" y="254" width="22" height="28" rx="9"/>
+  </g>
+  <text class="t-label" x="100" y="248">Same measured ability in early childhood.</text>
+  <text class="t-label" x="100" y="266">A tenth of the chance.</text>
+</svg>
+<figcaption><b>Skill is self-driven. The starting line is not.</b> Differences in early test scores explain very little of this gap; exposure explains a great deal. Growing up near inventors makes you an inventor — and an inventor of the specific things your neighbours invented.</figcaption>
+</figure>
+
+<section class="col">
+  <p>Warren Buffett has been making the same argument, less formally, for thirty years. He calls it the ovarian lottery: the single most consequential draw of your life happens before you have any say in it. Speaking at Berkshire Hathaway's 1997 meeting, he pointed out that <q>the odds were over 30-to-1 against being born in the United States</q>, and that his particular wiring — a knack for valuing businesses — happened to be a skill that his era paid extravagantly for. In a different century, or a different country, the same wiring would have been worth nothing at all.</p>
+
+  <p>So skill and environment are not independent variables. Environment shapes what skills you think to build, how early you start, who corrects you, and how high you dare aim. But the two are not the same thing either. Environment opens a door; only the person walks through it. Plenty of people raised in the room full of inventors invent nothing.</p>
+</section>
+
+<section class="col">
+  <h2><span class="mark">04 — The measurement</span>Pay is a ruler that measures the market, not the person</h2>
+
+  <p>Here is where the curve becomes dangerous: we start treating position on it as a verdict on human worth.</p>
+
+  <p>Look at what the reward structure actually does in a scalable field. Of the 1.6 million artists who released music to streaming platforms over an eighteen-month period, the top 16,000 — one percent — captured around 90% of all streams. Spotify's own 2025 reporting is the optimistic version of the same fact: more than 81,000 artists earned at least $10,000 from the platform in a year, and roughly 13,800 earned $100,000 or more. Genuinely good news. It also means that out of millions of people making music, roughly fourteen thousand cross a six-figure line — and even that is royalties generated for rightsholders, not money in a performer's account, since labels, distributors, publishers and collaborators are paid out of the same pot.</p>
+
+  <p>Acting is starker. On SAG-AFTRA's own 2023 figures, only 14% of members earned enough in covered work to qualify for the union's health plan — then a threshold of $26,470. Only 7% earned $80,000 or more. Membership includes people working intermittently, so this is not a census of full-time actors. It is still a union of professionals, and six in seven of them fall short of a health plan.</p>
+</section>
+
+<figure class="reveal">
+<svg viewBox="0 0 900 320" role="img" aria-label="A grid of 100 squares with 14 highlighted, showing that only 14 percent of SAG-AFTRA members earn enough to qualify for health insurance.">
+  <text class="t-head" x="40" y="30">100 SAG-AFTRA members</text>
+  <text class="t-small" x="40" y="48">SHARE EARNING ENOUGH TO QUALIFY FOR THE UNION HEALTH PLAN · 2023</text>
+
+  <g>
+    <!-- row 1: 10 filled -->
+    <g fill="#98194F">
+      <rect x="40" y="72" width="20" height="20"/><rect x="66" y="72" width="20" height="20"/><rect x="92" y="72" width="20" height="20"/><rect x="118" y="72" width="20" height="20"/><rect x="144" y="72" width="20" height="20"/><rect x="170" y="72" width="20" height="20"/><rect x="196" y="72" width="20" height="20"/><rect x="222" y="72" width="20" height="20"/><rect x="248" y="72" width="20" height="20"/><rect x="274" y="72" width="20" height="20"/>
+      <rect x="40" y="98" width="20" height="20"/><rect x="66" y="98" width="20" height="20"/><rect x="92" y="98" width="20" height="20"/><rect x="118" y="98" width="20" height="20"/>
+    </g>
+    <g fill="#1A1C16" opacity="0.16">
+      <rect x="144" y="98" width="20" height="20"/><rect x="170" y="98" width="20" height="20"/><rect x="196" y="98" width="20" height="20"/><rect x="222" y="98" width="20" height="20"/><rect x="248" y="98" width="20" height="20"/><rect x="274" y="98" width="20" height="20"/>
+      <rect x="40" y="124" width="20" height="20"/><rect x="66" y="124" width="20" height="20"/><rect x="92" y="124" width="20" height="20"/><rect x="118" y="124" width="20" height="20"/><rect x="144" y="124" width="20" height="20"/><rect x="170" y="124" width="20" height="20"/><rect x="196" y="124" width="20" height="20"/><rect x="222" y="124" width="20" height="20"/><rect x="248" y="124" width="20" height="20"/><rect x="274" y="124" width="20" height="20"/>
+      <rect x="40" y="150" width="20" height="20"/><rect x="66" y="150" width="20" height="20"/><rect x="92" y="150" width="20" height="20"/><rect x="118" y="150" width="20" height="20"/><rect x="144" y="150" width="20" height="20"/><rect x="170" y="150" width="20" height="20"/><rect x="196" y="150" width="20" height="20"/><rect x="222" y="150" width="20" height="20"/><rect x="248" y="150" width="20" height="20"/><rect x="274" y="150" width="20" height="20"/>
+      <rect x="40" y="176" width="20" height="20"/><rect x="66" y="176" width="20" height="20"/><rect x="92" y="176" width="20" height="20"/><rect x="118" y="176" width="20" height="20"/><rect x="144" y="176" width="20" height="20"/><rect x="170" y="176" width="20" height="20"/><rect x="196" y="176" width="20" height="20"/><rect x="222" y="176" width="20" height="20"/><rect x="248" y="176" width="20" height="20"/><rect x="274" y="176" width="20" height="20"/>
+      <rect x="40" y="202" width="20" height="20"/><rect x="66" y="202" width="20" height="20"/><rect x="92" y="202" width="20" height="20"/><rect x="118" y="202" width="20" height="20"/><rect x="144" y="202" width="20" height="20"/><rect x="170" y="202" width="20" height="20"/><rect x="196" y="202" width="20" height="20"/><rect x="222" y="202" width="20" height="20"/><rect x="248" y="202" width="20" height="20"/><rect x="274" y="202" width="20" height="20"/>
+      <rect x="40" y="228" width="20" height="20"/><rect x="66" y="228" width="20" height="20"/><rect x="92" y="228" width="20" height="20"/><rect x="118" y="228" width="20" height="20"/><rect x="144" y="228" width="20" height="20"/><rect x="170" y="228" width="20" height="20"/><rect x="196" y="228" width="20" height="20"/><rect x="222" y="228" width="20" height="20"/><rect x="248" y="228" width="20" height="20"/><rect x="274" y="228" width="20" height="20"/>
+      <rect x="40" y="254" width="20" height="20"/><rect x="66" y="254" width="20" height="20"/><rect x="92" y="254" width="20" height="20"/><rect x="118" y="254" width="20" height="20"/><rect x="144" y="254" width="20" height="20"/><rect x="170" y="254" width="20" height="20"/><rect x="196" y="254" width="20" height="20"/><rect x="222" y="254" width="20" height="20"/><rect x="248" y="254" width="20" height="20"/><rect x="274" y="254" width="20" height="20"/>
+      <rect x="40" y="280" width="20" height="20"/><rect x="66" y="280" width="20" height="20"/><rect x="92" y="280" width="20" height="20"/><rect x="118" y="280" width="20" height="20"/><rect x="144" y="280" width="20" height="20"/><rect x="170" y="280" width="20" height="20"/><rect x="196" y="280" width="20" height="20"/><rect x="222" y="280" width="20" height="20"/><rect x="248" y="280" width="20" height="20"/><rect x="274" y="280" width="20" height="20"/>
+    </g>
+  </g>
+
+  <text class="t-big" x="360" y="112" fill="#98194F">14</text>
+  <text class="t-label" x="360" y="136">cleared $26,470 in covered earnings.</text>
+  <text class="t-label" x="360" y="156">Seven cleared $80,000.</text>
+
+  <text class="t-head" x="360" y="206" font-size="13">MUSIC TELLS THE SAME STORY</text>
+  <text class="t-label" x="360" y="230">1% of artists · ~90% of all streams</text>
+  <text class="t-label" x="360" y="250">The 100,000th-highest-earning artist on</text>
+  <text class="t-label" x="360" y="268">Spotify made about $7,300 in 2025.</text>
+</svg>
+<figcaption><b>Being a professional is not the same as being paid like one.</b> In fields where reproduction is free and attention is scarce, the plateau does not pay a living wage at all. Sources: SAG-AFTRA chief economist via Rolling Stone; Alpha Data; Spotify Loud &amp; Clear.</figcaption>
+</figure>
+
+<section class="col">
+  <p>Now invert the telescope. If pay measured human quality, then everyone in the tail would be excellent and everyone outside it would not be. But the tail is a function of markets, geography, timing and access — and markets only pay for what they can see.</p>
+
+  <p>Srinivasa Ramanujan — who had taught himself years earlier from a borrowed synopsis of formulae, with no formal training to speak of — was a clerk at the Madras Port Trust when he mailed a letter of results to G. H. Hardy in 1913. His genius did not begin with the letter. It had been there all along, unpaid, unmeasured and invisible, and it stayed that way for years. What changed was not his ability. It was that a channel opened.</p>
+
+  <p>There are people right now, in villages and small towns without that channel, whose talent will never register on any instrument we possess. Thomas Gray wrote it in 1751 and it has not aged: <q>Full many a flower is born to blush unseen</q>. The distribution we can measure is not the distribution that exists. Salary is a measurement of the market's reach, not of a person's ceiling.</p>
+</section>
+
+<section class="col">
+  <h2><span class="mark">05 — The tool</span>AI raises the floor. It cannot raise the roof for you.</h2>
+
+  <p>The most genuinely hopeful development of this decade is that the information half of the environment problem is collapsing. A student in a town with no library, no mentor and no functioning physics teacher can now interrogate a model at two in the morning and get a better explanation than most people alive received in a classroom. That is not a small thing. It is arguably the largest expansion of access to expertise in human history.</p>
+
+  <p>The numbers are moving fast. OpenAI's research with Harvard's David Deming found that by May 2025, <strong>adoption growth in the lowest-income countries was running at more than four times the rate of the highest-income ones</strong>. OpenAI frames the goal directly: <q>access to AI should be treated as a basic right</q>. UNDP counts 1.2 billion AI users within three years, with nearly 70% of them in developing countries.</p>
+
+  <p>And yet.</p>
+</section>
+
+<figure class="reveal">
+<svg viewBox="0 0 900 350" role="img" aria-label="Two panels: on the left, AI adoption growing four times faster in the lowest-income countries; on the right, usage intensity around fifty times higher per internet user in high-income countries.">
+  <line x1="450" y1="60" x2="450" y2="330" stroke="#1A1C16" stroke-opacity="0.2"/>
+
+  <!-- left -->
+  <text class="t-head" x="40" y="30">The floor is rising</text>
+  <text class="t-small" x="40" y="48">ADOPTION GROWTH RATE, MAY 2025 · OPENAI / NBER</text>
+  <rect x="40" y="86" width="70" height="26" fill="#1A1C16" opacity="0.28"/>
+  <text class="t-small" x="120" y="104">HIGHEST-INCOME COUNTRIES  (1×)</text>
+  <rect x="40" y="128" width="215" height="26" fill="#98194F"/>
+  <text class="t-small" x="265" y="146">LOWEST-INCOME  (4×+)</text>
+  <text class="t-label" x="40" y="196">1.2 billion AI users in three years.</text>
+  <text class="t-label" x="40" y="216">Nearly 70% of them in developing</text>
+  <text class="t-label" x="40" y="236">countries. — UNDP, 2026</text>
+  <text class="t-label" x="40" y="276" fill="#98194F">In lower-income regions, people are more</text>
+  <text class="t-label" x="40" y="294" fill="#98194F">likely to describe AI as a tool for learning</text>
+  <text class="t-label" x="40" y="312" fill="#98194F">and starting a business.</text>
+
+  <!-- right -->
+  <text class="t-head" x="490" y="30">The ceiling is not</text>
+  <text class="t-small" x="490" y="48">CHATGPT VISITS PER INTERNET USER, MAY 2025 · WORLD BANK</text>
+  <rect x="490" y="86" width="7" height="26" fill="#1A1C16" opacity="0.28"/>
+  <text class="t-small" x="507" y="104">LOW-INCOME COUNTRIES  (1×)</text>
+  <rect x="490" y="128" width="350" height="26" fill="#B5822A"/>
+  <text class="t-num" x="700" y="146" fill="#1A1C16">≈ 50×</text>
+  <text class="t-small" x="490" y="172">HIGH-INCOME COUNTRIES</text>
+
+  <text class="t-label" x="490" y="216">Generative AI use, Q1 2026:</text>
+  <text class="t-label" x="490" y="236">27.5% of working-age adults in the Global</text>
+  <text class="t-label" x="490" y="256">North (from 24.7%) vs 15.4% in the Global</text>
+  <text class="t-label" x="490" y="276">South (from 14.1%) — the gap widened 1.5</text>
+  <text class="t-label" x="490" y="292">points in one quarter.</text>
+  <text class="t-label" x="490" y="332" fill="#98194F">2.2 billion people are still not online at all.</text>
+</svg>
+<figcaption><b>Two true things at once.</b> The fastest growth is at the bottom, and the gap at the top is still widening. Microsoft's AI Economy Institute attributes the divide to connectivity, electricity and digital skills. The ITU's Doreen Bogdan-Martin describes today's divides as being <q>defined by speed, reliability, affordability, and skills</q>.</figcaption>
+</figure>
+
+<figure class="reveal">
+<svg viewBox="0 0 900 230" role="img" aria-label="Four statistics on who is still offline and who is not using AI: 2.2 billion offline in 2025; 94 percent versus 23 percent internet use in high- and low-income countries; 85 percent urban versus 58 percent rural; under 10 percent working-age AI use in most of sub-Saharan Africa.">
+  <text class="t-head" x="16" y="24">The floor under the floor</text>
+  <text class="t-small" x="16" y="42">BEFORE ANYONE ASKS A MODEL ANYTHING · ITU 2025 · MICROSOFT AI ECONOMY INSTITUTE 2026</text>
+
+  <line x1="16" y1="60" x2="884" y2="60" stroke="#1A1C16" stroke-opacity="0.55" stroke-width="1.4"/>
+  <line x1="16" y1="212" x2="884" y2="212" stroke="#1A1C16" stroke-opacity="0.55" stroke-width="1.4"/>
+  <line x1="233" y1="60" x2="233" y2="212" stroke="#1A1C16" stroke-opacity="0.18"/>
+  <line x1="450" y1="60" x2="450" y2="212" stroke="#1A1C16" stroke-opacity="0.18"/>
+  <line x1="667" y1="60" x2="667" y2="212" stroke="#1A1C16" stroke-opacity="0.18"/>
+
+  <text class="t-big" x="30" y="126" font-size="40" fill="#98194F">2.2bn</text>
+  <text class="t-label" x="30" y="158">People still offline</text>
+  <text class="t-label" x="30" y="178">worldwide in 2025.</text>
+
+  <text class="t-big" x="247" y="126" font-size="29" fill="#98194F">94% / 23%</text>
+  <text class="t-label" x="247" y="158">Internet use: high-income</text>
+  <text class="t-label" x="247" y="178">vs low-income countries.</text>
+
+  <text class="t-big" x="464" y="126" font-size="29" fill="#98194F">85% / 58%</text>
+  <text class="t-label" x="464" y="158">Internet use: urban</text>
+  <text class="t-label" x="464" y="178">vs rural.</text>
+
+  <text class="t-big" x="681" y="126" font-size="40" fill="#98194F">&lt;10%</text>
+  <text class="t-label" x="681" y="158">Working-age AI use in</text>
+  <text class="t-label" x="681" y="178">most of sub-Saharan Africa.</text>
+</svg>
+<figcaption><b>Democratised access has a hard prerequisite.</b> Every argument about AI levelling the field assumes a connection, a device and the electricity to run them. For roughly a quarter of humanity, none of the rest of this section has started yet.</figcaption>
+</figure>
+
+<section class="col">
+  <p>Two limits matter more than the access gap, and neither will be solved by a better model.</p>
+
+  <p><strong>The first is the question.</strong> A model answers what you ask. It does not tell you what is worth asking. The gap between a student who asks "explain this chapter" and one who asks "why did the author choose this framing, and what would break if they were wrong" is not a gap in access — both have the same tool open. It is a gap in ambition, and ambition is still caught from the environment. We have democratised the answers and left the questions exactly where they were. It is suggestive that separate research on early adopters finds people in lower-income regions more likely to describe AI as a tool for learning and for starting a business, where wealthier users lean toward life management. Where the hunger already exists, the tool multiplies it.</p>
+
+  <p class="pull">Information was never the whole bottleneck. It was the cheapest part of the bottleneck to fix, so we fixed it first.</p>
+
+  <p><strong>The second is practice.</strong> People do not get good by reading; they get good by doing, badly, many times, with feedback. You cannot become a surgeon from a chatbot. You cannot become a carpenter without wood, tools, a workshop and someone to tell you the joint is wrong. You cannot become a filmmaker without a camera, a crew and permission to fail on someone's budget. Infrastructure is the part of the environment that no amount of information will substitute for, and that has not changed and will not change.</p>
+</section>
+
+<section class="col">
+  <h2><span class="mark">06 — The plural</span>Greatness is not one destination</h2>
+
+  <p>Everything above assumes we agree on what the summit is. We don't, and that is the most important fact in the essay.</p>
+
+  <p>Reaching the tail of a field is only success if that field's tail is what you want. For a great many people it isn't. The best carpenter in a small town who turns down the contract that would take him to the city has not failed to optimise; he has optimised for something the chart cannot see. Someone who spends their life climbing mountains alone — an activity most people find not merely risky but incomprehensible — is running a coherent life plan, just not yours.</p>
+
+  <p>And we judge these choices from inside our own environment, which is exactly the error the whole essay has been circling. The comfortable observer assumes the solo climber must have money, because in the observer's world only money buys that kind of time. The person who has never been on the losing end of an institution assumes that a marginalised community's anger is irrational, because in their experience institutions mostly work. Both are reading someone else's rational response to a world they have never lived in, and marking it wrong against their own answer key.</p>
+
+  <div class="quote">
+    <p>Creativity is broadly distributed. Opportunity is not.</p>
+    <cite>Steve Case, on the Lost Einsteins study</cite>
+  </div>
+
+  <p>The variety is not a flaw to be optimised away. It is the mechanism. A species where everyone wanted the same thing, valued the same things and pursued the same peak would be catastrophically fragile — one bad environmental bet and the whole thing goes. We have survived where far stronger and faster animals did not, in part because at any moment some of us are farming, some are wandering, some are asking useless questions that turn out not to be useless, and some are climbing a mountain for no reason anyone can defend.</p>
+
+  <p>So: the curve is real. The tail is mostly earned and partly inherited. The plateau is honourable and crowded. AI is the best lever anyone has built for the information half of the problem and does almost nothing for the practice half. And the number at the end of your name measures how legible your particular excellence happens to be to a particular market at a particular moment.</p>
+
+  <p class="pull">Take the curve seriously as a description of pay. Refuse it entirely as a description of people.</p>
+</section>
+
+<section class="col sources">
+  <h3>Sources</h3>
+  <ol>
+    <li>US Bureau of Labor Statistics, Occupational Employment and Wage Statistics, May 2024 — carpenters, software developers, QA analysts. <a href="https://www.bls.gov/oes/2024/may/featured_data.htm">bls.gov/oes</a></li>
+    <li>Sherwin Rosen, "The Economics of Superstars," <em>American Economic Review</em> 71(5), 1981.</li>
+    <li>K. Anders Ericsson, Krampe &amp; Tesch-Römer, "The Role of Deliberate Practice in the Acquisition of Expert Performance," <em>Psychological Review</em>, 1993; Ericsson &amp; Pool, <em>Peak</em>, 2016.</li>
+    <li>Brooke N. Macnamara &amp; Megha Maitra, "The role of deliberate practice in expert performance: revisiting Ericsson, Krampe &amp; Tesch-Römer (1993)," <em>Royal Society Open Science</em> 6(8):190327, 2019. <a href="https://royalsocietypublishing.org/doi/10.1098/rsos.190327">rsos.190327</a></li>
+    <li>Bell, Chetty, Jaravel, Petkova &amp; Van Reenen, "Who Becomes an Inventor in America? The Importance of Exposure to Innovation," NBER Working Paper 24062, 2017. <a href="https://www.nber.org/papers/w24062">nber.org/papers/w24062</a></li>
+    <li>Warren Buffett, Berkshire Hathaway shareholder meeting, 1997; University of Florida talk, 1998.</li>
+    <li>SAG-AFTRA earnings figures via chief economist David Viviano, reported by <em>Rolling Stone</em>, 2023.</li>
+    <li>Alpha Data streaming concentration analysis (releases January 2019 – July 2020), <em>Rolling Stone</em>, 2020; Spotify <em>Loud &amp; Clear</em>, 2026 edition. <a href="https://newsroom.spotify.com/2026-03-11/loud-and-clear-music-economics-highlights/">newsroom.spotify.com</a></li>
+    <li>Levels.fyi 2025 year-end report — staff-level median total compensation, US submissions (salary, stock and bonus). <a href="https://www.levels.fyi/2025/">levels.fyi/2025</a></li>
+    <li>Chatterji et al. / OpenAI &amp; David Deming, "How People Are Using ChatGPT," NBER working paper, 2025. <a href="https://openai.com/index/how-people-are-using-chatgpt/">openai.com</a></li>
+    <li>World Bank, <em>Atlas of Global Development</em> — Inequalities in Use of and Exposure to Artificial Intelligence, 2026. <a href="https://data360.worldbank.org/en/atlas/artificial-intelligence/">data360.worldbank.org</a></li>
+    <li>Microsoft AI Economy Institute, Global AI Adoption reports, 2025–2026.</li>
+    <li>UNDP, "The Next Great Divergence," 2026. <a href="https://www.undp.org/asia-pacific/next-great-divergence">undp.org</a></li>
+    <li>ITU, <em>Measuring Digital Development: Facts and Figures 2025</em>, and accompanying press release, 17 November 2025 (source of the Bogdan-Martin remark). <a href="https://www.itu.int/itu-d/reports/statistics/facts-figures-2025/">itu.int</a></li>
+    <li>Huang et al., "How Early Adopters Used Generative AI Worldwide: Variation by Country Income and Language," 2026 — on how users in different economies describe what AI is for.</li>
+    <li>Thomas Gray, "Elegy Written in a Country Churchyard," 1751.</li>
+  </ol>
+</section>
+
+</div>
+
+<script>
+(function(){
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var items = document.querySelectorAll('.reveal');
+  if(reduce || !('IntersectionObserver' in window)){
+    items.forEach(function(el){ el.classList.add('in'); });
+    return;
+  }
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, {threshold:0.12});
+  items.forEach(function(el){ io.observe(el); });
+})();
+</script>
+</body>
+</html>
