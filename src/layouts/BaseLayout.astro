@@ -2,17 +2,26 @@
 interface Props {
   title: string;
   description?: string;
+  ogImage?: string;
 }
 
-const { title, description = "Prabal Banerjee — Co-Founder at Avail, blockchain researcher, former Lead Researcher at Polygon. Research interests in blockchains, interoperability, data availability, and cryptography." } = Astro.props;
+const {
+  title,
+  description = "Prabal Banerjee — Co-Founder at Avail, blockchain researcher, former Lead Researcher at Polygon. Research interests in blockchains, interoperability, data availability, and cryptography.",
+  ogImage = "/og.png",
+} = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const ogImageURL = new URL(ogImage, Astro.site);
 
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Person",
+  "@id": "https://prabalbanerjee.xyz/#prabal",
   "name": "Prabal Banerjee",
+  "description": "Co-Founder of Avail, a modular blockchain infrastructure project focused on data availability. Previously Lead Researcher at Polygon and a cryptology PhD student at the Indian Statistical Institute, Kolkata.",
   "url": "https://prabalbanerjee.xyz",
+  "image": "https://prabalbanerjee.xyz/og.png",
   "jobTitle": "Co-Founder",
   "worksFor": {
     "@type": "Organization",
@@ -59,6 +68,9 @@ const jsonLd = {
     <meta name="author" content="Prabal Banerjee" />
     <link rel="canonical" href={canonicalURL.href} />
 
+    <link rel="sitemap" type="application/xml" href="/sitemap-index.xml" />
+    <link rel="alternate" type="text/plain" href="/llms.txt" title="Plain-text summary for AI agents" />
+
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content={canonicalURL.href} />
@@ -66,13 +78,18 @@ const jsonLd = {
     <meta property="og:description" content={description} />
     <meta property="og:site_name" content="Prabal Banerjee" />
     <meta property="og:locale" content="en_US" />
+    <meta property="og:image" content={ogImageURL.href} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="A terminal window reading: Prabal Banerjee, Co-Founder at Avail, Ph.D. Dropout at ISI Kolkata." />
 
     <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@prabalbanerjee" />
     <meta name="twitter:creator" content="@prabalbanerjee" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageURL.href} />
 
     <!-- Structured Data -->
     <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />

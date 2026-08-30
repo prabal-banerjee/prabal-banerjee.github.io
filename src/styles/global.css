@@ -158,6 +158,7 @@ section#home {
 .terminal-prompt-line {
   color: var(--green);
   font-size: 0.9rem;
+  font-weight: 400;
   margin-bottom: 1.5rem;
   line-height: 1.5;
 }

@@ -16,13 +16,33 @@ import '../styles/global.css';
     <main>
       <Hero />
       <Publications />
-      <Writings />
       <Experience />
       <Education />
       <Contact />
+      <Writings />
     </main>
+
+    <footer class="site-footer">
+      <span class="prompt">$</span> <a href="/about">about</a> · <a href="/privacy">privacy</a> ·
+      <a href="/llms.txt">llms.txt</a> · <a href="/sitemap-index.xml">sitemap</a> ·
+      <a href="https://github.com/prabal-banerjee/prabal-banerjee.github.io">source</a>
+    </footer>
   </div>
 </BaseLayout>
+
+<style>
+  .site-footer {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 clamp(20px, 5vw, 60px) 48px;
+    font-size: 0.75rem;
+    color: var(--subtext);
+  }
+
+  .site-footer .prompt {
+    color: var(--green);
+  }
+</style>
 
 <script>
   // Scroll reveal + active nav highlighting

@@ -4,6 +4,25 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>The Ninety-Fifth Percentile</title>
+<meta name="description" content="In almost every field, the best are paid absurdly more than the very good. The gap is real, it is mostly explainable, and it is still a terrible way to measure a life.">
+<meta name="author" content="Prabal Banerjee">
+<link rel="canonical" href="https://prabalbanerjee.xyz/Ninety-Fifth-Percentile/">
+<link rel="sitemap" type="application/xml" href="/sitemap-index.xml">
+<link rel="alternate" type="text/plain" href="/llms.txt" title="Plain-text summary for AI agents">
+<meta property="og:type" content="article">
+<meta property="og:title" content="The Ninety-Fifth Percentile">
+<meta property="og:description" content="In almost every field, the best are paid absurdly more than the very good. The gap is real, it is mostly explainable, and it is still a terrible way to measure a life.">
+<meta property="og:url" content="https://prabalbanerjee.xyz/Ninety-Fifth-Percentile/">
+<meta property="og:site_name" content="Prabal Banerjee">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://prabalbanerjee.xyz/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@prabalbanerjee">
+<meta name="twitter:creator" content="@prabalbanerjee">
+<meta name="twitter:image" content="https://prabalbanerjee.xyz/og.png">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "The Ninety-Fifth Percentile", "description": "In almost every field, the best are paid absurdly more than the very good. The gap is real, it is mostly explainable, and it is still a terrible way to measure a life.", "url": "https://prabalbanerjee.xyz/Ninety-Fifth-Percentile/", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://prabalbanerjee.xyz/Ninety-Fifth-Percentile/"}, "datePublished": "2026-08-30", "inLanguage": "en", "image": "https://prabalbanerjee.xyz/og.png", "author": [{"@type": "Person", "@id": "https://prabalbanerjee.xyz/#prabal", "name": "Prabal Banerjee", "url": "https://prabalbanerjee.xyz"}, {"@type": "SoftwareApplication", "name": "Claude Opus 5", "applicationCategory": "AI language model", "url": "https://claude.ai"}], "publisher": {"@type": "Person", "@id": "https://prabalbanerjee.xyz/#prabal", "name": "Prabal Banerjee"}, "isPartOf": {"@type": "WebSite", "name": "Prabal Banerjee", "url": "https://prabalbanerjee.xyz"}, "about": ["labour economics", "superstar economics", "income distribution", "skill and pay", "exposure effects"]}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..500&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -19,6 +38,7 @@
   --rule:rgba(26,28,22,0.16);
   --rule-soft:rgba(26,28,22,0.08);
   --measure:34rem;
+  --figure:50rem;
   --wide:60rem;
 }
 *{box-sizing:border-box;}
@@ -117,7 +137,7 @@ strong{font-weight:600;}
 /* ---------- figures ---------- */
 figure{
   margin:3rem auto;
-  max-width:var(--wide);
+  max-width:var(--figure);
 }
 figure svg{width:100%;height:auto;display:block;}
 figcaption{
@@ -126,8 +146,8 @@ figcaption{
   color:var(--ink-soft);
   border-top:1px solid var(--rule);
   padding-top:.65rem;
-  margin:.8rem auto 0;
-  max-width:58ch;
+  margin:.8rem 0 0;
+  max-width:none;
 }
 figcaption b{color:var(--ink);font-weight:600;}
 
@@ -143,7 +163,7 @@ figcaption b{color:var(--ink);font-weight:600;}
   display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
   gap:1px;background:var(--rule);
   border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);
-  margin:2.6rem auto;max-width:var(--wide);
+  margin:2.6rem auto;max-width:var(--figure);
 }
 .stat{background:var(--ash);padding:1.1rem 1rem;}
 .stat b{

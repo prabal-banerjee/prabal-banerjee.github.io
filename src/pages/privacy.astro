@@ -1,0 +1,100 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import DocNav from '../components/DocNav.astro';
+import '../styles/global.css';
+---
+
+<BaseLayout
+  title="Privacy — Prabal Banerjee"
+  description="Privacy notice for prabalbanerjee.xyz: what this static personal site collects, the third parties involved, and how to avoid them."
+>
+  <div class="terminal-content">
+    <DocNav current="privacy" />
+
+    <main>
+      <section id="privacy" class="doc">
+        <h1 class="sr-only">Privacy notice</h1>
+        <div class="terminal-prompt-line" aria-hidden="true">$ cat privacy.txt</div>
+
+        <p>
+          This is a personal website. It is a set of static files — there is no application server, no
+          database, no account system, no shopping cart and no form anywhere on it. I do not ask you
+          for your name, your email address or anything else, and there is nothing here for you to log
+          in to.
+        </p>
+
+        <h2>What the site itself collects</h2>
+        <p>
+          Nothing directly. The pages set no cookies of their own and store nothing in your browser
+          beyond the ordinary HTTP cache. Because the site is served from a static host, that host
+          keeps the usual web server request logs — IP address, user agent, requested path, timestamp —
+          which I do not have any special access to and do not use.
+        </p>
+
+        <h2>Third parties</h2>
+        <p>
+          Two third parties see your request, and you should know about both.
+        </p>
+        <p>
+          <strong>Google Analytics.</strong> Every page loads Google Analytics (property
+          UA-97017425-1) to count visits. It sets its own cookies and reports page views, approximate
+          location and device information back to Google. If you would rather not be counted, any
+          content blocker or the Google Analytics opt-out add-on will stop it, and the site works
+          exactly the same without it.
+        </p>
+        <p>
+          <strong>Google Fonts.</strong> Typefaces are requested from fonts.googleapis.com and
+          fonts.gstatic.com, which means Google sees your IP address and user agent when a page loads.
+        </p>
+        <p>
+          Links out to X, GitHub, LinkedIn, arXiv, publishers and other sites are ordinary links.
+          Once you follow one you are on somebody else's site under somebody else's privacy policy.
+        </p>
+
+        <h2>Automated clients</h2>
+        <p>
+          Crawlers and AI agents are welcome. <a href="/robots.txt">/robots.txt</a> allows everything,
+          <a href="/sitemap-index.xml">/sitemap-index.xml</a> lists every page, and
+          <a href="/llms.txt">/llms.txt</a> is a plain-text summary of the site written for machine
+          readers. Nothing here is behind a paywall, a login or a rate limit.
+        </p>
+
+        <h2>Changes and contact</h2>
+        <p>
+          If this notice changes, the change ships with the site and is visible in its public
+          <a href="https://github.com/prabal-banerjee/prabal-banerjee.github.io">source repository</a>,
+          which is the authoritative history of what this page has said. Questions about any of the
+          above can go to the contact addresses listed on the
+          <a href="/#contact">home page</a>.
+        </p>
+
+        <p class="back"><a href="/">&larr; back to the terminal</a></p>
+      </section>
+    </main>
+  </div>
+</BaseLayout>
+
+<style>
+  .doc {
+    max-width: 900px;
+  }
+
+  .doc p {
+    color: var(--subtext);
+    font-size: 0.85rem;
+    line-height: 1.8;
+    margin-bottom: 1.2rem;
+    max-width: 72ch;
+  }
+
+  .doc h2 {
+    color: var(--mauve);
+    font-size: 0.85rem;
+    font-weight: 700;
+    margin: 2rem 0 0.8rem;
+  }
+
+  .doc .back {
+    margin-top: 2.5rem;
+  }
+</style>

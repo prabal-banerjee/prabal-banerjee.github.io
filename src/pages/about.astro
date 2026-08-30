@@ -1,0 +1,79 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import DocNav from '../components/DocNav.astro';
+import '../styles/global.css';
+---
+
+<BaseLayout
+  title="About — Prabal Banerjee"
+  description="About Prabal Banerjee: Co-Founder of Avail, previously Lead Researcher at Polygon, and a cryptography researcher from the Indian Statistical Institute, Kolkata."
+>
+  <div class="terminal-content">
+    <DocNav current="about" />
+
+    <main>
+      <section id="about" class="doc">
+        <h1 class="sr-only">About Prabal Banerjee</h1>
+        <div class="terminal-prompt-line" aria-hidden="true">$ cat about.txt</div>
+
+        <p>
+          I am Prabal Banerjee, co-founder of <a href="https://www.availproject.org/">Avail</a>, where
+          I lead research and engineering. Avail is a modular blockchain infrastructure project built
+          around data availability — the problem of making sure that the data behind a block has
+          actually been published, so that anybody who wants to verify a chain is able to.
+        </p>
+
+        <p>
+          Before Avail I was Lead Researcher at Polygon (previously Matic Network) from 2020 to 2023,
+          working on improving a production proof-of-stake chain, contributing to scaling work such as
+          zkRollups, and designing, prototyping and leading the development of Avail itself while it
+          was still inside Polygon.
+        </p>
+
+        <p>
+          My academic background is in cryptology. I was a PhD student at the Cryptology and Security
+          Research Unit of the Indian Statistical Institute, Kolkata, from 2016 to 2020, and left
+          before finishing to work on blockchains full time. Before that I read for an MSc in Computer
+          Science at the Chennai Mathematical Institute and a BSc (Hons) in Computer Science at St.
+          Xavier's College, Kolkata. Along the way I interned with the blockchain teams at IBM
+          Research India, with Xoken Labs, with Oracle, and at Jadavpur University.
+        </p>
+
+        <p>
+          My published work sits mostly at the intersection of blockchains and cryptographic
+          fairness: fair digital exchange, griefing attacks on the Lightning Network, decentralised
+          marketplaces for content sharing, privacy-preserving data audit in the cloud, and
+          proof-of-work schemes that do something useful. The full list, with links to the papers and
+          their arXiv preprints, is on the <a href="/#publications">home page</a>.
+        </p>
+
+        <p>
+          I write occasionally. Essays are listed under <a href="/#writings">writings</a>. The best
+          way to reach me is on <a href="https://x.com/prabalbanerjee">X</a>; my code is on <a
+          href="https://github.com/prabal-banerjee">GitHub</a> and my other contact details are on
+          the <a href="/#contact">home page</a>.
+        </p>
+
+        <p class="back"><a href="/">&larr; back to the terminal</a></p>
+      </section>
+    </main>
+  </div>
+</BaseLayout>
+
+<style>
+  .doc {
+    max-width: 900px;
+  }
+
+  .doc p {
+    color: var(--subtext);
+    font-size: 0.85rem;
+    line-height: 1.8;
+    margin-bottom: 1.2rem;
+    max-width: 72ch;
+  }
+
+  .doc .back {
+    margin-top: 2.5rem;
+  }
+</style>
