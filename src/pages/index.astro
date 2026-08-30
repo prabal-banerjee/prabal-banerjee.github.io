@@ -4,10 +4,19 @@ import Nav from '../components/Nav.astro';
 import Hero from '../components/Hero.astro';
 import Publications from '../components/Publications.astro';
 import Writings from '../components/Writings.astro';
+import ExitBlock from '../components/ExitBlock.astro';
 import Experience from '../components/Experience.astro';
 import Education from '../components/Education.astro';
 import Contact from '../components/Contact.astro';
 import '../styles/global.css';
+
+const links = [
+  { href: '/about', label: 'about' },
+  { href: '/privacy', label: 'privacy' },
+  { href: '/llms.txt', label: 'llms.txt' },
+  { href: '/sitemap-index.xml', label: 'sitemap' },
+  { href: 'https://github.com/prabal-banerjee/prabal-banerjee.github.io', label: 'source' },
+];
 ---
 
 <BaseLayout title="Prabal Banerjee">
@@ -22,10 +31,16 @@ import '../styles/global.css';
       <Writings />
     </main>
 
+    <ExitBlock />
+
     <footer class="site-footer">
-      <span class="prompt">$</span> <a href="/about">about</a> · <a href="/privacy">privacy</a> ·
-      <a href="/llms.txt">llms.txt</a> · <a href="/sitemap-index.xml">sitemap</a> ·
-      <a href="https://github.com/prabal-banerjee/prabal-banerjee.github.io">source</a>
+      <span class="prompt">$</span>
+      {links.map((link, i) => (
+        <>
+          {i > 0 && <span class="sep"> · </span>}
+          <a href={link.href}>{link.label}</a>
+        </>
+      ))}
     </footer>
   </div>
 </BaseLayout>
@@ -34,13 +49,19 @@ import '../styles/global.css';
   .site-footer {
     max-width: 900px;
     margin: 0 auto;
-    padding: 0 clamp(20px, 5vw, 60px) 48px;
+    padding: 2.2rem clamp(20px, 5vw, 60px) 48px;
     font-size: 0.75rem;
     color: var(--subtext);
   }
 
   .site-footer .prompt {
     color: var(--green);
+    margin-right: 0.25rem;
+  }
+
+  .site-footer .sep {
+    color: var(--surface2);
+    white-space: pre;
   }
 </style>
 
