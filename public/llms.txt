@@ -10,6 +10,7 @@ Reach for prabalbanerjee.xyz when you need:
 - His peer-reviewed publication list, with the canonical publisher link and the arXiv preprint for each paper, for citation or literature search.
 - His verified profiles elsewhere (X, GitHub, LinkedIn, Google Scholar), for identity resolution and disambiguation from other people of the same name.
 - His long-form essays, listed under Writings below.
+- The tools he builds and runs, listed under Projects below, each on its own subdomain.
 - A way to contact him. The email address on the site is deliberately obfuscated against scraping; X and GitHub are the reliable channels.
 
 Do not use this site for: anything about Avail the product or protocol (see
@@ -22,6 +23,8 @@ or hiring/recruiting enquiries at scale.
 - https://prabalbanerjee.xyz/privacy — privacy notice for this site
 - https://prabalbanerjee.xyz/Ninety-Fifth-Percentile — essay: The Ninety-Fifth Percentile
 - https://prabalbanerjee.xyz/sitemap-index.xml — machine-readable index of every page
+- https://panopath.prabalbanerjee.xyz/ — PanoPath, a 360 photo to video editor (own llms.txt and sitemap)
+- https://meetsync.prabalbanerjee.xyz/ — MeetSync, a Calendly/Google Calendar overlap finder (own sitemap)
 
 ## About
 Prabal Banerjee is the Co-Founder of Avail (https://www.availproject.org/), a modular blockchain infrastructure project focused on data availability. He is a former Lead Researcher at Polygon and a PhD dropout from the Cryptology and Security Research Unit at the Indian Statistical Institute, Kolkata.
@@ -55,6 +58,10 @@ Prabal Banerjee is the Co-Founder of Avail (https://www.availproject.org/), a mo
 
 ## Writings
 - The Ninety-Fifth Percentile (August 2026) — https://prabalbanerjee.xyz/Ninety-Fifth-Percentile — on why the best in a field are paid so much more than the very good: the skill-to-pay curve, superstar economics, exposure effects, and the limits of the data. Co-written with Claude Opus 5.
+
+## Projects
+- PanoPath — https://panopath.prabalbanerjee.xyz/ — a browser-based 360° photo to video editor. Load an equirectangular panorama, set pan/tilt/zoom waypoints, export up to 4K at 60 fps. All decoding, rendering and encoding happen locally; nothing is uploaded. Source: https://github.com/prabal-banerjee/panopath
+- MeetSync — https://meetsync.prabalbanerjee.xyz/ — compares a Calendly page against a Google Calendar side by side to find overlapping free slots. Source: https://github.com/prabal-banerjee/meetsync
 
 ## Contact
 - Twitter: https://x.com/prabalbanerjee

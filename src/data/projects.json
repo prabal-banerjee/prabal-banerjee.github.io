@@ -1,0 +1,16 @@
+[
+  {
+    "title": "PanoPath",
+    "blurb": "A browser-based 360° photo to video editor. Load an equirectangular panorama, set camera waypoints for pan, tilt and zoom, and export up to 4K at 60 fps. Everything is decoded, rendered and encoded locally — no upload, no account.",
+    "meta": "Open source · panopath.prabalbanerjee.xyz",
+    "url": "https://panopath.prabalbanerjee.xyz/",
+    "source": "https://github.com/prabal-banerjee/panopath"
+  },
+  {
+    "title": "MeetSync",
+    "blurb": "Compares a Calendly page against your Google Calendar side by side, so overlapping free slots are easy to spot when scheduling across two systems.",
+    "meta": "Open source · meetsync.prabalbanerjee.xyz",
+    "url": "https://meetsync.prabalbanerjee.xyz/",
+    "source": "https://github.com/prabal-banerjee/meetsync"
+  }
+]
