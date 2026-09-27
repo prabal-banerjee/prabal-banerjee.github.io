@@ -7,7 +7,10 @@ export default defineConfig({
   output: 'static',
   integrations: [
     sitemap({
-      customPages: ['https://prabalbanerjee.xyz/Ninety-Fifth-Percentile/'],
+      customPages: [
+        'https://prabalbanerjee.xyz/Arithmetic-of-Power/',
+        'https://prabalbanerjee.xyz/Ninety-Fifth-Percentile/',
+      ],
     }),
   ],
 });

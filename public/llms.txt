@@ -21,6 +21,7 @@ or hiring/recruiting enquiries at scale.
 - https://prabalbanerjee.xyz/ — home: publications, experience, education, contact, writings
 - https://prabalbanerjee.xyz/about — long-form biography
 - https://prabalbanerjee.xyz/privacy — privacy notice for this site
+- https://prabalbanerjee.xyz/Arithmetic-of-Power — essay: The Arithmetic of Power
 - https://prabalbanerjee.xyz/Ninety-Fifth-Percentile — essay: The Ninety-Fifth Percentile
 - https://prabalbanerjee.xyz/sitemap-index.xml — machine-readable index of every page
 - https://panopath.prabalbanerjee.xyz/ — PanoPath, a 360 photo to video editor (own llms.txt and sitemap)
@@ -57,6 +58,7 @@ Prabal Banerjee is the Co-Founder of Avail (https://www.availproject.org/), a mo
 - BSc (Hons) Computer Science, St. Xavier's College Kolkata (2011–2014)
 
 ## Writings
+- The Arithmetic of Power (September 2026) — https://prabalbanerjee.xyz/Arithmetic-of-Power — on talent and state power: why power has always rested on a small circle of capable people, how nations train, attract or leak them, the role of universities and trust, and a country-by-country tally (US, UK, China, UAE, India). Co-written with Claude Opus 5.5.
 - The Ninety-Fifth Percentile (August 2026) — https://prabalbanerjee.xyz/Ninety-Fifth-Percentile — on why the best in a field are paid so much more than the very good: the skill-to-pay curve, superstar economics, exposure effects, and the limits of the data. Co-written with Claude Opus 5.
 
 ## Projects

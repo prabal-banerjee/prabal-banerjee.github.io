@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Arithmetic of Power</title>
+<meta name="description" content="Every power that mattered was built by a small circle of capable people and a state ambitious enough to use them. The difference now is that those people choose where to go.">
+<meta name="author" content="Prabal Banerjee">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="canonical" href="https://prabalbanerjee.xyz/Arithmetic-of-Power/">
+<link rel="sitemap" type="application/xml" href="/sitemap-index.xml">
+<link rel="alternate" type="text/plain" href="/llms.txt" title="Plain-text summary for AI agents">
+<meta property="og:type" content="article">
+<meta property="og:title" content="The Arithmetic of Power">
+<meta property="og:description" content="Every power that mattered was built by a small circle of capable people and a state ambitious enough to use them. The difference now is that those people choose where to go.">
+<meta property="og:url" content="https://prabalbanerjee.xyz/Arithmetic-of-Power/">
+<meta property="og:site_name" content="Prabal Banerjee">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://prabalbanerjee.xyz/og-arithmetic-of-power.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:alt" content="A nation drawn as a basin: training and attracting flow in, leaks drain out, over the title The Arithmetic of Power.">
+<meta property="article:published_time" content="2026-09-27">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@prabalbanerjee">
+<meta name="twitter:creator" content="@prabalbanerjee">
+<meta name="twitter:image" content="https://prabalbanerjee.xyz/og-arithmetic-of-power.png">
+<meta name="twitter:image:alt" content="A nation drawn as a basin: training and attracting flow in, leaks drain out, over the title The Arithmetic of Power.">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "The Arithmetic of Power", "description": "Every power that mattered was built by a small circle of capable people and a state ambitious enough to use them. The difference now is that those people choose where to go.", "url": "https://prabalbanerjee.xyz/Arithmetic-of-Power/", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://prabalbanerjee.xyz/Arithmetic-of-Power/"}, "datePublished": "2026-09-27", "inLanguage": "en", "image": "https://prabalbanerjee.xyz/og-arithmetic-of-power.png", "author": [{"@type": "Person", "@id": "https://prabalbanerjee.xyz/#prabal", "name": "Prabal Banerjee", "url": "https://prabalbanerjee.xyz"}, {"@type": "SoftwareApplication", "name": "Claude Opus 5.5", "applicationCategory": "AI language model", "url": "https://claude.ai"}], "publisher": {"@type": "Person", "@id": "https://prabalbanerjee.xyz/#prabal", "name": "Prabal Banerjee"}, "isPartOf": {"@type": "WebSite", "name": "Prabal Banerjee", "url": "https://prabalbanerjee.xyz"}, "about": ["talent migration", "state capacity", "brain drain", "higher education policy", "geopolitics"]}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..500&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ash:#E9EAE4;
+  --ash-deep:#DFE1D8;
+  --ink:#1A1C16;
+  --ink-soft:#585C4E;
+  --ink-faint:#8A8E7F;
+  --ochre:#B5822A;
+  --crimson:#98194F;
+  --rule:rgba(26,28,22,0.16);
+  --rule-soft:rgba(26,28,22,0.08);
+  --measure:34rem;
+  --wide:60rem;
+}
+*{box-sizing:border-box;}
+html{-webkit-text-size-adjust:100%;}
+body{
+  margin:0;
+  background:var(--ash);
+  color:var(--ink);
+  font-family:"Newsreader",Georgia,"Times New Roman",serif;
+  font-size:19px;
+  line-height:1.62;
+  font-weight:380;
+}
+.wrap{max-width:var(--wide);margin:0 auto;padding:0 1.5rem 6rem;}
+.col{max-width:var(--measure);margin-left:auto;margin-right:auto;}
+
+/* ---------- masthead ---------- */
+.sitebar{
+  display:flex;align-items:baseline;justify-content:space-between;gap:1rem;
+  padding:2.2rem 0 0;
+}
+.sitebar a{
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:.7rem;letter-spacing:.06em;text-transform:uppercase;
+  color:var(--ink-faint);text-decoration:none;
+  border-bottom:1px solid transparent;padding-bottom:2px;
+}
+.sitebar a:hover{color:var(--crimson);border-bottom-color:var(--crimson);}
+.sitebar .home::before{content:"\2190\00a0\00a0";}
+.masthead{padding:3.5rem 0 1rem;}
+h1{
+  font-family:"Bricolage Grotesque","Helvetica Neue",Arial,sans-serif;
+  font-variation-settings:"wdth" 88,"opsz" 96;
+  font-weight:750;
+  font-size:clamp(2.9rem,8.5vw,5.4rem);
+  line-height:.94;
+  letter-spacing:-.025em;
+  margin:0 0 1.3rem;
+  max-width:14ch;
+}
+h1 em{font-style:normal;color:var(--crimson);}
+.deck{
+  font-size:clamp(1.15rem,2.4vw,1.4rem);
+  line-height:1.45;
+  color:var(--ink-soft);
+  max-width:46ch;margin:0 0 2.2rem;
+  font-weight:350;
+}
+.byline{
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:.72rem;letter-spacing:.08em;color:var(--ink-soft);
+  border-top:1px solid var(--rule);padding-top:.9rem;
+}
+.byline a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--rule);}
+.byline a:hover{border-bottom-color:var(--crimson);color:var(--crimson);}
+.byline .handle{color:var(--ink-faint);}
+.byline .handle a{color:var(--ink-faint);}
+
+/* ---------- structure ---------- */
+h2{
+  font-family:"Bricolage Grotesque","Helvetica Neue",Arial,sans-serif;
+  font-variation-settings:"wdth" 92,"opsz" 40;
+  font-weight:700;
+  font-size:1.62rem;
+  line-height:1.12;
+  letter-spacing:-.015em;
+  margin:3.4rem 0 1.1rem;
+}
+h2 .mark{
+  display:block;
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:.66rem;font-weight:500;letter-spacing:.18em;
+  color:var(--crimson);text-transform:uppercase;
+  margin-bottom:.7rem;
+}
+p{margin:0 0 1.15rem;}
+p.lead{font-size:1.12rem;}
+a{color:var(--ink);text-decoration-color:var(--rule);text-underline-offset:2px;}
+a:hover{text-decoration-color:var(--crimson);}
+strong{font-weight:600;}
+
+.pull{
+  font-family:"Bricolage Grotesque","Helvetica Neue",Arial,sans-serif;
+  font-variation-settings:"wdth" 84,"opsz" 40;
+  font-weight:600;
+  font-size:clamp(1.4rem,3.4vw,1.85rem);
+  line-height:1.18;letter-spacing:-.02em;
+  color:var(--ink);
+  border-left:3px solid var(--crimson);
+  padding:.15rem 0 .15rem 1.15rem;
+  margin:2.4rem 0;
+}
+
+.quote{
+  margin:2.2rem 0;
+  padding:1.35rem 1.4rem;
+  background:var(--ash-deep);
+}
+.quote p{
+  font-size:1.18rem;line-height:1.4;margin:0 0 .7rem;font-style:italic;
+}
+.quote cite{
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-style:normal;font-size:.68rem;letter-spacing:.09em;
+  text-transform:uppercase;color:var(--ink-soft);
+}
+
+/* ---------- figures ---------- */
+figure{
+  margin:3rem auto;
+  max-width:var(--wide);
+}
+figure svg{width:100%;height:auto;display:block;}
+figcaption{
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:.7rem;line-height:1.55;letter-spacing:.02em;
+  color:var(--ink-soft);
+  border-top:1px solid var(--rule);
+  padding-top:.65rem;margin-top:.8rem;
+  max-width:none;width:100%;
+  margin-left:auto;margin-right:auto;text-align:center;
+}
+figcaption b{color:var(--ink);font-weight:600;}
+
+/* svg text classes */
+.t-label{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:12px;fill:var(--ink-soft);}
+.t-small{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:10.5px;fill:var(--ink-faint);letter-spacing:.06em;}
+.t-num{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:12px;fill:var(--ink);font-weight:500;}
+.t-head{font-family:"Bricolage Grotesque",Arial,sans-serif;font-size:15px;fill:var(--ink);font-weight:700;}
+.t-big{font-family:"Bricolage Grotesque",Arial,sans-serif;font-size:34px;fill:var(--ink);font-weight:750;}
+
+/* ---------- stat strip ---------- */
+.stats{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+  gap:1px;background:var(--rule);
+  border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);
+  margin:2.6rem auto;max-width:var(--wide);
+}
+.stat{background:var(--ash);padding:1.1rem 1rem;}
+.stat b{
+  display:block;
+  font-family:"Bricolage Grotesque",Arial,sans-serif;
+  font-variation-settings:"wdth" 85;
+  font-size:1.85rem;font-weight:750;line-height:1;letter-spacing:-.02em;
+  color:var(--crimson);margin-bottom:.45rem;
+}
+.stat span{
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:.68rem;line-height:1.5;color:var(--ink-soft);display:block;
+}
+
+/* ---------- sources ---------- */
+.sources{
+  margin-top:4rem;padding-top:1.2rem;border-top:2px solid var(--ink);
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:.72rem;line-height:1.75;color:var(--ink-soft);
+}
+.sources h3{
+  font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--ink);margin:0 0 .9rem;font-weight:600;
+}
+.sources li{margin-bottom:.5rem;}
+.sources ol{padding-left:1.4rem;margin:0;}
+
+@media (max-width:640px){
+  body{font-size:18px;}
+  .quote p{font-size:1.05rem;}
+}
+
+.fin{font-family:"Bricolage Grotesque","Helvetica Neue",Arial,sans-serif;font-variation-settings:"wdth" 86,"opsz" 96;font-weight:750;font-size:clamp(2.1rem,6vw,3.4rem);line-height:1;letter-spacing:-.025em;margin:2.6rem 0 0;}
+.fin em{font-style:normal;color:var(--crimson);}
+table.ledger{width:100%;border-collapse:collapse;margin:2.2rem 0;font-size:1rem;line-height:1.4;}
+table.ledger th{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:.66rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;text-align:left;color:var(--ink-soft);padding:0 .8rem .6rem 0;border-bottom:2px solid var(--ink);}
+table.ledger th + th{color:var(--crimson);}
+table.ledger td{padding:.75rem .8rem .75rem 0;border-bottom:1px solid var(--rule);vertical-align:top;}
+table.ledger td:first-child{color:var(--ink-soft);}
+table.ledger td + td{font-weight:500;}
+</style>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-CHFJDYGC7N"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-CHFJDYGC7N');
+</script>
+</head>
+<body>
+<div class="wrap">
+
+<nav class="sitebar col" aria-label="Site">
+  <a class="home" href="/">Prabal Banerjee</a>
+  <a href="/#writings">More writing</a>
+</nav>
+
+<header class="masthead col">
+<h1>The Arithmetic of <em>Power</em></h1>
+<p class="deck">Every power that mattered was built by a small circle of capable people and a state ambitious enough to use them. The difference now is that those people choose where to go.</p>
+<p class="byline">By <a href="https://prabalbanerjee.xyz">Prabal Banerjee</a> <span class="handle">(<a href="https://x.com/prabalbanerjee">@prabalbanerjee</a>)</span> and Claude Opus 5.5</p>
+</header>
+
+<section class="col">
+<p class="lead">Look behind any power that mattered and you find two things: a state with ambition, and a small number of people capable of carrying it out. Money, territory and armies followed from those two, rarely the other way round.</p>
+<p class="pull">A nation's success is roughly proportional to the talent it can harness, multiplied by the ambition of the state that directs it.</p>
+<p>What has changed is that talent now chooses. It crosses borders in weeks, not generations, and settles wherever it is trained, hired, trusted and used best. So the question for every state is no longer how much talent it has. It is how much it can keep, and what it does with it.</p>
+</section>
+
+<figure>
+<svg viewBox="0 0 900 480" role="img" aria-label="A nation as a basin: training and attracting flow in, leaks drain out, ambition turns what remains into reach">
+<defs>
+<marker id="ai" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#1A1C16"></path></marker>
+<marker id="ac" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#98194F"></path></marker>
+<marker id="ao" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#B5822A"></path></marker>
+</defs>
+<text class="t-head" x="40" y="40">Train</text>
+<text class="t-small" x="40" y="58">SCHOOLS · UNIVERSITIES · WORKPLACES</text>
+<path d="M 120 78 C 170 150, 250 180, 330 196" fill="none" stroke="#1A1C16" stroke-width="2.6" stroke-linecap="round" marker-end="url(#ai)"></path>
+<text class="t-head" x="860" y="40" style="text-anchor:end">Attract</text>
+<text class="t-small" x="860" y="58" style="text-anchor:end">JOBS · CAPITAL · PREDICTABLE RULES</text>
+<path d="M 780 78 C 730 150, 650 180, 570 196" fill="none" stroke="#1A1C16" stroke-width="2.6" stroke-linecap="round" marker-end="url(#ai)"></path>
+<polygon points="331.8,235 568.2,235 542,380 358,380" fill="#B5822A" fill-opacity="0.16"></polygon>
+<path d="M 331.8 235 Q 391 224 450 235 T 568.2 235" fill="none" stroke="#B5822A" stroke-width="1.5"></path>
+<polygon points="320,170 580,170 542,380 358,380" fill="none" stroke="#1A1C16" stroke-width="1.4" stroke-linejoin="round"></polygon>
+<text class="t-small" x="450" y="208" style="text-anchor:middle">A NATION</text>
+<text class="t-head" x="450" y="300" style="text-anchor:middle;font-size:19px">Talent harnessed</text>
+<text class="t-label" x="450" y="322" style="text-anchor:middle">what it keeps,</text>
+<text class="t-label" x="450" y="340" style="text-anchor:middle">not what it has</text>
+<path d="M 378 384 C 362 412, 300 424, 240 426" fill="none" stroke="#98194F" stroke-width="2.6" stroke-linecap="round" marker-end="url(#ac)"></path>
+<text class="t-head" x="40" y="454" fill="#98194F" style="fill:#98194F">Leak</text>
+<text class="t-small" x="40" y="472">EMIGRATION · RED TAPE · IDLE GRADUATES</text>
+<path d="M 522 384 C 538 412, 600 424, 660 426" fill="none" stroke="#B5822A" stroke-width="2.6" stroke-linecap="round" marker-end="url(#ao)"></path>
+<text class="t-head" x="860" y="454" style="text-anchor:end;fill:#8A6520">Ambition → reach</text>
+<text class="t-small" x="860" y="472" style="text-anchor:end">PORTS · FIRMS · STANDARDS · ALLIANCES</text>
+</svg>
+<figcaption><b>What a nation keeps.</b> Talent trained at home and attracted from abroad, minus what leaks away, is what a state actually has to work with. Ambition decides whether that turns into reach beyond its borders.</figcaption>
+</figure>
+
+<section class="col">
+<h2><span class="mark">01 — The court</span>Power has always been a few hundred people deep</h2>
+<div class="quote">
+<p>Sovereignty is possible only with assistance. A single wheel can never move.</p>
+<cite>Kautilya — <em>Arthashastra</em>, Book I (tr. R. Shamasastry, 1915)</cite>
+</div>
+<p>The states that rose fastest were the ones that collected minds. Persia's Sasanian kings took in the scholars Justinian expelled from Athens. The Abbasids paid translators at Baghdad's House of Wisdom to bring Greek and Sanskrit learning into Arabic. Chola temple colleges flourished in the same decades Chola fleets crossed the Bay of Bengal. Britain ran a subcontinent with barely a thousand Oxbridge-trained civil servants. The Birbal stories are mostly legend, but their moral holds: <em>a king is only as wise as the cleverest person he will listen to.</em></p>
+<p>The failure mode is a court that stops telling the truth. Saudi Arabia's The Line was sold as a 170-kilometre city for nine million people; by 2026 work had been halted with a sliver of it built. The problem was not simply a shortage of capital. It was whether capital was being directed toward plans that could survive contact with engineering, economics and execution, and my reading is that the court never forced that question. The same fund has since pivoted to ports and data centres, which is what a court that finally speaks up looks like.</p>
+</section>
+
+<section class="col">
+<h2><span class="mark">02 — Train, attract, or leak</span>Talent goes where it is trusted</h2>
+<p>Talent enters a country through the classroom or the job, and leaves when it stops trusting what comes next. Some states are trainers, like China and India. Some are attractors, like the UAE, where only about one resident in ten is a citizen. The United States has done both for a century, and immigrants founded more than half of its billion-dollar companies. Singapore's founder saw the logic early.</p>
+<div class="quote">
+<p>the more talent you have in a society, the better the society will grow</p>
+<cite>Lee Kuan Yew — Singapore's founding prime minister, 2011</cite>
+</div>
+<p>The fastest signal of that trust is where mobile money goes.</p>
+</section>
+
+<figure>
+<svg viewBox="0 0 900 372" role="img" aria-label="Projected 2025 net millionaire migration: UAE +9,800, United States +7,500, Saudi Arabia +2,400, India −3,500, China −7,800, United Kingdom −16,500">
+<text class="t-head" x="40" y="30">Where the mobile money went</text>
+<text class="t-small" x="40" y="48">PROJECTED NET MIGRATION OF MILLIONAIRES, 2025 · HENLEY &amp; PARTNERS</text>
+<line x1="266" y1="70" x2="266" y2="328" stroke="#1A1C16" stroke-opacity="0.18" stroke-dasharray="3 4"></line>
+<text class="t-small" x="266" y="348" style="text-anchor:middle">−15K</text>
+<line x1="376" y1="70" x2="376" y2="328" stroke="#1A1C16" stroke-opacity="0.18" stroke-dasharray="3 4"></line>
+<text class="t-small" x="376" y="348" style="text-anchor:middle">−10K</text>
+<line x1="486" y1="70" x2="486" y2="328" stroke="#1A1C16" stroke-opacity="0.18" stroke-dasharray="3 4"></line>
+<text class="t-small" x="486" y="348" style="text-anchor:middle">−5K</text>
+<line x1="706" y1="70" x2="706" y2="328" stroke="#1A1C16" stroke-opacity="0.18" stroke-dasharray="3 4"></line>
+<text class="t-small" x="706" y="348" style="text-anchor:middle">+5K</text>
+<line x1="816" y1="70" x2="816" y2="328" stroke="#1A1C16" stroke-opacity="0.18" stroke-dasharray="3 4"></line>
+<text class="t-small" x="816" y="348" style="text-anchor:middle">+10K</text>
+<text class="t-small" x="596" y="348" style="text-anchor:middle">0</text>
+<text class="t-label" x="185" y="93" style="text-anchor:end;fill:#1A1C16">UAE</text>
+<rect x="596" y="80" width="215.6" height="18" fill="#1A1C16" opacity="0.75"></rect>
+<text class="t-num" x="819.6" y="93">+9,800</text>
+<text class="t-label" x="185" y="135" style="text-anchor:end;fill:#1A1C16">United States</text>
+<rect x="596" y="122" width="165" height="18" fill="#1A1C16" opacity="0.75"></rect>
+<text class="t-num" x="769" y="135">+7,500</text>
+<text class="t-label" x="185" y="177" style="text-anchor:end;fill:#1A1C16">Saudi Arabia</text>
+<rect x="596" y="164" width="52.8" height="18" fill="#1A1C16" opacity="0.75"></rect>
+<text class="t-num" x="656.8" y="177">+2,400</text>
+<text class="t-label" x="185" y="219" style="text-anchor:end;fill:#1A1C16">India</text>
+<rect x="519" y="206" width="77" height="18" fill="#98194F"></rect>
+<text class="t-num" x="604" y="219" style="fill:#98194F">−3,500<tspan class="t-label"> · down from 5,100 in 2023</tspan></text>
+<text class="t-label" x="185" y="261" style="text-anchor:end;fill:#1A1C16">China</text>
+<rect x="424.4" y="248" width="171.6" height="18" fill="#98194F"></rect>
+<text class="t-num" x="604" y="261" style="fill:#98194F">−7,800<tspan class="t-label"></tspan></text>
+<text class="t-label" x="185" y="303" style="text-anchor:end;fill:#1A1C16">United Kingdom</text>
+<rect x="233" y="290" width="363" height="18" fill="#98194F"></rect>
+<text class="t-num" x="604" y="303" style="fill:#98194F">−16,500<tspan class="t-label"> · a record outflow</tspan></text>
+<line x1="596" y1="70" x2="596" y2="328" stroke="#1A1C16" stroke-width="1.2"></line>
+</svg>
+<figcaption><b>Wealth moves toward predictability.</b> Henley &amp; Partners' projected net flows for 2025, people with at least $1 million in liquid wealth. Projections made before this year's Gulf war.</figcaption>
+</figure>
+
+<section class="col">
+<p>Britain, one of the richest countries on earth, is set to lose more millionaires than any nation on record after a decade of shifting tax rules. India's outflow, by contrast, has shrunk three years running. The pattern is not rich versus poor. It is predictable versus not.</p>
+<p>No position is permanent. AI researchers moving to the United States, the greatest talent magnet in history, have fallen 89% since 2017, most of it in a single year. And for every foreign student enrolled in an Indian university, more than twenty Indians are studying abroad; the chief executives of Google, Microsoft, Adobe and IBM were all schooled in India and made their careers, and their citizenship, in America. <strong>A trainer that cannot retain is subsidising its rivals.</strong></p>
+
+<h2><span class="mark">03 — The universities</span>Where a state manufactures its court</h2>
+<p>Eight of the world's ten best universities are American or British, and that is not an accident of history. When Sputnik flew in 1957, Washington answered within a year with the National Defense Education Act. It understood it was losing a talent race before it was losing a space race.</p>
+<p>India is running the experiment in reverse. It has more ranked universities than ever, but none in the global top 100 for academic reputation, and education has been quietly losing its place in the budget.</p>
+</section>
+
+<figure>
+<svg viewBox="0 0 900 400" role="img" aria-label="India: Union education share of spending fell from 4.6% to 2.5%, states from 17% to 13%. Education spend as share of GDP: UK 5.9, US 5.4, Germany 5.2, India 2.7 to 2.9, China 4.0, Japan 3.3">
+<text class="t-head" x="40" y="30">A shrinking slice of India's budgets</text>
+<text class="t-small" x="40" y="48">EDUCATION SPENDING · INDIAN EXPRESS BUDGET ANALYSIS; UNESCO UIS; CBGA</text>
+<text class="t-small" x="40" y="80">SHARE OF TOTAL GOVT SPENDING, INDIA</text>
+<text class="t-small" x="520" y="80">PUBLIC EDUCATION SPEND, % OF GDP</text>
+<line x1="70" y1="340" x2="440" y2="340" stroke="#1A1C16" stroke-opacity="0.5"></line><text class="t-small" x="62" y="344" style="text-anchor:end">0%</text>
+<line x1="70" y1="272.5" x2="440" y2="272.5" stroke="#1A1C16" stroke-opacity="0.12"></line><text class="t-small" x="62" y="276.5" style="text-anchor:end">5%</text>
+<line x1="70" y1="205" x2="440" y2="205" stroke="#1A1C16" stroke-opacity="0.12"></line><text class="t-small" x="62" y="209" style="text-anchor:end">10%</text>
+<line x1="70" y1="137.5" x2="440" y2="137.5" stroke="#1A1C16" stroke-opacity="0.12"></line><text class="t-small" x="62" y="141.5" style="text-anchor:end">15%</text>
+<line x1="130" y1="110.5" x2="330" y2="164.5" stroke="#1A1C16" stroke-width="2.6"></line><circle cx="130" cy="110.5" r="5" fill="#1A1C16"></circle><circle cx="330" cy="164.5" r="5" fill="#1A1C16"></circle>
+<text class="t-num" x="118" y="114.5" style="text-anchor:end;fill:#1A1C16">17%</text><text class="t-num" x="342" y="168.5" style="fill:#1A1C16">13%</text><text class="t-label" x="342" y="184.5">States (avg.)</text>
+<line x1="130" y1="277.9" x2="330" y2="306.2" stroke="#98194F" stroke-width="2.6"></line><circle cx="130" cy="277.9" r="5" fill="#98194F"></circle><circle cx="330" cy="306.2" r="5" fill="#98194F"></circle>
+<text class="t-num" x="118" y="281.9" style="text-anchor:end;fill:#98194F">4.6%</text><text class="t-num" x="342" y="310.2" style="fill:#98194F">2.5%</text><text class="t-label" x="342" y="326.2">Union govt</text>
+<text class="t-label" x="130" y="368" style="text-anchor:middle">2013–14</text><text class="t-label" x="330" y="368" style="text-anchor:middle">2025–26 BE</text>
+<text class="t-label" x="590" y="113" style="text-anchor:end">UK</text><rect x="600" y="100" width="208.8" height="18" fill="#1A1C16" opacity="0.35"></rect><text class="t-num" x="828" y="113">5.9%</text>
+<text class="t-label" x="590" y="151" style="text-anchor:end">US</text><rect x="600" y="138" width="191.1" height="18" fill="#1A1C16" opacity="0.35"></rect><text class="t-num" x="828" y="151">5.4%</text>
+<text class="t-label" x="590" y="189" style="text-anchor:end">Germany</text><rect x="600" y="176" width="184" height="18" fill="#1A1C16" opacity="0.35"></rect><text class="t-num" x="828" y="189">5.2%</text>
+<text class="t-label" x="590" y="227" style="text-anchor:end;fill:#B5822A;font-weight:600">India</text>
+<rect x="600" y="214" width="102.6" height="18" fill="#B5822A"></rect>
+<text class="t-num" x="828" y="227" style="fill:#8A6520">2.7–2.9%</text>
+<text class="t-label" x="590" y="265" style="text-anchor:end">China</text><rect x="600" y="252" width="141.5" height="18" fill="#1A1C16" opacity="0.35"></rect><text class="t-num" x="828" y="265">4.0%</text>
+<text class="t-label" x="590" y="303" style="text-anchor:end">Japan</text><rect x="600" y="290" width="116.8" height="18" fill="#1A1C16" opacity="0.35"></rect><text class="t-num" x="828" y="303">3.3%</text>
+<line x1="812.3" y1="92" x2="812.3" y2="330" stroke="#98194F" stroke-width="1.4" stroke-dasharray="4 4"></line><text class="t-small" x="812.3" y="346" style="text-anchor:middle;fill:#98194F">6% TARGET (1966)</text>
+</svg>
+<figcaption><b>The budget tells the priority.</b> Left: education's share of Union and average state spending, from an Indian Express analysis of budget documents (2025–26 are estimates). Right: public education spending as a share of GDP. India's bar is budget-level analysis by CBGA and the Economic Survey; other countries use UNESCO data, which counts more broadly.</figcaption>
+</figure>
+
+<section class="col">
+<p>The target India set itself in 1966 was 6% of GDP. It spends roughly half that, and its share of both Union and state budgets is lower than a decade ago. That is how a country ends up training brilliant undergraduates and exporting the graduate degree, the lab and the company that follows.</p>
+
+<h2><span class="mark">04 — Countries make companies</span>Not the other way round</h2>
+<p class="pull">Countries do not dominate because they have great firms. They make ordinary firms great by giving them the world's talent, then defend the lead with state power.</p>
+</section>
+
+<figure>
+<svg viewBox="0 0 900 250" role="img" aria-label="Notable AI models released in 2025: United States 59, China 35, South Korea 8">
+<text class="t-head" x="40" y="30">Two countries built almost every notable model</text>
+<text class="t-small" x="40" y="48">NOTABLE AI MODELS RELEASED IN 2025, BY DEVELOPER'S COUNTRY · STANFORD AI INDEX 2026</text>
+<text class="t-label" x="185" y="104" style="text-anchor:end;fill:#1A1C16">United States</text><rect x="200" y="84" width="590" height="28" fill="#1A1C16" opacity="0.75"></rect><text class="t-big" x="802" y="110" style="font-size:26px">59</text>
+<text class="t-label" x="185" y="154" style="text-anchor:end;fill:#1A1C16">China</text><rect x="200" y="134" width="350" height="28" fill="#B5822A" opacity="1"></rect><text class="t-big" x="562" y="160" style="font-size:26px">35</text>
+<text class="t-label" x="185" y="204" style="text-anchor:end;fill:#1A1C16">South Korea</text><rect x="200" y="184" width="80" height="28" fill="#1A1C16" opacity="0.3"></rect><text class="t-big" x="292" y="210" style="font-size:26px">8</text>
+</svg>
+<figcaption><b>A two-country race.</b> Stanford HAI, 2026 AI Index Report, using Epoch AI's count of notable models.</figcaption>
+</figure>
+
+<section class="col">
+<p>America outspent China on AI roughly 23 to one, yet the gap between their best models is under 3%, because China now writes more of the world's AI research than anyone. Money buys compute. Talent density decides what it produces. Both governments know it: Trump flew to Beijing in May with Nvidia's Jensen Huang in tow, and by September the two states had agreed a standing AI dialogue. The talent sits in the companies. The strategy sits in the state.</p>
+<p>The same logic runs through capital. Britain's empire was a chain of coaling stations and chokepoints; today China holds stakes in 129 overseas port projects, Dubai's DP World runs 82 terminals in over 40 countries, and India owns Haifa's port. A stake in a port buys leverage. It still takes people to run it.</p>
+
+<h2><span class="mark">05 — Money is not enough</span>Incentives attract. Trust retains.</h2>
+<p>Every ambitious government now runs the same playbook: nomad visas, tax holidays, land in a special zone. Malaysia did all of it for Balaji Srinivasan's Network School. Then, amid an election-season controversy in July 2026, local authorities revoked the operator's licence over its premises and signage, and the campus was ordered shut. Whatever the merits of the licensing case, the episode showed the clash at the heart of every talent strategy: incentives are written for founders, but enforcement answers to local politics. Kazakhstan signed the school the next day. Its offer will be tested the first time the campus becomes politically inconvenient.</p>
+<table class="ledger">
+<thead><tr><th>What the brochure says</th><th>What actually keeps people</th></tr></thead>
+<tbody>
+<tr><td>Low or zero income tax</td><td>Rules that will not change retroactively</td></tr>
+<tr><td>Fast-track visas</td><td>Visas that do not become political footballs</td></tr>
+<tr><td>Subsidies and free zones</td><td>Officials who clear files rather than extract from them</td></tr>
+</tbody>
+</table>
+<p>India shows the gap most sharply, because the money is already there. Incentive schemes and startup funds have multiplied. The ground a founder walks on has not moved as fast.</p>
+</section>
+
+<figure>
+<svg viewBox="0 0 900 400" role="img" aria-label="Of 69,233 compliance requirements, 26,134 carry a possible prison term: about 38 in every 100">
+<text class="t-head" x="40" y="30">Two in five business rules carry a jail term</text>
+<text class="t-small" x="40" y="48">EACH SQUARE = 1% OF 69,233 COMPLIANCE REQUIREMENTS · ORF, 2022</text>
+<rect x="40" y="72" width="26" height="26" fill="#98194F" opacity="1"></rect>
+<rect x="71" y="72" width="26" height="26" fill="#98194F" opacity="1"></rect>
+<rect x="102" y="72" width="26" height="26" fill="#98194F" opacity="1"></rect>
+<rect x="133" y="72" width="26" height="26" fill="#98194F" opacity="1"></rect>
+<rect x="164" y="72" width="26" height="26" fill="#98194F" opacity="1"></rect>
+<rect x="195" y="72" width="26" height="26" fill="#98194F" opacity="1"></rect>
+<rect x="226" y="72" width="26" height="26" fill="#98194F" opacity="1"></rect>
+<rect x="257" y="72" width="26" height="26" fill="#98194F" opacity="1"></rect>
+<rect x="288" y="72" width="26" height="26" fill="#98194F" opacity="1"></rect>
+<rect x="319" y="72" width="26" height="26" fill="#98194F" opacity="1"></rect>
+<rect x="40" y="103" width="26" height="26" fill="#98194F" opacity="1"></rect>
+<rect x="71" y="103" width="26" height="26" fill="#98194F" opacity="1"></rect>
+<rect x="102" y="103" width="26" height="26" fill="#98194F" opacity="1"></rect>
+<rect x="133" y="103" width="26" height="26" fill="#98194F" opacity="1"></rect>
+<rect x="164" y="103" width="26" height="26" fill="#98194F" opacity="1"></rect>
+<rect x="195" y="103" width="26" height="26" fill="#98194F" opacity="1"></rect>
+<rect x="226" y="103" width="26" height="26" fill="#98194F" opacity="1"></rect>
+<rect x="257" y="103" width="26" height="26" fill="#98194F" opacity="1"></rect>
+<rect x="288" y="103" width="26" height="26" fill="#98194F" opacity="1"></rect>
+<rect x="319" y="103" width="26" height="26" fill="#98194F" opacity="1"></rect>
+<rect x="40" y="134" width="26" height="26" fill="#98194F" opacity="1"></rect>
+<rect x="71" y="134" width="26" height="26" fill="#98194F" opacity="1"></rect>
+<rect x="102" y="134" width="26" height="26" fill="#98194F" opacity="1"></rect>
+<rect x="133" y="134" width="26" height="26" fill="#98194F" opacity="1"></rect>
+<rect x="164" y="134" width="26" height="26" fill="#98194F" opacity="1"></rect>
+<rect x="195" y="134" width="26" height="26" fill="#98194F" opacity="1"></rect>
+<rect x="226" y="134" width="26" height="26" fill="#98194F" opacity="1"></rect>
+<rect x="257" y="134" width="26" height="26" fill="#98194F" opacity="1"></rect>
+<rect x="288" y="134" width="26" height="26" fill="#98194F" opacity="1"></rect>
+<rect x="319" y="134" width="26" height="26" fill="#98194F" opacity="1"></rect>
+<rect x="40" y="165" width="26" height="26" fill="#98194F" opacity="1"></rect>
+<rect x="71" y="165" width="26" height="26" fill="#98194F" opacity="1"></rect>
+<rect x="102" y="165" width="26" height="26" fill="#98194F" opacity="1"></rect>
+<rect x="133" y="165" width="26" height="26" fill="#98194F" opacity="1"></rect>
+<rect x="164" y="165" width="26" height="26" fill="#98194F" opacity="1"></rect>
+<rect x="195" y="165" width="26" height="26" fill="#98194F" opacity="1"></rect>
+<rect x="226" y="165" width="26" height="26" fill="#98194F" opacity="1"></rect>
+<rect x="257" y="165" width="26" height="26" fill="#98194F" opacity="1"></rect>
+<rect x="288" y="165" width="26" height="26" fill="#1A1C16" opacity="0.1"></rect>
+<rect x="319" y="165" width="26" height="26" fill="#1A1C16" opacity="0.1"></rect>
+<rect x="40" y="196" width="26" height="26" fill="#1A1C16" opacity="0.1"></rect>
+<rect x="71" y="196" width="26" height="26" fill="#1A1C16" opacity="0.1"></rect>
+<rect x="102" y="196" width="26" height="26" fill="#1A1C16" opacity="0.1"></rect>
+<rect x="133" y="196" width="26" height="26" fill="#1A1C16" opacity="0.1"></rect>
+<rect x="164" y="196" width="26" height="26" fill="#1A1C16" opacity="0.1"></rect>
+<rect x="195" y="196" width="26" height="26" fill="#1A1C16" opacity="0.1"></rect>
+<rect x="226" y="196" width="26" height="26" fill="#1A1C16" opacity="0.1"></rect>
+<rect x="257" y="196" width="26" height="26" fill="#1A1C16" opacity="0.1"></rect>
+<rect x="288" y="196" width="26" height="26" fill="#1A1C16" opacity="0.1"></rect>
+<rect x="319" y="196" width="26" height="26" fill="#1A1C16" opacity="0.1"></rect>
+<rect x="40" y="227" width="26" height="26" fill="#1A1C16" opacity="0.1"></rect>
+<rect x="71" y="227" width="26" height="26" fill="#1A1C16" opacity="0.1"></rect>
+<rect x="102" y="227" width="26" height="26" fill="#1A1C16" opacity="0.1"></rect>
+<rect x="133" y="227" width="26" height="26" fill="#1A1C16" opacity="0.1"></rect>
+<rect x="164" y="227" width="26" height="26" fill="#1A1C16" opacity="0.1"></rect>
+<rect x="195" y="227" width="26" height="26" fill="#1A1C16" opacity="0.1"></rect>
+<rect x="226" y="227" width="26" height="26" fill="#1A1C16" opacity="0.1"></rect>
+<rect x="257" y="227" width="26" height="26" fill="#1A1C16" opacity="0.1"></rect>
+<rect x="288" y="227" width="26" height="26" fill="#1A1C16" opacity="0.1"></rect>
+<rect x="319" y="227" width="26" height="26" fill="#1A1C16" opacity="0.1"></rect>
+<rect x="40" y="258" width="26" height="26" fill="#1A1C16" opacity="0.1"></rect>
+<rect x="71" y="258" width="26" height="26" fill="#1A1C16" opacity="0.1"></rect>
+<rect x="102" y="258" width="26" height="26" fill="#1A1C16" opacity="0.1"></rect>
+<rect x="133" y="258" width="26" height="26" fill="#1A1C16" opacity="0.1"></rect>
+<rect x="164" y="258" width="26" height="26" fill="#1A1C16" opacity="0.1"></rect>
+<rect x="195" y="258" width="26" height="26" fill="#1A1C16" opacity="0.1"></rect>
+<rect x="226" y="258" width="26" height="26" fill="#1A1C16" opacity="0.1"></rect>
+<rect x="257" y="258" width="26" height="26" fill="#1A1C16" opacity="0.1"></rect>
+<rect x="288" y="258" width="26" height="26" fill="#1A1C16" opacity="0.1"></rect>
+<rect x="319" y="258" width="26" height="26" fill="#1A1C16" opacity="0.1"></rect>
+<rect x="40" y="289" width="26" height="26" fill="#1A1C16" opacity="0.1"></rect>
+<rect x="71" y="289" width="26" height="26" fill="#1A1C16" opacity="0.1"></rect>
+<rect x="102" y="289" width="26" height="26" fill="#1A1C16" opacity="0.1"></rect>
+<rect x="133" y="289" width="26" height="26" fill="#1A1C16" opacity="0.1"></rect>
+<rect x="164" y="289" width="26" height="26" fill="#1A1C16" opacity="0.1"></rect>
+<rect x="195" y="289" width="26" height="26" fill="#1A1C16" opacity="0.1"></rect>
+<rect x="226" y="289" width="26" height="26" fill="#1A1C16" opacity="0.1"></rect>
+<rect x="257" y="289" width="26" height="26" fill="#1A1C16" opacity="0.1"></rect>
+<rect x="288" y="289" width="26" height="26" fill="#1A1C16" opacity="0.1"></rect>
+<rect x="319" y="289" width="26" height="26" fill="#1A1C16" opacity="0.1"></rect>
+<rect x="40" y="320" width="26" height="26" fill="#1A1C16" opacity="0.1"></rect>
+<rect x="71" y="320" width="26" height="26" fill="#1A1C16" opacity="0.1"></rect>
+<rect x="102" y="320" width="26" height="26" fill="#1A1C16" opacity="0.1"></rect>
+<rect x="133" y="320" width="26" height="26" fill="#1A1C16" opacity="0.1"></rect>
+<rect x="164" y="320" width="26" height="26" fill="#1A1C16" opacity="0.1"></rect>
+<rect x="195" y="320" width="26" height="26" fill="#1A1C16" opacity="0.1"></rect>
+<rect x="226" y="320" width="26" height="26" fill="#1A1C16" opacity="0.1"></rect>
+<rect x="257" y="320" width="26" height="26" fill="#1A1C16" opacity="0.1"></rect>
+<rect x="288" y="320" width="26" height="26" fill="#1A1C16" opacity="0.1"></rect>
+<rect x="319" y="320" width="26" height="26" fill="#1A1C16" opacity="0.1"></rect>
+<rect x="40" y="351" width="26" height="26" fill="#1A1C16" opacity="0.1"></rect>
+<rect x="71" y="351" width="26" height="26" fill="#1A1C16" opacity="0.1"></rect>
+<rect x="102" y="351" width="26" height="26" fill="#1A1C16" opacity="0.1"></rect>
+<rect x="133" y="351" width="26" height="26" fill="#1A1C16" opacity="0.1"></rect>
+<rect x="164" y="351" width="26" height="26" fill="#1A1C16" opacity="0.1"></rect>
+<rect x="195" y="351" width="26" height="26" fill="#1A1C16" opacity="0.1"></rect>
+<rect x="226" y="351" width="26" height="26" fill="#1A1C16" opacity="0.1"></rect>
+<rect x="257" y="351" width="26" height="26" fill="#1A1C16" opacity="0.1"></rect>
+<rect x="288" y="351" width="26" height="26" fill="#1A1C16" opacity="0.1"></rect>
+<rect x="319" y="351" width="26" height="26" fill="#1A1C16" opacity="0.1"></rect>
+<text class="t-big" x="420" y="120" style="fill:#98194F">26,134</text><text class="t-label" x="420" y="142">requirements that can send a founder to jail</text>
+<text class="t-big" x="420" y="210">69,233</text><text class="t-label" x="420" y="232">compliance requirements in all</text>
+<text class="t-big" x="420" y="300" style="fill:#98194F">2 in 3</text><text class="t-label" x="420" y="322">businesses surveyed paid a bribe in the past year</text>
+</svg>
+<figcaption><b>The friction on the ground.</b> Chikermane &amp; Agrawal, <em>Jailed for Doing Business</em>, Observer Research Foundation (2022); bribery figure from the LocalCircles India Business Corruption Survey (2024). Around 180 provisions were decriminalised in 2023, with more promised.</figcaption>
+</figure>
+
+<section class="col">
+<div class="quote">
+<p>The system is such that it pays to be below the regulatory radar.</p>
+<cite>Gautam Chikermane — Observer Research Foundation, 2022</cite>
+</div>
+<p>India has begun closing that gap. PhonePe moved its domicile back in 2022, Groww followed in 2024, and Zepto later joined them, while companies including Razorpay and Meesho pursued similar moves. A 2024 reform created a fast-track route for inbound mergers, making future reverse flips substantially easier.</p>
+<p class="pull">Capital follows friction removed, not money announced.</p>
+<p>Removing friction is slow, unglamorous work. Its benefits often arrive beyond an electoral cycle, while its costs are immediate and concentrated. That gives every political system a version of the same problem: how to preserve attention for long-term state capacity when short-term demands are louder. Different systems solve that problem differently—and fail at it differently too. Britain has spent a decade protecting what its median voter already has; Indian states compete on pre-election handouts while education's share of their budgets falls. The Gulf's small, well-provided citizenries free their states to look outward, though that bargain has costs of its own, as the UAE learned under Iranian missiles this year. Ambition needs spare attention, and talent can tell which governments have it.</p>
+
+<h2><span class="mark">06 — The tally</span>No country comes out clean</h2>
+<p>America built the greatest talent machine in history and is watching it slow. Britain makes world-class minds and loses the wealth they create. China trains at unmatched scale and still loses its rich. The UAE attracts brilliantly and is learning what openness costs. India trains superbly, has begun removing friction, and still exports too much of what it trains.</p>
+<p>Talent no longer belongs to the country that produced it. It is on loan, renewed each year to whichever state it trusts most.</p>
+<p class="fin">The next great power will be the country the world's best people <em>choose to build in.</em></p>
+</section>
+
+<section class="col sources">
+<h3>Sources</h3>
+<ol>
+<li>Kautilya, <em>Arthashastra</em>, Book I, tr. R. Shamasastry (1915).</li>
+<li>Bloomberg (April 2024) and Semafor (22 May 2026) on The Line. <a href="https://www.semafor.com/article/05/22/2026/saudis-neom-halts-work-on-the-line-until-after-2030">semafor.com</a></li>
+<li>Lee Kuan Yew, South Asian Diaspora Convention, 22 July 2011, via <a href="https://workpermit.com/node/26120">workpermit.com</a></li>
+<li>Henley &amp; Partners, <em>Private Wealth Migration Report</em> 2025 and 2024.</li>
+<li>Stanford HAI, <em>2026 AI Index Report</em>. <a href="https://hai.stanford.edu/ai-index/2026-ai-index-report/research-and-development">hai.stanford.edu</a></li>
+<li>Ministry of External Affairs, Students Registration Portal (about 1.25 million Indians in foreign higher education, January 2025); Ministry of Education, AISHE 2023–24 (58,134 foreign students enrolled in India), via <a href="https://thepienews.com/india-attracts-students-from-173-countries-as-overseas-enrolment-rises-19/">thepienews.com</a></li>
+<li>QS, <em>World University Rankings 2027</em>, 18 June 2026. <a href="https://kyodonewsprwire.jp/release/202606181045">QS release</a></li>
+<li><em>Indian Express</em> analysis of education budget shares, 21 July 2026, via <a href="https://www.civilsdaily.com/news/alongside-centre-states-education-expenditure-too-declined-over-past-12-years/">civilsdaily.com</a>; Centre for Budget and Governance Accountability, <a href="https://www.cbgaindia.org/inthe-media/indias-public-spending-education-less-3-gdp-kothari-commission-wanted-6/">cbgaindia.org</a>; Economic Survey 2023–24; UNESCO UIS via the <a href="https://data.worldbank.org/indicator/SE.XPD.TOTL.GD.ZS?locations=IN">World Bank</a>.</li>
+<li>Reuters and AP on the Trump–Xi summit, May 2026; Axios and AP on the US–China AI dialogue, 26 September 2026.</li>
+<li>Council on Foreign Relations, <em>China's Overseas Ports</em> tracker. <a href="https://www.cfr.org/tracker/china-overseas-ports">cfr.org</a>; DP World.</li>
+<li>The Block and The Star on Network School, July 2026. <a href="https://www.thestar.com.my/news/nation/2026/07/22/network-school-heading-to-kazakhstan-after-johor-operations-halted">thestar.com.my</a></li>
+<li>Chikermane &amp; Agrawal, <em>Jailed for Doing Business</em>, ORF, 2022. <a href="https://orfonline.org/jailed-for-doing-business">orfonline.org</a>; Business Today, August 2022.</li>
+<li>LocalCircles, <em>India Business Corruption Survey 2024</em>, via <a href="https://www.outlookbusiness.com/news/66-businesses-surveyed-paid-a-bribe-in-the-last-12-months">outlookbusiness.com</a></li>
+<li>Outlook Business on reverse flips and the 2024 fast-track rule. <a href="https://www.outlookbusiness.com/start-up/zeptos-homecoming-gets-nclt-nod-how-indian-start-ups-reverse-flipping-concept-work">outlookbusiness.com</a></li>
+<li>Associated Press, 19 May 2026, on the UAE and the Iran war.</li>
+<li>Historical material draws on standard histories.</li>
+</ol>
+</section>
+
+</div>
+
+<script>
+/* Read-depth + engaged-time reporting for GA4. */
+(function(){
+  if(!window.gtag) return;
+  var marks = [25, 50, 75, 100];
+  var fired = {};
+  var start = Date.now();
+  var completed = false;
+
+  function depth(){
+    var doc = document.documentElement;
+    var scrollable = doc.scrollHeight - window.innerHeight;
+    if(scrollable <= 0) return 100;
+    return Math.min(100, Math.round((window.pageYOffset / scrollable) * 100));
+  }
+
+  function check(){
+    var d = depth();
+    for(var i = 0; i < marks.length; i++){
+      var m = marks[i];
+      if(d >= m && !fired[m]){
+        fired[m] = true;
+        gtag('event', 'read_depth', {
+          percent: m,
+          seconds: Math.round((Date.now() - start) / 1000)
+        });
+      }
+    }
+    if(d >= 90 && !completed && (Date.now() - start) > 60000){
+      completed = true;
+      gtag('event', 'read_complete', {
+        seconds: Math.round((Date.now() - start) / 1000)
+      });
+    }
+  }
+
+  var ticking = false;
+  window.addEventListener('scroll', function(){
+    if(ticking) return;
+    ticking = true;
+    window.requestAnimationFrame(function(){ check(); ticking = false; });
+  }, {passive: true});
+  check();
+})();
+</script>
+</body>
+</html>
