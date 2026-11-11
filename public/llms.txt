@@ -23,6 +23,7 @@ or hiring/recruiting enquiries at scale.
 - https://prabalbanerjee.xyz/privacy — privacy notice for this site
 - https://prabalbanerjee.xyz/Arithmetic-of-Power — essay: The Arithmetic of Power
 - https://prabalbanerjee.xyz/Ninety-Fifth-Percentile — essay: The Ninety-Fifth Percentile
+- https://prabalbanerjee.xyz/Five-Million-Variants-One-Hypothesis/ — essay: Five Million Variants, One Hypothesis
 - https://prabalbanerjee.xyz/sitemap-index.xml — machine-readable index of every page
 - https://panopath.prabalbanerjee.xyz/ — PanoPath, a 360 photo to video editor (own llms.txt and sitemap)
 - https://meetsync.prabalbanerjee.xyz/ — MeetSync, a Calendly/Google Calendar overlap finder (own sitemap)
@@ -58,6 +59,7 @@ Prabal Banerjee is the Co-Founder of Avail (https://www.availproject.org/), a mo
 - BSc (Hons) Computer Science, St. Xavier's College Kolkata (2011–2014)
 
 ## Writings
+- Five Million Variants, One Hypothesis (November 2026) — https://prabalbanerjee.xyz/Five-Million-Variants-One-Hypothesis/ — on the science and social potential of rare-disease genomics, AI-assisted variant prioritization, and participatory medicine. Describes a public hackathon analysis as a research hypothesis, not a diagnosis. Co-written with Codex (GPT-5.6-sol); controlled genomic data are not published.
 - The Arithmetic of Power (September 2026) — https://prabalbanerjee.xyz/Arithmetic-of-Power — on talent and state power: why power has always rested on a small circle of capable people, how nations train, attract or leak them, the role of universities and trust, and a country-by-country tally (US, UK, China, UAE, India). Co-written with Claude Opus 5.5.
 - The Ninety-Fifth Percentile (August 2026) — https://prabalbanerjee.xyz/Ninety-Fifth-Percentile — on why the best in a field are paid so much more than the very good: the skill-to-pay curve, superstar economics, exposure effects, and the limits of the data. Co-written with Claude Opus 5.
 

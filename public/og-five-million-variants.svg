@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="Five million variants. One hypothesis. An evidence funnel narrows a rare-disease genome to a testable question.">
+  <rect width="1200" height="630" fill="#E9EAE4"/>
+  <rect x="828" width="372" height="630" fill="#DFE1D8"/>
+  <path d="M830 0V630" stroke="#1A1C16" stroke-opacity=".14"/>
+  <text x="65" y="148" fill="#1A1C16" font-family="Arial, sans-serif" font-size="76" font-weight="800" letter-spacing="-3">Five million</text>
+  <text x="65" y="236" fill="#1A1C16" font-family="Arial, sans-serif" font-size="76" font-weight="800" letter-spacing="-3">variants.</text>
+  <text x="65" y="324" fill="#98194F" font-family="Arial, sans-serif" font-size="76" font-weight="800" letter-spacing="-3">One hypothesis.</text>
+  <text x="67" y="398" fill="#585C4E" font-family="monospace" font-size="21">How AI and open science make a rare-disease</text>
+  <text x="67" y="429" fill="#585C4E" font-family="monospace" font-size="21">genome an investigable question.</text>
+  <path d="M65 553H1135" stroke="#1A1C16" stroke-opacity=".24"/>
+  <text x="65" y="585" fill="#8A8E7F" font-family="monospace" font-size="16" letter-spacing="1">PRABAL BANERJEE  ·  CODEX (GPT-5.6-SOL)</text>
+  <text x="870" y="116" fill="#98194F" font-family="monospace" font-size="20" letter-spacing="2">EVIDENCE FUNNEL</text>
+  <text x="870" y="183" fill="#1A1C16" font-family="Arial, sans-serif" font-size="52" font-weight="700">5,012,204</text>
+  <text x="870" y="212" fill="#585C4E" font-family="monospace" font-size="16">GENOMIC VARIANTS</text>
+  <path d="M875 235H1120L1065 325H930Z" fill="#B5822A" fill-opacity=".23" stroke="#B5822A"/>
+  <text x="914" y="290" fill="#1A1C16" font-family="monospace" font-size="16">FILTER · RANK</text>
+  <path d="M930 339H1065L1027 416H968Z" fill="#98194F" fill-opacity=".17" stroke="#98194F"/>
+  <text x="955" y="384" fill="#1A1C16" font-family="monospace" font-size="14">CROSS-CHECK</text>
+  <path d="M999 431V489" stroke="#98194F" stroke-width="3"/>
+  <path d="M991 480L999 493L1007 480" fill="none" stroke="#98194F" stroke-width="3"/>
+  <text x="987" y="539" fill="#98194F" font-family="Arial, sans-serif" font-size="67" font-weight="800">1</text>
+</svg>

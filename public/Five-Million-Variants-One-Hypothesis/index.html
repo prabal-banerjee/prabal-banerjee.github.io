@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Five Million Variants, One Hypothesis</title>
+<meta name="description" content="AI and open science could make rarity less isolating—and turn millions of neglected genetic mysteries into questions that can finally be attempted.">
+<meta name="author" content="Prabal Banerjee">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="canonical" href="https://prabalbanerjee.xyz/Five-Million-Variants-One-Hypothesis/">
+<link rel="sitemap" type="application/xml" href="/sitemap-index.xml">
+<link rel="alternate" type="text/plain" href="/llms.txt" title="Plain-text summary for AI agents">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Five Million Variants, One Hypothesis">
+<meta property="og:description" content="AI and open science could make rarity less isolating—and turn millions of neglected genetic mysteries into questions that can finally be attempted.">
+<meta property="og:url" content="https://prabalbanerjee.xyz/Five-Million-Variants-One-Hypothesis/">
+<meta property="og:site_name" content="Prabal Banerjee">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://prabalbanerjee.xyz/og-five-million-variants.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:alt" content="Five million variants. One hypothesis. An evidence funnel narrows a rare-disease genome to a testable question.">
+<meta property="article:published_time" content="2026-11-11">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@prabalbanerjee">
+<meta name="twitter:creator" content="@prabalbanerjee">
+<meta name="twitter:image" content="https://prabalbanerjee.xyz/og-five-million-variants.png">
+<meta name="twitter:image:alt" content="Five million variants. One hypothesis. An evidence funnel narrows a rare-disease genome to a testable question.">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Five Million Variants, One Hypothesis","description":"AI and open science could make rarity less isolating—and turn millions of neglected genetic mysteries into questions that can finally be attempted.","url":"https://prabalbanerjee.xyz/Five-Million-Variants-One-Hypothesis/","mainEntityOfPage":{"@type":"WebPage","@id":"https://prabalbanerjee.xyz/Five-Million-Variants-One-Hypothesis/"},"datePublished":"2026-11-11","inLanguage":"en","image":"https://prabalbanerjee.xyz/og-five-million-variants.png","author":[{"@type":"Person","@id":"https://prabalbanerjee.xyz/#prabal","name":"Prabal Banerjee","url":"https://prabalbanerjee.xyz"},{"@type":"SoftwareApplication","name":"Codex (GPT-5.6-sol)","applicationCategory":"AI language model","url":"https://openai.com/codex/"}],"publisher":{"@type":"Person","@id":"https://prabalbanerjee.xyz/#prabal","name":"Prabal Banerjee"},"isPartOf":{"@type":"WebSite","name":"Prabal Banerjee","url":"https://prabalbanerjee.xyz"},"about":["rare disease genomics","variant prioritization","mosaic variegated aneuploidy","AI-assisted scientific research","participatory medicine"]}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&amp;family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..500&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-CHFJDYGC7N"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-CHFJDYGC7N');
+</script>
+<style>
+:root{
+  --ash:#E9EAE4;
+  --ash-deep:#DFE1D8;
+  --ink:#1A1C16;
+  --ink-soft:#585C4E;
+  --ink-faint:#8A8E7F;
+  --ochre:#B5822A;
+  --crimson:#98194F;
+  --rule:rgba(26,28,22,.16);
+  --rule-soft:rgba(26,28,22,.08);
+  --measure:38rem;
+  --figure:56rem;
+  --wide:64rem;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;max-width:100%;overflow-x:hidden}
+body{
+  margin:0;background:var(--ash);color:var(--ink);
+  font-family:"Newsreader",Georgia,"Times New Roman",serif;
+  font-size:19px;line-height:1.62;font-weight:380;
+  max-width:100%;overflow-x:hidden;
+}
+.wrap{width:100%;max-width:var(--wide);margin:0 auto;padding:0 1.5rem 6rem;min-width:0}
+.col{width:100%;max-width:var(--measure);margin-left:auto;margin-right:auto;min-width:0}
+.sitebar{display:flex;align-items:baseline;justify-content:space-between;gap:1rem;padding:2.2rem 0 0}
+.sitebar a{
+  font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:.7rem;
+  letter-spacing:.06em;text-transform:uppercase;color:var(--ink-faint);text-decoration:none;
+}
+.sitebar a{border-bottom:1px solid transparent;padding-bottom:2px}
+.sitebar a:hover{color:var(--crimson);border-bottom-color:var(--crimson)}
+.sitebar .home::before{content:"\2190\00a0\00a0"}
+.masthead{padding:3.5rem 0 1rem}
+h1{
+  font-family:"Bricolage Grotesque","Helvetica Neue",Arial,sans-serif;
+  font-variation-settings:"wdth" 88,"opsz" 96;font-weight:750;
+  font-size:clamp(3rem,8.8vw,5.6rem);line-height:.92;letter-spacing:-.03em;
+  margin:0 0 1.45rem;max-width:13ch;
+}
+h1 em{font-style:normal;color:var(--crimson)}
+.deck{font-size:clamp(1.15rem,2.4vw,1.4rem);line-height:1.45;color:var(--ink-soft);max-width:48ch;margin:0 0 2.2rem;font-weight:350}
+.byline{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:.72rem;line-height:1.65;letter-spacing:.06em;color:var(--ink-soft);border-top:1px solid var(--rule);padding-top:.9rem}
+.byline a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--rule)}
+.byline a:hover{border-bottom-color:var(--crimson);color:var(--crimson)}
+.byline .handle,.byline .handle a{color:var(--ink-faint)}
+h2{
+  font-family:"Bricolage Grotesque","Helvetica Neue",Arial,sans-serif;
+  font-variation-settings:"wdth" 92,"opsz" 40;font-weight:700;
+  font-size:1.62rem;line-height:1.12;letter-spacing:-.015em;margin:3.4rem 0 1.1rem;
+}
+h2 .mark{display:block;font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:.66rem;font-weight:500;letter-spacing:.18em;color:var(--crimson);text-transform:uppercase;margin-bottom:.7rem}
+p{margin:0 0 1.15rem}
+p.lead{font-size:1.12rem}
+a{color:var(--ink);text-decoration-color:var(--rule);text-underline-offset:2px}
+a:hover{text-decoration-color:var(--crimson)}
+strong{font-weight:600}
+.pull{
+  font-family:"Bricolage Grotesque","Helvetica Neue",Arial,sans-serif;
+  font-variation-settings:"wdth" 84,"opsz" 40;font-weight:600;
+  font-size:clamp(1.4rem,3.4vw,1.85rem);line-height:1.18;letter-spacing:-.02em;
+  border-left:3px solid var(--crimson);padding:.15rem 0 .15rem 1.15rem;margin:2.4rem 0;
+}
+.note{margin:2.2rem 0;padding:1.25rem 1.4rem;background:var(--ash-deep)}
+.note .note-title{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--crimson);margin-bottom:.55rem}
+.note p{font-size:1rem;line-height:1.5;margin:0}
+figure{margin:3rem auto;max-width:var(--figure)}
+.diagram-scroll{overflow-x:auto;max-width:100%;overscroll-behavior-inline:contain}
+.diagram-scroll:focus-visible{outline:2px solid var(--crimson);outline-offset:4px}
+figure svg{width:100%;height:auto;display:block;overflow:visible}
+figcaption{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:.7rem;line-height:1.55;letter-spacing:.02em;color:var(--ink-soft);border-top:1px solid var(--rule);padding-top:.65rem;margin-top:.8rem;text-align:center}
+figcaption b{color:var(--ink);font-weight:600}
+.t-label{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:12px;fill:var(--ink-soft)}
+.t-small{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:10.5px;fill:var(--ink-faint);letter-spacing:.06em}
+.t-num{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:12px;fill:var(--ink);font-weight:500}
+.t-head{font-family:"Bricolage Grotesque",Arial,sans-serif;font-size:15px;fill:var(--ink);font-weight:700}
+.t-big{font-family:"Bricolage Grotesque",Arial,sans-serif;font-size:34px;fill:var(--ink);font-weight:750}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--rule);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);margin:2.6rem auto;max-width:var(--figure)}
+.stat{background:var(--ash);padding:1.1rem 1rem;min-width:0}
+.stat b{display:block;font-family:"Bricolage Grotesque",Arial,sans-serif;font-variation-settings:"wdth" 85;font-size:1.85rem;font-weight:750;line-height:1;letter-spacing:-.02em;color:var(--crimson);margin-bottom:.45rem}
+.stat span{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:.68rem;line-height:1.5;color:var(--ink-soft);display:block}
+.method{width:100%;border-collapse:collapse;margin:2.2rem 0;font-size:1rem;line-height:1.4}
+.method th{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:.66rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;text-align:left;color:var(--ink-soft);padding:0 .8rem .6rem 0;border-bottom:2px solid var(--ink)}
+.method th + th{color:var(--crimson)}
+.method td{padding:.75rem .8rem .75rem 0;border-bottom:1px solid var(--rule);vertical-align:top}
+.method td:first-child{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:.77rem;color:var(--ink-soft);white-space:nowrap}
+.method td:last-child{font-weight:500}
+.variant{margin:2rem 0;border-top:2px solid var(--ink);border-bottom:1px solid var(--rule);padding:1rem 0}
+.variant-row{display:grid;grid-template-columns:7rem 1fr;gap:1rem;padding:.75rem 0;border-bottom:1px solid var(--rule-soft)}
+.variant-row:last-child{border-bottom:0}
+.variant dt{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-faint)}
+.variant dd{margin:0;font-size:.98rem;line-height:1.45}
+.code{
+  margin:2rem 0;padding:1.15rem 1.25rem;background:var(--ink);color:var(--ash);
+  font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:.72rem;line-height:1.7;
+  overflow-x:auto;border-left:4px solid var(--ochre);
+}
+.code .dim{color:#AEB1A7}.code .hot{color:#E8B65D}.code .result{color:#E79ABA}
+.sources{margin-top:4rem;padding-top:1.2rem;border-top:2px solid var(--ink);font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:.72rem;line-height:1.75;color:var(--ink-soft)}
+.sources h3{font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink);margin:0 0 .9rem;font-weight:600}
+.sources li{margin-bottom:.6rem}.sources ol{padding-left:1.4rem;margin:0}
+.fin{font-family:"Bricolage Grotesque","Helvetica Neue",Arial,sans-serif;font-variation-settings:"wdth" 86,"opsz" 96;font-weight:750;font-size:clamp(2.1rem,6vw,3.5rem);line-height:1;letter-spacing:-.025em;margin:2.8rem 0 0}
+.fin em{font-style:normal;color:var(--crimson)}
+@media(max-width:700px){
+  body{font-size:18px}.stats{grid-template-columns:repeat(2,1fr)}
+  .variant-row{grid-template-columns:1fr;gap:.25rem}
+  figure.wide{margin-left:0;margin-right:0;max-width:100%}
+  figure.wide::before{content:"↔  Scroll diagram";display:block;font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-faint);margin:0 0 .65rem .7rem}
+  figure.wide svg{width:900px;max-width:none}
+  figure.wide figcaption{width:100%;margin:.8rem 0 0}
+  .method{display:block;max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch}
+}
+@media(max-width:420px){.stats{grid-template-columns:1fr}.sitebar{align-items:flex-start}.sitebar a:last-child{text-align:right}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<main class="wrap">
+
+<nav class="sitebar col" aria-label="Site">
+  <a class="home" href="https://prabalbanerjee.xyz/">Prabal Banerjee</a>
+  <a href="https://prabalbanerjee.xyz/#writings">More writing</a>
+</nav>
+
+<header class="masthead col">
+  <h1>Five million variants. <em>One hypothesis.</em></h1>
+  <p class="deck">A disease can be too uncommon for a market, a clinical trial or even a nearby specialist. It should not be too uncommon for the world’s knowledge to gather around one patient.</p>
+  <p class="byline">By <a href="https://prabalbanerjee.xyz/">Prabal Banerjee</a> <span class="handle">(<a href="https://x.com/prabalbanerjee">@prabalbanerjee</a>)</span> and Codex (GPT‑5.6‑sol)</p>
+</header>
+
+<section class="col">
+  <p class="lead">Imagine that a child’s illness has been seen only a handful of times—or perhaps never in exactly the same form. There may be no specialist in their city, no established treatment and no pharmaceutical company for whom the numbers make commercial sense. Yet somewhere in the world may already exist every fragment needed to understand what went wrong.</p>
+  <p>One laboratory has seen a similar genetic change. A database knows that it is almost absent from healthy populations. A paper describes what the affected protein does. Another family has reported overlapping symptoms. A structural model shows the part of the protein that may have broken. Rare-disease medicine often fails not because nothing is known, but because the pieces are scattered across institutions, countries and technical languages.</p>
+  <p class="pull">The promise of AI is not that it knows the answer. It is that no useful fragment of knowledge has to remain alone.</p>
+  <p>More than 7,000 rare diseases collectively affect over 300 million people, most beginning in childhood. Each condition is uncommon; the underlying problem is not. Millions of families are trying to assemble explanations from evidence too dispersed for any one clinician, researcher or patient group to continuously track.</p>
+  <p>That is beginning to change. Sequencing can turn a person’s biology into data that software can search. Public databases record which genetic changes have appeared in healthy populations and which have been linked to disease. Shared vocabularies let symptoms described in different hospitals be compared. AlphaFold offers a predicted view of proteins that once required years of laboratory work to see. AI can move between these layers, translate their specialist languages and help preserve the logic of an investigation.</p>
+  <p>In Australia, AI entrepreneur Paul Conyngham used AI to navigate unfamiliar genomics after his dog Rosie’s aggressive cancer persisted through conventional treatment. He then worked with sequencing facilities and university researchers to pursue a treatment built around her tumour’s mutations. The story made international news not because a chatbot cured cancer—the science and care came from specialists—but because it showed what becomes possible when sophisticated science is navigable beyond the small circle already fluent in it.</p>
+  <p>The result could be larger than faster diagnosis. Families could become active research participants. Patient groups could organise knowledge that no market has an incentive to collect. Engineers could build tools around neglected conditions. Researchers could expose well-bounded questions to thousands of capable people. When knowledge can gather around one patient, rarity no longer has to mean isolation.</p>
+  <p>The hackathon described here was one small test of that future. A controlled genome from a real rare-disease case contained 5,012,204 candidate differences. The task was to use today’s open scientific infrastructure to reduce those five million possibilities to one hypothesis worth testing.</p>
+</section>
+
+<figure class="wide">
+<div class="diagram-scroll" tabindex="0" role="region" aria-label="Scrollable diagram"><svg viewBox="0 0 900 355" role="img" aria-label="A layered scientific stack turns a genome and phenotype into a testable hypothesis">
+  <defs>
+    <marker id="arrow-ink" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#1A1C16"/></marker>
+    <marker id="arrow-red" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#98194F"/></marker>
+  </defs>
+  <text class="t-head" x="40" y="32">The rare-disease analysis stack</text>
+  <text class="t-small" x="40" y="51">EACH LAYER MAKES THE NEXT ONE POSSIBLE</text>
+  <rect x="40" y="94" width="178" height="92" fill="#1A1C16"/>
+  <text x="129" y="129" text-anchor="middle" style="font:700 18px 'Bricolage Grotesque';fill:#E9EAE4">Patient data</text>
+  <text x="129" y="153" text-anchor="middle" style="font:11px 'IBM Plex Mono';fill:#C9CBC2">GENOME · PHENOTYPE</text>
+  <path d="M224 140H282" stroke="#1A1C16" stroke-width="2.5" marker-end="url(#arrow-ink)"/>
+  <rect x="298" y="76" width="184" height="128" fill="#B5822A" fill-opacity=".18" stroke="#B5822A"/>
+  <text class="t-head" x="390" y="111" text-anchor="middle">Scientific commons</text>
+  <text class="t-small" x="390" y="137" text-anchor="middle">CLINVAR · GNOMAD · HPO</text>
+  <text class="t-small" x="390" y="158" text-anchor="middle">ENSEMBL · ALPHAFOLD</text>
+  <text class="t-small" x="390" y="179" text-anchor="middle">OPEN SOFTWARE</text>
+  <path d="M488 140H546" stroke="#98194F" stroke-width="3" marker-end="url(#arrow-red)"/>
+  <rect x="562" y="76" width="146" height="128" rx="5" fill="#98194F"/>
+  <text x="635" y="122" text-anchor="middle" style="font:700 19px 'Bricolage Grotesque';fill:#E9EAE4">Machine</text>
+  <text x="635" y="146" text-anchor="middle" style="font:700 19px 'Bricolage Grotesque';fill:#E9EAE4">reasoning</text>
+  <text x="635" y="174" text-anchor="middle" style="font:10px 'IBM Plex Mono';fill:#F0C4D6">FILTER · LINK · CHECK</text>
+  <path d="M714 140H764" stroke="#98194F" stroke-width="3" marker-end="url(#arrow-red)"/>
+  <circle cx="817" cy="140" r="47" fill="#DFE1D8" stroke="#1A1C16"/>
+  <text class="t-head" x="817" y="135" text-anchor="middle">Testable</text>
+  <text class="t-head" x="817" y="155" text-anchor="middle">hypothesis</text>
+  <path d="M817 193V246" stroke="#1A1C16" stroke-width="2" marker-end="url(#arrow-ink)"/>
+  <rect x="667" y="261" width="193" height="58" fill="#DFE1D8" stroke="#1A1C16" stroke-opacity=".25"/>
+  <text class="t-head" x="764" y="286" text-anchor="middle">Human validation</text>
+  <text class="t-small" x="764" y="306" text-anchor="middle">FAMILY · LAB · CLINIC</text>
+  <path d="M667 290C475 329 244 318 129 201" fill="none" stroke="#1A1C16" stroke-width="1.7" stroke-dasharray="5 5" marker-end="url(#arrow-ink)"/>
+</svg></div>
+<figcaption><b>A stack, not a chatbot.</b> AI connects patient data to a scientific commons and helps produce hypotheses. Families, laboratories and clinicians close the loop.</figcaption>
+</figure>
+
+<section class="col">
+  <h2><span class="mark">01 — The benchmark</span>A real genome, not a toy problem</h2>
+  <p>The <a href="https://huggingface.co/spaces/SageBio/rare-disease-real-kid-mva-hackathon-2026">Rare Disease, Real Kid: MVA Hackathon</a> invited public participants to analyse a controlled-access genome and rank the variant pair most likely to cause a child’s illness. A genome is not a clean program with one obvious bug. Every person carries millions of differences, nearly all harmless; some matter only when inherited in a particular combination, in a particular gene, against a particular clinical history.</p>
+  <p>The task was therefore not simply to find something unusual. It was to distinguish two consequential letters from millions of normal ones, connect them to the same biological mechanism, and assemble enough independent evidence to justify the claim. The signal can be one letter, while a biologically elegant story can still be wrong.</p>
+  <p>The analysis followed two constraints. Clinical features (the phenotype) and genetic variants (the genotype) were examined separately before they were allowed to meet. And AI output never counted as biological evidence. AI could translate a term, write a parser, propose a check or locate a database; every material claim still had to survive a primary source or a calculation on the supplied data.</p>
+</section>
+
+<div class="stats" aria-label="Analysis funnel statistics">
+  <div class="stat"><b>5,012,204</b><span>VARIANT RECORDS IN THE STARTING VCF</span></div>
+  <div class="stat"><b>18,146</b><span>CODING OR SPLICE CANDIDATES AFTER ANNOTATION</span></div>
+  <div class="stat"><b>≈5,000</b><span>DISEASE GENES RANKED FROM PHENOTYPE</span></div>
+  <div class="stat"><b>1 pair</b><span>FINAL TESTABLE HYPOTHESIS</span></div>
+</div>
+
+<section class="col">
+  <h2><span class="mark">02 — Two searches</span>Read the symptoms. Read the genome.</h2>
+  <p>The safest way to fool yourself is to find an interesting mutation and retrofit the symptoms around it. We ran the search in both directions instead.</p>
+  <p><strong>Phenotype first:</strong> clinical observations were translated into Human Phenotype Ontology terms. A small Python program measured semantic similarity between that set and the known phenotype profile of each disease gene. This is more useful than keyword matching: “poor growth” and a more specific growth abnormality can be biologically close even when the words differ.</p>
+  <p><strong>Genotype first:</strong> the variant call format (VCF) file—a list of differences from a reference genome—was inventoried, quality checked, and annotated locally. We retained variants likely to alter a protein or essential splice site, then asked whether they were technically convincing, rare in the general population, compatible with an inheritance model, and supported by clinical databases.</p>
+</section>
+
+<figure class="wide">
+<div class="diagram-scroll" tabindex="0" role="region" aria-label="Scrollable diagram"><svg viewBox="0 0 900 430" role="img" aria-label="Phenotype and genotype analysis streams converge on one candidate gene and variant pair">
+  <defs>
+    <marker id="a1" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#1A1C16"/></marker>
+    <marker id="a2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#98194F"/></marker>
+  </defs>
+  <text class="t-head" x="40" y="30">Convergence, not intuition</text>
+  <text class="t-small" x="40" y="49">TWO INDEPENDENT PATHS · ONE SHARED ANSWER</text>
+  <text class="t-small" x="70" y="91" style="fill:#98194F">PHENOTYPE PATH</text>
+  <rect x="70" y="108" width="205" height="60" fill="#98194F" fill-opacity=".12" stroke="#98194F"/>
+  <text class="t-head" x="88" y="133">Clinical observations</text><text class="t-label" x="88" y="153">mapped to HPO concepts</text>
+  <path d="M275 138H340" stroke="#98194F" stroke-width="2" marker-end="url(#a2)"/>
+  <rect x="355" y="108" width="205" height="60" fill="#98194F" fill-opacity=".12" stroke="#98194F"/>
+  <text class="t-head" x="373" y="133">Semantic ranking</text><text class="t-label" x="373" y="153">≈5,000 disease genes</text>
+  <text class="t-small" x="70" y="247">GENOTYPE PATH</text>
+  <rect x="70" y="264" width="150" height="60" fill="#1A1C16" fill-opacity=".06" stroke="#1A1C16"/>
+  <text class="t-head" x="88" y="289">Whole genome</text><text class="t-label" x="88" y="309">5.01m records</text>
+  <path d="M220 294H260" stroke="#1A1C16" stroke-width="2" marker-end="url(#a1)"/>
+  <rect x="275" y="264" width="150" height="60" fill="#1A1C16" fill-opacity=".06" stroke="#1A1C16"/>
+  <text class="t-head" x="293" y="289">Consequence</text><text class="t-label" x="293" y="309">18,146 candidates</text>
+  <path d="M425 294H465" stroke="#1A1C16" stroke-width="2" marker-end="url(#a1)"/>
+  <rect x="470" y="258" width="170" height="72" fill="#1A1C16" fill-opacity=".06" stroke="#1A1C16"/>
+  <text class="t-head" x="555" y="282" text-anchor="middle">Evidence</text>
+  <text class="t-label" x="555" y="305" text-anchor="middle">rare · damaging</text>
+  <text class="t-label" x="555" y="321" text-anchor="middle">inheritance fits</text>
+  <path d="M560 168C585 208 625 214 669 214" fill="none" stroke="#98194F" stroke-width="2.5" marker-end="url(#a2)"/>
+  <path d="M640 294C656 277 669 257 683 240" fill="none" stroke="#1A1C16" stroke-width="2.5" marker-end="url(#a1)"/>
+  <circle cx="754" cy="219" r="92" fill="#B5822A" fill-opacity=".18" stroke="#B5822A" stroke-width="2"/>
+  <text x="754" y="202" text-anchor="middle" style="font:750 30px 'Bricolage Grotesque';fill:#1A1C16">BUB1B</text>
+  <text x="754" y="226" text-anchor="middle" style="font:11px 'IBM Plex Mono';fill:#585C4E">ONE GENE</text>
+  <text x="754" y="245" text-anchor="middle" style="font:11px 'IBM Plex Mono';fill:#585C4E">TWO ALLELES</text>
+  <line x1="70" y1="380" x2="830" y2="380" stroke="#1A1C16" stroke-opacity=".16"/>
+  <text class="t-small" x="450" y="405" text-anchor="middle">THE ANSWER HAD TO SURVIVE BOTH SEARCHES</text>
+</svg></div>
+<figcaption><b>Independent evidence met at BUB1B.</b> The phenotype ranker elevated the gene without seeing the variants; the genome search elevated the variants without being told to find that gene.</figcaption>
+</figure>
+
+<section class="col">
+  <h2><span class="mark">03 — The funnel</span>Five million is manageable when every filter has a reason</h2>
+  <p>A language model did not “read the genome.” Ordinary bioinformatics tools performed the deterministic work; AI helped assemble, inspect and challenge the workflow around them.</p>
+
+  <table class="method">
+    <thead><tr><th>Question</th><th>Tool</th><th>What counted</th></tr></thead>
+    <tbody>
+      <tr><td>Is the call real?</td><td>VCF fields, bcftools</td><td>PASS status, depth, balanced allele reads, genotype quality</td></tr>
+      <tr><td>What could it do?</td><td>bcftools/csq, Ensembl</td><td>Stop, frameshift, splice, missense, or in-frame consequence</td></tr>
+      <tr><td>Is it too common?</td><td>gnomAD</td><td>Frequency in population samples and people carrying two copies; these participants are not necessarily healthy</td></tr>
+      <tr><td>Has anyone seen it?</td><td>ClinVar, MANE</td><td>Clinical classifications, mapped to a shared reference transcript</td></tr>
+      <tr><td>Does the gene fit?</td><td>HPO + Resnik score</td><td>Independent similarity to the clinical presentation</td></tr>
+      <tr><td>Is the protein story plausible?</td><td>AlphaFold, CADD, REVEL</td><td>Structure and prediction as support—not proof</td></tr>
+    </tbody>
+  </table>
+
+  <div class="code" aria-label="Simplified analysis pipeline">
+    <span class="dim"># schematic — controlled data stayed local</span><br>
+    bcftools csq <span class="hot">--fasta-ref GRCh38.fa --gff Ensembl.gff3</span> sample.vcf.gz<br>
+    python extract_coding_candidates.py annotated.vcf.gz candidates.tsv<br>
+    python rank_phenotype_genes.py <span class="hot">--obo hp.obo --annotations genes_to_phenotype.txt</span> …<br>
+    <span class="result">→ intersect phenotype fit × inheritance × variant evidence</span>
+  </div>
+
+  <p>The privacy boundary mattered. The clinical document, raw reads, VCF, and patient-level working tables never entered the public repository. Annotation databases were downloaded locally. Coordinates were not pasted into public web tools. Only reusable code, aggregate counts, methods, and the final competition answer were published.</p>
+</section>
+
+<section class="col">
+  <h2><span class="mark">04 — The hypothesis</span>Could both copies of a checkpoint gene be impaired?</h2>
+  <p>The two searches converged on <strong>BUB1B</strong>, a gene involved in the machinery that checks whether chromosomes are correctly attached before a cell divides. When both copies are sufficiently impaired, cells can end up with the wrong number of chromosomes. That mechanism is associated with mosaic variegated aneuploidy syndrome 1 and cancer predisposition.</p>
+
+  <dl class="variant">
+    <div class="variant-row"><dt>Allele one</dt><dd><strong>chr15:40209701 T→G</strong> · <code>p.Leu737Ter</code> · a premature stop signal</dd></div>
+    <div class="variant-row"><dt>Evidence</dt><dd>High-quality heterozygous call; ClinVar Pathogenic/Likely pathogenic; very rare in population data; no observed homozygotes in the local gnomAD comparison.</dd></div>
+    <div class="variant-row"><dt>Allele two</dt><dd><strong>chr15:40220612 T→G</strong> · <code>p.Asn1002Lys</code> · a missense change in the C-terminal region</dd></div>
+    <div class="variant-row"><dt>Evidence</dt><dd>High-quality heterozygous call; population singleton; several damaging predictions; high-confidence AlphaFold region. Retained as a variant of uncertain significance (VUS), not promoted to “pathogenic.”</dd></div>
+  </dl>
+
+  <p>The proposed model was <em>compound heterozygosity</em>: a different variant on each copy of <strong>BUB1B</strong>. Because the dataset contained only the child, we could not establish whether the variants were on opposite chromosomes or determine which parent contributed either allele. The two variants were 10.9 kilobases apart—too far for ordinary short reads to phase confidently.</p>
+  <div class="note">
+    <div class="note-title">The line we would not cross</div>
+    <p>This is a strong competition hypothesis, not a diagnosis. The second allele remains uncertain, phase is unresolved, structural variants were not comprehensively excluded, and parental testing would be the next decisive experiment.</p>
+  </div>
+</section>
+
+<figure class="wide">
+<div class="diagram-scroll" tabindex="0" role="region" aria-label="Scrollable diagram"><svg viewBox="0 0 900 390" role="img" aria-label="Proposed compound heterozygous model in BUB1B with one stop variant and one uncertain missense variant">
+  <text class="t-head" x="40" y="30">The proposed inheritance model</text>
+  <text class="t-small" x="40" y="49">TWO COPIES OF CHROMOSOME 15 · PHASE UNRESOLVED · PARENTAL TESTING PREFERRED</text>
+  <text class="t-label" x="55" y="136">COPY A</text>
+  <line x1="145" y1="130" x2="820" y2="130" stroke="#1A1C16" stroke-width="8" stroke-linecap="round" opacity=".72"/>
+  <circle cx="382" cy="130" r="14" fill="#98194F"/>
+  <line x1="382" y1="114" x2="382" y2="88" stroke="#98194F" stroke-width="2"/>
+  <text class="t-head" x="382" y="78" text-anchor="middle" style="fill:#98194F">p.Leu737Ter</text>
+  <text class="t-small" x="382" y="162" text-anchor="middle">PREMATURE STOP · ESTABLISHED</text>
+  <text class="t-label" x="55" y="256">COPY B</text>
+  <line x1="145" y1="250" x2="820" y2="250" stroke="#B5822A" stroke-width="8" stroke-linecap="round" opacity=".78"/>
+  <circle cx="645" cy="250" r="14" fill="#B5822A"/>
+  <line x1="645" y1="234" x2="645" y2="208" stroke="#B5822A" stroke-width="2"/>
+  <text class="t-head" x="645" y="198" text-anchor="middle" style="fill:#8A6520">p.Asn1002Lys</text>
+  <text class="t-small" x="645" y="282" text-anchor="middle">MISSENSE · VUS</text>
+  <path d="M382 310C450 345 577 345 645 310" fill="none" stroke="#98194F" stroke-width="2" stroke-dasharray="5 5"/>
+  <text class="t-small" x="514" y="374" text-anchor="middle" style="fill:#98194F">PROPOSED IN TRANS · NOT PROVEN</text>
+</svg></div>
+<figcaption><b>The uncertainty is part of the result.</b> One allele has strong clinical evidence; the other is a rare, plausible VUS. Parental genotyping would test whether they are truly on different chromosome copies.</figcaption>
+</figure>
+
+<section class="col">
+  <h2><span class="mark">05 — Try to break it</span>A good story is not enough</h2>
+  <p>Once BUB1B looked compelling, the task changed from finding support to finding failure. We checked the reference bases against GRCh38, normalized the variants, verified transcript and protein notation, compared population frequency and homozygote counts, examined every high-confidence clinical match, and reviewed other possible same-gene pairs.</p>
+  <p>Plausible alternatives were inspected rather than quietly discarded. A nearby cluster in another recessive disease gene looked more like variants travelling together on one chromosome than two independent hits. Several known pathogenic variants in unrelated genes were better interpreted as carrier or incidental findings because their inheritance and phenotypes did not explain the whole case.</p>
+  <p>AlphaFold supplied a useful final check: the uncertain amino acid sat in a high-confidence, tightly packed region of the protein. That made disruption plausible. It did not turn a VUS into a pathogenic variant. A predicted structure is still a model; a model is not an experiment.</p>
+  <p class="pull">The useful unit of AI assistance was not an answer. It was the next falsifiable check.</p>
+</section>
+
+<section class="col">
+  <h2><span class="mark">06 — What changed</span>The frontier moved from knowing to coordinating</h2>
+  <p>The important result is not that a non-specialist can imitate a geneticist. It is that rare-disease work is becoming modular. Population evidence, clinical classifications, phenotype ontologies, consequence annotation and protein models are separate expert achievements that can now be composed into a reproducible investigation.</p>
+  <p>Open databases supplied population and clinical evidence. Standard command-line tools performed reproducible genomics. AlphaFold supplied structural context. AI translated concepts, drafted code, caught inconsistencies and maintained a map of the investigation. Experts and laboratories remain responsible for validation and every decision that touches a patient.</p>
+  <p>That modularity changes who can contribute. Families can arrive at specialist appointments with better questions. Patient groups can organise neglected evidence. Software engineers can improve analysis infrastructure. Researchers can expose bounded problems to a much larger surface area of motivated attention. A condition may be rare to a health system yet the most important problem in the world to one family.</p>
+  <p>This can become a movement if participation is structured well: controlled data, reproducible code, explicit uncertainty, expert review and clear hand-offs from computation to experiment. The aim is not to dissolve expertise. It is to let more effort reach expertise in a form that experts can actually use.</p>
+</section>
+
+<figure class="wide">
+<div class="diagram-scroll" tabindex="0" role="region" aria-label="Scrollable diagram"><svg viewBox="0 0 900 390" role="img" aria-label="A progression from impossible questions to custom medicine, with validation gates between each stage">
+  <text class="t-head" x="40" y="30">From participation to personal medicine</text>
+  <text class="t-small" x="40" y="49">THE DIRECTION OF TRAVEL · NOT A GUARANTEED TIMELINE</text>
+  <path d="M95 300L270 248L445 193L620 130L795 76" fill="none" stroke="#98194F" stroke-width="4"/>
+  <line x1="95" y1="300" x2="95" y2="335" stroke="#1A1C16" stroke-opacity=".2"/>
+  <line x1="270" y1="248" x2="270" y2="335" stroke="#1A1C16" stroke-opacity=".2"/>
+  <line x1="445" y1="193" x2="445" y2="335" stroke="#1A1C16" stroke-opacity=".2"/>
+  <line x1="620" y1="130" x2="620" y2="335" stroke="#1A1C16" stroke-opacity=".2"/>
+  <line x1="795" y1="76" x2="795" y2="335" stroke="#1A1C16" stroke-opacity=".2"/>
+  <circle cx="95" cy="300" r="11" fill="#1A1C16"/><circle cx="270" cy="248" r="11" fill="#1A1C16"/><circle cx="445" cy="193" r="11" fill="#B5822A"/><circle cx="620" cy="130" r="11" fill="#B5822A"/><circle cx="795" cy="76" r="14" fill="#98194F"/>
+  <text class="t-head" x="95" y="359" text-anchor="middle">Understand</text><text class="t-small" x="95" y="376" text-anchor="middle">AI NAVIGATION</text>
+  <text class="t-head" x="270" y="307" text-anchor="middle">Prioritise</text><text class="t-small" x="270" y="324" text-anchor="middle">COMPUTATIONAL</text>
+  <text class="t-head" x="445" y="252" text-anchor="middle">Validate</text><text class="t-small" x="445" y="269" text-anchor="middle">LAB + CLINIC</text>
+  <text class="t-head" x="620" y="189" text-anchor="middle">Design</text><text class="t-small" x="620" y="206" text-anchor="middle">TARGETED THERAPY</text>
+  <text class="t-head" x="795" y="135" text-anchor="middle" style="fill:#98194F">Custom medicine</text><text class="t-small" x="795" y="152" text-anchor="middle">ONE PATIENT</text>
+</svg></div>
+<figcaption><b>The bottleneck is moving.</b> Computation can shorten the path to a hypothesis. Biology, safety, manufacturing, regulation, and equitable access still determine whether it becomes medicine.</figcaption>
+</figure>
+
+<section class="col">
+  <h2><span class="mark">07 — The industry after averages</span>From blockbuster drugs to programmable care</h2>
+  <p>Pharma was built around averages: find a molecule that helps enough people with the same diagnosis, manufacture it at enormous scale, and accept that many patients will not respond. Genomics makes disease more granular. AI makes that granularity computable. Programmable platforms—RNA, gene editing, engineered proteins and cells—could eventually make the treatment itself more adaptable.</p>
+  <p>The near future will not be a retail website that safely ships bespoke medicines overnight. The hard parts do not disappear: causal inference, toxicity, delivery, trials, manufacturing quality, consent, regulation, reimbursement and long-term monitoring. Rare-disease families have already paid dearly for technological promises that outran evidence.</p>
+  <p>But the economic unit can change. Today, a one-patient therapy is exceptional. Tomorrow, the repeatable product may be the validated process: sequence, interpret, design, manufacture and monitor—while the molecular payload changes for each patient. Pharma then becomes partly a software-and-platform industry, hospitals become data-generating research partners, and personal health records become active models rather than passive archives.</p>
+  <p>The sequence matters. First, we make the impossible investigable. Then we make the investigable treatable. The first visible change is therefore not a miracle drug, but millions of people becoming capable of attempting questions that once required permission simply to understand.</p>
+  <p class="fin">The future begins when no disease is too rare to deserve the world’s <em>attention.</em></p>
+</section>
+
+<section class="col sources">
+  <h3>Sources and project materials</h3>
+  <ol>
+    <li>World Health Organization, <a href="https://www.who.int/news/item/24-05-2025-seventy-eighth-world-health-assembly---daily-update--24-may-2025">“First-ever rare diseases resolution underscores equity and inclusion”</a>, 24 May 2025: more than 300 million people live with over 7,000 rare diseases, most beginning in childhood.</li>
+    <li>Sage Bionetworks, <a href="https://huggingface.co/spaces/SageBio/rare-disease-real-kid-mva-hackathon-2026">Rare Disease, Real Kid: MVA Hackathon 2026</a>.</li>
+    <li>ABC News, <a href="https://www.abc.net.au/news/2026-06-22/australian-dog-cancer-treated-via-mrna-vaccine-and-ai/106692668">“AI designs cancer vaccine for dog”</a>, 22 June 2026. The personalised mRNA vaccine involved Paul Conyngham, UNSW scientists, genomic sequencing, manufacturing and veterinary care; AI assisted the pipeline but did not cure the cancer or create and administer the vaccine by itself.</li>
+    <li>Google DeepMind and EMBL‑EBI, <a href="https://deepmind.google/science/alphafold/">AlphaFold</a> and the open Protein Structure Database.</li>
+    <li>NCBI ClinVar, <a href="https://www.ncbi.nlm.nih.gov/clinvar/variation/533901/">VCV000533901.9: BUB1B c.2210T&gt;G (p.Leu737Ter)</a>.</li>
+    <li>Hanks et al., <a href="https://pubmed.ncbi.nlm.nih.gov/15475955/">“Constitutional aneuploidy and cancer predisposition caused by biallelic mutations in BUB1B”</a>, <em>Nature Genetics</em>, 2004.</li>
+    <li><a href="https://gnomad.broadinstitute.org/">gnomAD</a>; <a href="https://www.ensembl.org/">Ensembl</a>; <a href="https://www.ncbi.nlm.nih.gov/refseq/MANE/">GENCODE/MANE</a>; and the <a href="https://hpo.jax.org/">Human Phenotype Ontology</a>.</li>
+    <li>Project repository: <a href="https://github.com/prabal-banerjee/rare-disease-real-kid-2026">documented analysis, scripts and competition submission</a>. Controlled participant data are intentionally excluded.</li>
+  </ol>
+</section>
+
+</main>
+<script>
+/* Match the site's read-depth and engaged-time GA4 events. */
+(function(){
+  if(!window.gtag) return;
+  var marks = [25, 50, 75, 100];
+  var fired = {};
+  var start = Date.now();
+  var completed = false;
+  function depth(){
+    var doc = document.documentElement;
+    var scrollable = doc.scrollHeight - window.innerHeight;
+    if(scrollable <= 0) return 100;
+    return Math.min(100, Math.round((window.pageYOffset / scrollable) * 100));
+  }
+  function check(){
+    var d = depth();
+    for(var i = 0; i < marks.length; i++){
+      var m = marks[i];
+      if(d >= m && !fired[m]){
+        fired[m] = true;
+        gtag('event', 'read_depth', {percent:m, seconds:Math.round((Date.now()-start)/1000)});
+      }
+    }
+    if(d >= 90 && !completed && (Date.now()-start) > 60000){
+      completed = true;
+      gtag('event', 'read_complete', {seconds:Math.round((Date.now()-start)/1000)});
+    }
+  }
+  var ticking = false;
+  window.addEventListener('scroll', function(){
+    if(ticking) return;
+    ticking = true;
+    window.requestAnimationFrame(function(){check();ticking=false;});
+  }, {passive:true});
+  check();
+})();
+</script>
+</body>
+</html>

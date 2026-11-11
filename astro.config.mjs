@@ -8,6 +8,7 @@ export default defineConfig({
   integrations: [
     sitemap({
       customPages: [
+        'https://prabalbanerjee.xyz/Five-Million-Variants-One-Hypothesis/',
         'https://prabalbanerjee.xyz/Arithmetic-of-Power/',
         'https://prabalbanerjee.xyz/Ninety-Fifth-Percentile/',
       ],
